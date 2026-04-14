@@ -989,7 +989,7 @@ function FooterDoc() {
 
 /* ── Contact Card documentation ─────────────────────────────── */
 
-const ELDERS_LOGO = '/elders-logo.png'
+const ELDERS_LOGO = `${import.meta.env.BASE_URL}elders-logo.png`
 const AGENT_PHOTO = 'https://images.unsplash.com/photo-1504224357642-c87eacea1da4?q=80&w=1775&auto=format&fit=crop'
 
 function ContactCardDoc() {
@@ -1068,7 +1068,7 @@ function AuctionCardRow({ commodity = 'cattle', title, auctionNo, commodityLabel
           flexShrink:      0,
         }}>
           <img
-            src={`/icons/commodity/${commodity}.svg`}
+            src={`${import.meta.env.BASE_URL}icons/commodity/${commodity}.svg`}
             alt={commodity}
             style={{ width: '40px', height: '40px' }}
           />
@@ -1199,7 +1199,7 @@ function LotCardDoc() {
                 { key: 'LE_DIR', value: '1.51',  percentile: 20 },
               ]}
               tags={['$/Head', 'Assessed']}
-              agencyLogo="/elders-logo.png"
+              agencyLogo={`${import.meta.env.BASE_URL}elders-logo.png`}
               agencyName="Elders Bendigo"
             />
           </DemoGroup>
@@ -1222,7 +1222,7 @@ function LotCardDoc() {
                 { key: 'Weight', value: '480 kg'   },
               ]}
               tags={['$/kg']}
-              agencyLogo="/elders-logo.png"
+              agencyLogo={`${import.meta.env.BASE_URL}elders-logo.png`}
               agencyName="Elders Wagga"
             />
           </DemoGroup>
