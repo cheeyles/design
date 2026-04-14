@@ -131,146 +131,46 @@ function AppShell() {
             <div className="ds-home">
               {/* Guide lines — responsive frame, max 1024px */}
               <div className="ds-home__frame">
-                {/* Main content — heading area */}
-                <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: '64px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'flex-start',
-                  justifyContent: 'center',
-                  padding: '0 64px',
-                  gap: 'var(--spacing-xs)',
-                }}>
-                  <h1 style={{
-                    margin: 0,
-                    fontFamily: 'var(--type-family-primary)',
-                    fontSize: 'var(--type-size-display-lg)',
-                    lineHeight: 'var(--type-lh-display-md)',
-                    fontWeight: 700,
-                    color: 'var(--color-text-dark)',
-                  }}>
+
+                {/* Hero content — heading, subtitle, CTA */}
+                <div className="ds-home__hero">
+                  <h1 className="ds-home__headline">
                     AuctionsPlus{' '}
-                    <span style={{
-                      backgroundImage: 'linear-gradient(105deg, var(--color-text-dark) 25%, var(--color-brand-primary) 45%, var(--color-brand-primary) 55%, var(--color-text-dark) 75%)',
-                      backgroundSize: '300% 100%',
-                      WebkitBackgroundClip: 'text',
-                      backgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      animation: 'text-shimmer 10s ease-in-out infinite',
-                    }}>
-                      Design System
-                    </span>
+                    <span className="ds-home__headline-gradient">Design System</span>
                   </h1>
-                  <p style={{
-                    margin: 0,
-                    fontFamily: 'var(--type-family-primary)',
-                    fontSize: 'var(--type-size-title-md)',
-                    lineHeight: 'var(--type-lh-title-md)',
-                    fontWeight: 400,
-                    color: 'var(--color-text-grey-dark)',
-                  }}>
+                  <p className="ds-home__subtitle">
                     A UI component library crafted for consistency, built for ag
                   </p>
                   <Button variant="primary" style={{ marginTop: 'var(--spacing-lg)' }} onClick={() => setActiveSection('foundations')}>Get Started</Button>
                 </div>
-                {/* Bottom divider — 64px from bottom */}
-                <div style={{
-                  position: 'absolute',
-                  bottom: '64px',
-                  left: 0,
-                  right: 0,
-                  height: '1px',
-                  backgroundColor: 'var(--color-border-grey-light)',
-                  pointerEvents: 'none',
-                }} />
-                {/* Ticker — scrolling text in bottom section */}
-                <div style={{
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  height: '64px',
-                  overflow: 'hidden',
-                  display: 'flex',
-                  alignItems: 'center',
-                }}>
+
+                {/* Bottom divider */}
+                <div className="ds-home__divider" />
+
+                {/* Ticker */}
+                <div className="ds-home__ticker">
                   {(() => {
                     const ITEMS = ['Assessment Entry', 'Listings Portal', 'Mobile App', 'Website', 'LiveAssess', 'Dashboard', 'Console']
                     const repeated = [...ITEMS, ...ITEMS]
                     return (
-                      <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        whiteSpace: 'nowrap',
-                        animation: 'ticker-scroll 32s linear infinite',
-                        willChange: 'transform',
-                      }}>
+                      <div className="ds-home__ticker-track">
                         {repeated.map((item, i) => (
-                          <span key={i} style={{
-                            fontFamily: 'var(--type-family-primary)',
-                            fontSize: '18px',
-                            fontWeight: 500,
-                            color: 'var(--color-text-dark)',
-                            paddingRight: '64px',
-                          }}>
-                            {item}
-                          </span>
+                          <span key={i} className="ds-home__ticker-item">{item}</span>
                         ))}
                       </div>
                     )
                   })()}
                 </div>
+
                 {/* Outline box */}
-                <div style={{
-                  position: 'absolute',
-                  inset: 0,
-                  border: '1px solid var(--color-border-grey-light)',
-                  pointerEvents: 'none',
-                }} />
-                {/* Top horizontal guide extending full width */}
-                <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: '-100vw',
-                  right: '-100vw',
-                  height: '1px',
-                  backgroundColor: 'var(--color-border-grey-light)',
-                  pointerEvents: 'none',
-                }} />
-                {/* Bottom horizontal guide extending full width */}
-                <div style={{
-                  position: 'absolute',
-                  bottom: 0,
-                  left: '-100vw',
-                  right: '-100vw',
-                  height: '1px',
-                  backgroundColor: 'var(--color-border-grey-light)',
-                  pointerEvents: 'none',
-                }} />
-                {/* Left vertical guide extending full height */}
-                <div style={{
-                  position: 'absolute',
-                  left: 0,
-                  top: '-100vh',
-                  bottom: '-100vh',
-                  width: '1px',
-                  backgroundColor: 'var(--color-border-grey-light)',
-                  pointerEvents: 'none',
-                }} />
-                {/* Right vertical guide extending full height */}
-                <div style={{
-                  position: 'absolute',
-                  right: 0,
-                  top: '-100vh',
-                  bottom: '-100vh',
-                  width: '1px',
-                  backgroundColor: 'var(--color-border-grey-light)',
-                  pointerEvents: 'none',
-                }} />
+                <div className="ds-home__outline" />
+
+                {/* Crosshair guide lines */}
+                <div className="ds-home__guide ds-home__guide--top" />
+                <div className="ds-home__guide ds-home__guide--bottom" />
+                <div className="ds-home__guide ds-home__guide--left" />
+                <div className="ds-home__guide ds-home__guide--right" />
+
               </div>
             </div>
           )}
@@ -974,13 +874,11 @@ function DocSection({ title, children }) {
 function Demo({ children, style }) {
   const items = Array.isArray(children) ? children.filter(Boolean) : [children].filter(Boolean)
   return (
-    <div style={{ display: 'flex', alignItems: 'stretch', ...style }}>
+    <div className="ds-demo" style={style}>
       {items.map((child, i) => (
-        <div key={i} style={{ display: 'flex', flex: '1 0 0', alignItems: 'stretch' }}>
+        <div key={i} className="ds-demo__cell">
           {child}
-          {i < items.length - 1 && (
-            <div style={{ width: '1px', backgroundColor: 'var(--color-border-grey-light)', flexShrink: 0, alignSelf: 'stretch' }} />
-          )}
+          {i < items.length - 1 && <div className="ds-demo__divider" />}
         </div>
       ))}
     </div>
@@ -990,26 +888,12 @@ function Demo({ children, style }) {
 /* DemoGroup: a padded column cell inside Demo */
 function DemoGroup({ label, children, column = false, gap }) {
   return (
-    <div style={{ flex: 1, padding: 'var(--spacing-lg)', display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sm)' }}>
-      {label && (
-        <span style={{
-          fontFamily: 'var(--type-family-primary)',
-          fontSize:   'var(--type-size-body-sm)',
-          lineHeight: 'var(--type-lh-body-sm)',
-          fontWeight: 500,
-          color:      'var(--color-text-grey-dark)',
-          display:    'block',
-        }}>
-          {label}
-        </span>
-      )}
-      <div style={{
-        display:       'flex',
-        flexWrap:      'wrap',
-        flexDirection: column ? 'column' : 'row',
-        gap:           gap ?? 'var(--spacing-sm)',
-        alignItems:    'flex-start',
-      }}>
+    <div className="ds-demo-group">
+      {label && <span className="ds-demo-group__label">{label}</span>}
+      <div
+        className={`ds-demo-group__content${column ? ' ds-demo-group__content--column' : ''}`}
+        style={gap ? { gap } : undefined}
+      >
         {children}
       </div>
     </div>
@@ -1155,31 +1039,25 @@ function CodeBlock({ code }) {
 function PropsTable({ rows }) {
   return (
     <div>
-      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--type-size-body-md)', lineHeight: 'var(--type-lh-body-sm)' }}>
+      <table className="ds-props-table">
         <thead>
-          <tr style={{ backgroundColor: 'var(--color-bg-white)', borderBottom: '1px solid var(--color-border-grey-light)' }}>
+          <tr>
             {['Prop', 'Type', 'Default', 'Description'].map(h => (
-              <th key={h} style={{ padding: 'var(--spacing-xs) var(--spacing-md)', textAlign: 'left', fontSize: 'var(--type-size-label-md)', fontWeight: 600, color: 'var(--color-text-grey)', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
-                {h}
-              </th>
+              <th key={h}>{h}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           {rows.map((row, i) => (
-            <tr key={i} style={{ backgroundColor: i % 2 === 0 ? 'transparent' : 'var(--color-bg-light)', borderBottom: i < rows.length - 1 ? '1px solid var(--color-border-grey-light)' : 'none' }}>
-              <td style={{ padding: 'var(--spacing-xs) var(--spacing-md)', whiteSpace: 'nowrap' }}>
-                <code style={{ fontFamily: 'monospace', fontSize: '13px', color: 'var(--color-brand-primary)', backgroundColor: 'var(--color-brand-primary-light)', padding: '1px 5px', borderRadius: '3px' }}>{row.prop}</code>
+            <tr key={i}>
+              <td><code className="ds-props-table__code--prop">{row.prop}</code></td>
+              <td><code className="ds-props-table__code--type">{row.type}</code></td>
+              <td>
+                {row.default
+                  ? <code className="ds-props-table__code--default">{row.default}</code>
+                  : <span style={{ color: 'var(--color-text-grey)' }}>—</span>}
               </td>
-              <td style={{ padding: 'var(--spacing-xs) var(--spacing-md)', whiteSpace: 'nowrap' }}>
-                <code style={{ fontFamily: 'monospace', fontSize: '13px', color: 'var(--color-accent-teal)', backgroundColor: 'var(--color-accent-teal-light)', padding: '1px 5px', borderRadius: '3px' }}>{row.type}</code>
-              </td>
-              <td style={{ padding: 'var(--spacing-xs) var(--spacing-md)', whiteSpace: 'nowrap' }}>
-                {row.default ? <code style={{ fontFamily: 'monospace', fontSize: '13px', color: 'var(--color-text-grey-dark)', backgroundColor: 'var(--color-bg-grey-medium)', padding: '1px 5px', borderRadius: '3px' }}>{row.default}</code> : <span style={{ color: 'var(--color-text-grey)' }}>—</span>}
-              </td>
-              <td style={{ padding: 'var(--spacing-xs) var(--spacing-md)', color: 'var(--color-text-grey-dark)' }}>
-                {row.desc ?? row.description}
-              </td>
+              <td>{row.desc ?? row.description}</td>
             </tr>
           ))}
         </tbody>
@@ -1191,26 +1069,22 @@ function PropsTable({ rows }) {
 function TokensTable({ rows }) {
   return (
     <div>
-      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--type-size-body-md)', lineHeight: 'var(--type-lh-body-sm)' }}>
+      <table className="ds-tokens-table">
         <thead>
-          <tr style={{ backgroundColor: 'var(--color-bg-white)', borderBottom: '1px solid var(--color-border-grey-light)' }}>
-            {['Token', 'Role'].map(h => (
-              <th key={h} style={{ padding: 'var(--spacing-xs) var(--spacing-md)', textAlign: 'left', fontSize: 'var(--type-size-label-md)', fontWeight: 600, color: 'var(--color-text-grey)', textTransform: 'uppercase', }}>
-                {h}
-              </th>
-            ))}
+          <tr>
+            {['Token', 'Role'].map(h => <th key={h}>{h}</th>)}
           </tr>
         </thead>
         <tbody>
           {rows.map((row, i) => (
-            <tr key={i} style={{ backgroundColor: i % 2 === 0 ? 'transparent' : 'var(--color-bg-light)', borderBottom: i < rows.length - 1 ? '1px solid var(--color-border-grey-light)' : 'none' }}>
-              <td style={{ padding: 'var(--spacing-xs) var(--spacing-md)', whiteSpace: 'nowrap' }}>
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--spacing-xs)' }}>
-                  <span style={{ width: '12px', height: '12px', borderRadius: '2px', backgroundColor: `var(${row.token})`, border: '1px solid rgba(0,0,0,0.08)', flexShrink: 0, display: 'inline-block' }} />
-                  <code style={{ fontFamily: 'monospace', fontSize: '13px', color: 'var(--color-text-grey-dark)' }}>{row.token}</code>
+            <tr key={i}>
+              <td>
+                <span className="ds-tokens-table__token-cell">
+                  <span className="ds-tokens-table__swatch" style={{ backgroundColor: `var(${row.token})` }} />
+                  <code className="ds-tokens-table__code">{row.token}</code>
                 </span>
               </td>
-              <td style={{ padding: 'var(--spacing-xs) var(--spacing-md)', color: 'var(--color-text-grey-dark)' }}>{row.role}</td>
+              <td>{row.role}</td>
             </tr>
           ))}
         </tbody>
@@ -4521,7 +4395,7 @@ const COLOUR_GROUPS = [
 
 function ColoursPanel() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-lg)' }}>
+    <div className="ds-panel">
       {COLOUR_GROUPS.map(({ label, tokens, text, border }) => {
         const kind = text ? 'text' : border ? 'border' : 'fill'
         // Split into rows of 4, padding the last row to 4 if needed
@@ -4559,7 +4433,6 @@ function ColoursPanel() {
 }
 
 function ColourTile({ tok, kind }) {
-  const [hovered, setHovered] = useState(false)
   const [copied, setCopied] = useState(false)
 
   if (!tok) {
@@ -4577,107 +4450,30 @@ function ColourTile({ tok, kind }) {
   }
 
   const swatch = kind === 'fill' ? (
-    <div style={{
-      width: '62px', height: '62px',
-      borderRadius: '2px',
-      backgroundColor: `var(${name})`,
-      border: '1px solid rgba(0,0,0,0.08)',
-      flexShrink: 0,
-    }} />
+    <div className="ds-colour-tile__swatch" style={{ backgroundColor: `var(${name})` }} />
   ) : kind === 'text' ? (
-    <div style={{
-      width: '62px', height: '62px',
-      borderRadius: '2px',
-      backgroundColor: 'var(--color-bg-light)',
-      border: '1px solid var(--color-border-grey-light)',
-      display: 'flex', alignItems: 'center', justifyContent: 'center',
-      flexShrink: 0,
-    }}>
-      <span style={{
-        fontSize: 'var(--type-size-title-lg)',
-        lineHeight: 1,
-        color: `var(${name})`,
-        fontWeight: 700,
-      }}>Aa</span>
+    <div className="ds-colour-tile__swatch ds-colour-tile__swatch--text">
+      <span style={{ fontSize: 'var(--type-size-title-lg)', lineHeight: 1, color: `var(${name})`, fontWeight: 700 }}>Aa</span>
     </div>
   ) : (
-    <div style={{
-      width: '62px', height: '62px',
-      borderRadius: '2px',
-      backgroundColor: 'var(--color-bg-light)',
-      border: `2px solid var(${name})`,
-      flexShrink: 0,
-    }} />
+    <div className="ds-colour-tile__swatch ds-colour-tile__swatch--border" style={{ border: `2px solid var(${name})` }} />
   )
 
   return (
-    <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        position: 'relative',
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--spacing-sm)',
-        padding: 'var(--spacing-lg)',
-      }}
-    >
-      {hovered && (
-        <button
-          onClick={handleCopy}
-          title="Copy token name"
-          style={{
-            position: 'absolute',
-            top: 'var(--spacing-sm)',
-            right: 'var(--spacing-sm)',
-            width: '28px',
-            height: '28px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'var(--color-bg-white)',
-            border: '1px solid var(--color-border-grey-light)',
-            borderRadius: 'var(--radius-sm)',
-            boxShadow: 'var(--shadow-xs)',
-            cursor: 'pointer',
-            padding: 0,
-          }}
-        >
-          <span style={{
-            fontFamily: "'Material Symbols Outlined'",
-            fontSize: '16px',
-            lineHeight: 1,
-            color: copied ? 'var(--color-status-green)' : 'var(--color-text-grey-dark)',
-            userSelect: 'none',
-            display: 'block',
-          }}>
-            {copied ? 'check' : 'content_copy'}
-          </span>
-        </button>
-      )}
+    <div className="ds-colour-tile">
+      <button
+        onClick={handleCopy}
+        title="Copy token name"
+        className="ds-colour-tile__copy-btn"
+      >
+        <span className={`ds-colour-tile__copy-icon${copied ? ' ds-colour-tile__copy-icon--copied' : ''}`}>
+          {copied ? 'check' : 'content_copy'}
+        </span>
+      </button>
       {swatch}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-0-5)' }}>
-        <div style={{
-          fontSize: 'var(--type-size-body-md)',
-          lineHeight: 'var(--type-lh-body-sm)',
-          color: 'var(--color-text-dark)',
-          fontFamily: 'var(--type-family-primary)',
-          fontWeight: 500,
-          wordBreak: 'break-all',
-        }}>
-          {short}
-        </div>
-        {hex && (
-          <div style={{
-            fontSize: 'var(--type-size-body-md)',
-            lineHeight: 'var(--type-lh-body-sm)',
-            color: 'var(--color-text-grey-light)',
-            fontFamily: 'monospace',
-          }}>
-            {hex}
-          </div>
-        )}
+      <div className="ds-colour-tile__meta">
+        <div className="ds-colour-tile__label">{short}</div>
+        {hex && <div className="ds-colour-tile__hex">{hex}</div>}
       </div>
     </div>
   )
@@ -4714,17 +4510,17 @@ const TYPE_GROUPS = [
 
 function TypographyPanel() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-lg)' }}>
+    <div className="ds-panel">
 
       {/* Font Family */}
       <Card style={{ padding: 0, overflow: 'hidden' }}>
         <GroupHeader>Font Family</GroupHeader>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-lg)', padding: 'var(--spacing-md) var(--spacing-lg)' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-0-5)', width: '160px', flexShrink: 0 }}>
-            <code style={{ color: '#013C65', fontFamily: 'var(--type-family-primary)', fontWeight: 500, fontSize: 'var(--type-size-body-md)', display: 'block' }}>type-family-primary</code>
-            <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey)', fontFamily: 'monospace' }}>Roboto</span>
+        <div className="ds-token-row">
+          <div className="ds-token-cell">
+            <code className="ds-token-name">type-family-primary</code>
+            <span className="ds-token-raw">Roboto</span>
           </div>
-          <p style={{ flex: 1, fontSize: 'var(--type-size-title-lg)', lineHeight: 'var(--type-lh-title-lg)', fontFamily: 'var(--type-family-primary)', color: 'var(--color-text-dark)', margin: 0 }}>
+          <p className="ds-token-preview" style={{ fontSize: 'var(--type-size-title-lg)', lineHeight: 'var(--type-lh-title-lg)', fontFamily: 'var(--type-family-primary)', color: 'var(--color-text-dark)', margin: 0 }}>
             ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789
           </p>
         </div>
@@ -4738,19 +4534,13 @@ function TypographyPanel() {
           { token: 'type-weight-medium',   label: 'Medium',    weight: 500 },
           { token: 'type-weight-semibold', label: 'Semi Bold', weight: 600 },
           { token: 'type-weight-bold',     label: 'Bold',      weight: 700 },
-        ].map(({ token, label, weight }, i, arr) => (
-          <div key={token} style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 'var(--spacing-lg)',
-            padding: 'var(--spacing-md) var(--spacing-lg)',
-            borderBottom: i < arr.length - 1 ? '1px solid var(--color-border-grey-light)' : 'none',
-          }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-0-5)', width: '160px', flexShrink: 0 }}>
-              <code style={{ color: '#013C65', fontFamily: 'var(--type-family-primary)', fontWeight: 500, fontSize: 'var(--type-size-body-md)', display: 'block' }}>{token}</code>
-              <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey)', fontFamily: 'monospace' }}>{weight}</span>
+        ].map(({ token, label, weight }) => (
+          <div key={token} className="ds-token-row">
+            <div className="ds-token-cell">
+              <code className="ds-token-name">{token}</code>
+              <span className="ds-token-raw">{weight}</span>
             </div>
-            <p style={{ flex: 1, fontSize: 'var(--type-size-title-lg)', lineHeight: 'var(--type-lh-title-lg)', fontWeight: weight, fontFamily: 'var(--type-family-primary)', color: 'var(--color-text-dark)', margin: 0 }}>
+            <p className="ds-token-preview" style={{ fontSize: 'var(--type-size-title-lg)', lineHeight: 'var(--type-lh-title-lg)', fontWeight: weight, fontFamily: 'var(--type-family-primary)', color: 'var(--color-text-dark)', margin: 0 }}>
               {label} — The quick brown fox
             </p>
           </div>
@@ -4760,23 +4550,17 @@ function TypographyPanel() {
       {TYPE_GROUPS.map(({ label, tokens }) => (
         <Card key={label} style={{ padding: 0, overflow: 'hidden' }}>
           <GroupHeader>{label}</GroupHeader>
-          {tokens.map(({ label: tok, size, lh, raw, family, weight }, i) => (
-            <div key={tok} style={{
-              display: 'flex',
-              alignItems: 'center',
-              padding: 'var(--spacing-md) var(--spacing-lg)',
-              borderBottom: i < tokens.length - 1 ? '1px solid var(--color-border-grey-light)' : 'none',
-              gap: 'var(--spacing-lg)',
-            }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-0-5)', width: '160px', flexShrink: 0 }}>
-                <code style={{ color: '#013C65', fontFamily: 'var(--type-family-primary)', fontWeight: 500, fontSize: 'var(--type-size-body-md)', display: 'block' }}>{tok}</code>
-                <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey)', fontFamily: 'monospace' }}>{raw}px</span>
+          {tokens.map(({ label: tok, size, lh, raw, family, weight }) => (
+            <div key={tok} className="ds-token-row">
+              <div className="ds-token-cell">
+                <code className="ds-token-name">{tok}</code>
+                <span className="ds-token-raw">{raw}px</span>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-0-5)', width: '120px', flexShrink: 0 }}>
-                <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey-dark)' }}>{family}</span>
-                <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey)' }}>{weight === 400 ? 'Regular · 400' : 'Medium · 500'}</span>
+              <div className="ds-token-cell" style={{ width: '120px' }}>
+                <span className="ds-token-desc">{family}</span>
+                <span className="ds-token-raw">{weight === 400 ? 'Regular · 400' : 'Medium · 500'}</span>
               </div>
-              <p style={{ flex: 1, fontSize: `var(${size})`, lineHeight: `var(${lh})`, fontWeight: weight, color: 'var(--color-text-dark)', margin: 0 }}>
+              <p className="ds-token-preview" style={{ fontSize: `var(${size})`, lineHeight: `var(${lh})`, fontWeight: weight, color: 'var(--color-text-dark)', margin: 0 }}>
                 The quick brown fox
               </p>
             </div>
@@ -4808,21 +4592,15 @@ const SPACING = [
 
 function SpacingPanel() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-lg)' }}>
+    <div className="ds-panel">
       <Card style={{ padding: 0, overflow: 'hidden' }}>
         <GroupHeader>Spacing Scale</GroupHeader>
-        {SPACING.map(({ token, label, raw }, i) => (
-          <div key={token} style={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: 'var(--spacing-md) var(--spacing-lg)',
-            borderBottom: i < SPACING.length - 1 ? '1px solid var(--color-border-grey-light)' : 'none',
-            gap: 'var(--spacing-lg)',
-          }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-0-5)', width: '160px', flexShrink: 0 }}>
-              <code style={{ color: '#013C65', fontFamily: 'var(--type-family-primary)', fontWeight: 500, fontSize: 'var(--type-size-body-md)', display: 'block' }}>{label}</code>
+        {SPACING.map(({ token, label, raw }) => (
+          <div key={token} className="ds-token-row">
+            <div className="ds-token-cell">
+              <code className="ds-token-name">{label}</code>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', flex: 1 }}>
+            <div className="ds-token-preview">
               <div style={{
                 height: '8px',
                 width: `var(${token})`,
@@ -4853,31 +4631,24 @@ const SHADOWS = [
 
 function ShadowsPanel() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-lg)' }}>
+    <div className="ds-panel">
       <Card style={{ padding: 0, overflow: 'hidden' }}>
         <GroupHeader>Elevation</GroupHeader>
-        {SHADOWS.map(({ token, label, desc }, i) => (
-          <div key={token} style={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: 'var(--spacing-lg)',
-            borderBottom: i < SHADOWS.length - 1 ? '1px solid var(--color-border-grey-light)' : 'none',
-            gap: 'var(--spacing-lg)',
-          }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-0-5)', width: '160px', flexShrink: 0 }}>
-              <code style={{ color: '#013C65', fontFamily: 'var(--type-family-primary)', fontWeight: 500, fontSize: 'var(--type-size-body-md)', display: 'block' }}>{label}</code>
-              <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey)' }}>{desc}</span>
+        {SHADOWS.map(({ token, label, desc }) => (
+          <div key={token} className="ds-token-row">
+            <div className="ds-token-cell">
+              <code className="ds-token-name">{label}</code>
+              <span className="ds-token-raw">{desc}</span>
             </div>
             <div style={{ width: '80px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div style={{
+              <div className="ds-token-swatch" style={{
                 width: '48px', height: '48px',
-                borderRadius: 'var(--radius-md)',
                 backgroundColor: 'var(--color-bg-white)',
                 boxShadow: `var(${token})`,
                 border: '1px solid var(--color-border-grey-light)',
               }} />
             </div>
-            <div style={{ flex: 1 }} />
+            <div className="ds-token-preview" />
           </div>
         ))}
       </Card>
@@ -4900,29 +4671,23 @@ const RADII = [
 
 function RadiusPanel() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-lg)' }}>
+    <div className="ds-panel">
       <Card style={{ padding: 0, overflow: 'hidden' }}>
         <GroupHeader>Border Radius</GroupHeader>
-        {RADII.map(({ token, label, raw }, i) => (
-          <div key={token} style={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: 'var(--spacing-md) var(--spacing-lg)',
-            borderBottom: i < RADII.length - 1 ? '1px solid var(--color-border-grey-light)' : 'none',
-            gap: 'var(--spacing-lg)',
-          }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-0-5)', width: '160px', flexShrink: 0 }}>
-              <code style={{ color: '#013C65', fontFamily: 'var(--type-family-primary)', fontWeight: 500, fontSize: 'var(--type-size-body-md)', display: 'block' }}>{label}</code>
-              <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey)', fontFamily: 'monospace' }}>{raw}</span>
+        {RADII.map(({ token, label, raw }) => (
+          <div key={token} className="ds-token-row">
+            <div className="ds-token-cell">
+              <code className="ds-token-name">{label}</code>
+              <span className="ds-token-raw">{raw}</span>
             </div>
             <div style={{ width: '80px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div style={{
+              <div className="ds-token-swatch" style={{
                 width: '48px', height: '48px',
                 borderRadius: `var(${token})`,
                 backgroundColor: 'var(--color-brand-primary)',
               }} />
             </div>
-            <div style={{ flex: 1 }} />
+            <div className="ds-token-preview" />
           </div>
         ))}
       </Card>
@@ -4950,18 +4715,12 @@ const BTN_SIZES = [
   { token: '--size-btn-lg', label: 'size-btn-lg', raw: '48px', use: 'Large / hero CTAs' },
 ]
 
-function SizingRow({ token, label, raw, use, isLast }) {
+function SizingRow({ token, label, raw, use }) {
   return (
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      padding: 'var(--spacing-md) var(--spacing-lg)',
-      borderBottom: isLast ? 'none' : '1px solid var(--color-border-grey-light)',
-      gap: 'var(--spacing-lg)',
-    }}>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-0-5)', width: '160px', flexShrink: 0 }}>
-        <code style={{ color: '#013C65', fontFamily: 'var(--type-family-primary)', fontWeight: 500, fontSize: 'var(--type-size-body-md)', display: 'block' }}>{label}</code>
-        <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey)', fontFamily: 'monospace' }}>{raw}</span>
+    <div className="ds-token-row">
+      <div className="ds-token-cell">
+        <code className="ds-token-name">{label}</code>
+        <span className="ds-token-raw">{raw}</span>
       </div>
       <div style={{ width: '80px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{
@@ -4973,21 +4732,21 @@ function SizingRow({ token, label, raw, use, isLast }) {
           flexShrink: 0,
         }} />
       </div>
-      <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey-dark)', flex: 1 }}>{use}</span>
+      <span className="ds-token-desc">{use}</span>
     </div>
   )
 }
 
 function SizingPanel() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-lg)' }}>
+    <div className="ds-panel">
       <Card style={{ padding: 0, overflow: 'hidden' }}>
         <GroupHeader>Icon Sizes</GroupHeader>
-        {ICON_SIZES.map((row, i) => <SizingRow key={row.token} {...row} isLast={i === ICON_SIZES.length - 1} />)}
+        {ICON_SIZES.map((row) => <SizingRow key={row.token} {...row} />)}
       </Card>
       <Card style={{ padding: 0, overflow: 'hidden' }}>
         <GroupHeader>Button Heights</GroupHeader>
-        {BTN_SIZES.map((row, i) => <SizingRow key={row.token} {...row} isLast={i === BTN_SIZES.length - 1} />)}
+        {BTN_SIZES.map((row) => <SizingRow key={row.token} {...row} />)}
       </Card>
     </div>
   )
@@ -5005,31 +4764,24 @@ const BORDER_WIDTHS = [
 
 function BorderWidthPanel() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-lg)' }}>
+    <div className="ds-panel">
       <Card style={{ padding: 0, overflow: 'hidden' }}>
         <GroupHeader>Border Width</GroupHeader>
-        {BORDER_WIDTHS.map(({ token, label, raw, use }, i) => (
-          <div key={token} style={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: 'var(--spacing-md) var(--spacing-lg)',
-            borderBottom: i < BORDER_WIDTHS.length - 1 ? '1px solid var(--color-border-grey-light)' : 'none',
-            gap: 'var(--spacing-lg)',
-          }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-0-5)', width: '160px', flexShrink: 0 }}>
-              <code style={{ color: '#013C65', fontFamily: 'var(--type-family-primary)', fontWeight: 500, fontSize: 'var(--type-size-body-md)', display: 'block' }}>{label}</code>
-              <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey)', fontFamily: 'monospace' }}>{raw}</span>
+        {BORDER_WIDTHS.map(({ token, label, raw, use }) => (
+          <div key={token} className="ds-token-row">
+            <div className="ds-token-cell">
+              <code className="ds-token-name">{label}</code>
+              <span className="ds-token-raw">{raw}</span>
             </div>
             <div style={{ width: '80px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <div style={{
-                width: '56px',
-                height: '32px',
+                width: '56px', height: '32px',
                 borderRadius: 'var(--radius-sm)',
                 border: `var(${token}) solid var(--color-brand-primary)`,
                 backgroundColor: 'var(--color-brand-primary-light)',
               }} />
             </div>
-            <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey-dark)', flex: 1 }}>{use}</span>
+            <span className="ds-token-desc">{use}</span>
           </div>
         ))}
       </Card>
@@ -5049,29 +4801,22 @@ const OPACITIES = [
 
 function OpacityPanel() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-lg)' }}>
+    <div className="ds-panel">
       <Card style={{ padding: 0, overflow: 'hidden' }}>
         <GroupHeader>Opacity</GroupHeader>
-        {OPACITIES.map(({ token, label, raw, use }, i) => (
-          <div key={token} style={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: 'var(--spacing-md) var(--spacing-lg)',
-            borderBottom: i < OPACITIES.length - 1 ? '1px solid var(--color-border-grey-light)' : 'none',
-            gap: 'var(--spacing-lg)',
-          }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-0-5)', width: '160px', flexShrink: 0 }}>
-              <code style={{ color: '#013C65', fontFamily: 'var(--type-family-primary)', fontWeight: 500, fontSize: 'var(--type-size-body-md)', display: 'block' }}>{label}</code>
-              <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey)', fontFamily: 'monospace' }}>{raw}</span>
+        {OPACITIES.map(({ token, label, raw, use }) => (
+          <div key={token} className="ds-token-row">
+            <div className="ds-token-cell">
+              <code className="ds-token-name">{label}</code>
+              <span className="ds-token-raw">{raw}</span>
             </div>
             <div style={{ width: '80px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <div style={{ position: 'relative', width: '56px', height: '32px', borderRadius: 'var(--radius-sm)', overflow: 'hidden' }}>
-                {/* Checkerboard background to show transparency */}
                 <div style={{ position: 'absolute', inset: 0, backgroundImage: 'repeating-conic-gradient(#ccc 0% 25%, #fff 0% 50%)', backgroundSize: '12px 12px' }} />
                 <div style={{ position: 'absolute', inset: 0, backgroundColor: 'var(--color-brand-primary)', opacity: `var(${token})` }} />
               </div>
             </div>
-            <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey-dark)', flex: 1 }}>{use}</span>
+            <span className="ds-token-desc">{use}</span>
           </div>
         ))}
       </Card>
@@ -5111,31 +4856,23 @@ function TransitionDemo({ token, raw }) {
 
 function TransitionPanel() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-lg)' }}>
+    <div className="ds-panel">
       <Card style={{ padding: 0, overflow: 'hidden' }}>
         <GroupHeader>Transition</GroupHeader>
-        {TRANSITIONS.map(({ token, label, raw, use }, i) => (
-          <div key={token} style={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: 'var(--spacing-md) var(--spacing-lg)',
-            borderBottom: i < TRANSITIONS.length - 1 ? '1px solid var(--color-border-grey-light)' : 'none',
-            gap: 'var(--spacing-lg)',
-          }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-0-5)', width: '160px', flexShrink: 0 }}>
-              <code style={{ color: '#013C65', fontFamily: 'var(--type-family-primary)', fontWeight: 500, fontSize: 'var(--type-size-body-md)', display: 'block' }}>{label}</code>
-              <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey)', fontFamily: 'monospace' }}>{raw}</span>
+        {TRANSITIONS.map(({ token, label, raw, use }) => (
+          <div key={token} className="ds-token-row">
+            <div className="ds-token-cell">
+              <code className="ds-token-name">{label}</code>
+              <span className="ds-token-raw">{raw}</span>
             </div>
             <div style={{ width: '80px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <TransitionDemo token={token} raw={raw} />
             </div>
-            <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey-dark)', flex: 1 }}>{use}</span>
+            <span className="ds-token-desc">{use}</span>
           </div>
         ))}
       </Card>
-      <div style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey)', padding: '0 var(--spacing-xs)' }}>
-        Hover each swatch to see the transition speed live.
-      </div>
+      <p className="ds-panel__hint">Hover each swatch to see the transition speed live.</p>
     </div>
   )
 }
@@ -5156,24 +4893,18 @@ const Z_INDICES = [
 function ZIndexPanel() {
   const max = 500
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-lg)' }}>
+    <div className="ds-panel">
       <Card style={{ padding: 0, overflow: 'hidden' }}>
         <GroupHeader>Z-Index Scale</GroupHeader>
-        {Z_INDICES.map(({ token, label, raw, use }, i) => {
+        {Z_INDICES.map(({ token, label, raw, use }) => {
           const pct = (parseInt(raw) / max) * 100
           return (
-            <div key={token} style={{
-              display: 'flex',
-              alignItems: 'center',
-              padding: 'var(--spacing-md) var(--spacing-lg)',
-              borderBottom: i < Z_INDICES.length - 1 ? '1px solid var(--color-border-grey-light)' : 'none',
-              gap: 'var(--spacing-lg)',
-            }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-0-5)', width: '160px', flexShrink: 0 }}>
-                <code style={{ color: '#013C65', fontFamily: 'var(--type-family-primary)', fontWeight: 500, fontSize: 'var(--type-size-body-md)', display: 'block' }}>{label}</code>
-                <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey)', fontFamily: 'monospace' }}>{raw}</span>
+            <div key={token} className="ds-token-row">
+              <div className="ds-token-cell">
+                <code className="ds-token-name">{label}</code>
+                <span className="ds-token-raw">{raw}</span>
               </div>
-              <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 'var(--spacing-sm)' }}>
+              <div className="ds-token-preview" style={{ gap: 'var(--spacing-sm)' }}>
                 <div style={{ flex: 1, height: '6px', backgroundColor: 'var(--color-bg-grey-medium)', borderRadius: 'var(--radius-full)', overflow: 'hidden' }}>
                   <div style={{
                     height: '100%',
@@ -5183,7 +4914,7 @@ function ZIndexPanel() {
                   }} />
                 </div>
               </div>
-              <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey-dark)', width: '280px', flexShrink: 0, textAlign: 'left' }}>{use}</span>
+              <span className="ds-token-desc" style={{ width: '280px', flexShrink: 0 }}>{use}</span>
             </div>
           )
         })}

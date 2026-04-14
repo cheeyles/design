@@ -320,7 +320,7 @@
   display:        flex;
   flex-direction: column;
   gap:            var(--spacing-xl);
-  max-width:      900px;
+  max-width:      100%;
 }
 
 .ds-doc-page__header {
@@ -400,19 +400,17 @@
 /* ── Code block ─────────────────────────────────────────────── */
 
 .ds-code-block {
-  background-color: var(--color-bg-dark);
+  background-color: var(--color-bg-light);
   border-radius:    var(--radius-md);
+  border:           var(--border-width-default) solid var(--color-border-grey-light);
   padding:          var(--spacing-md);
   overflow-x:       auto;
-}
-
-.ds-code-block pre {
-  margin:      0;
-  font-family: 'Roboto Mono', 'Courier New', monospace;
-  font-size:   var(--type-size-body-sm);
-  line-height: var(--type-lh-body-sm);
-  color:       var(--color-text-grey-light);
-  white-space: pre;
+  margin:           0;
+  font-family:      'Roboto Mono', 'Courier New', monospace;
+  font-size:        var(--type-size-body-sm);
+  line-height:      var(--type-lh-body-sm);
+  color:            var(--color-text-grey-dark);
+  white-space:      pre;
 }
 
 /* ── Card ───────────────────────────────────────────────────── */
@@ -452,6 +450,151 @@
   color:       var(--color-bg-dark);
 }
 
+/* ── Foundations panel wrapper ──────────────────────────────── */
+
+.ds-panel {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--spacing-lg);
+}
+
+/* ── Token row (used in all foundations panels) ─────────────── */
+
+.ds-token-row {
+  display:     flex;
+  align-items: center;
+  padding:     var(--spacing-md) var(--spacing-lg);
+  gap:         var(--spacing-lg);
+}
+
+.ds-token-row + .ds-token-row {
+  border-top: var(--border-width-default) solid var(--color-border-grey-light);
+}
+
+.ds-token-cell {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--spacing-0-5);
+  width:          160px;
+  flex-shrink:    0;
+}
+
+.ds-token-cell--wide {
+  width: 200px;
+}
+
+.ds-token-name {
+  color:       var(--color-bg-dark);
+  font-family: var(--type-family-primary);
+  font-weight: 500;
+  font-size:   var(--type-size-body-md);
+  display:     block;
+}
+
+.ds-token-raw {
+  font-size:   var(--type-size-body-md);
+  line-height: var(--type-lh-body-sm);
+  color:       var(--color-text-grey);
+  font-family: monospace;
+}
+
+.ds-token-desc {
+  font-size:   var(--type-size-body-md);
+  line-height: var(--type-lh-body-sm);
+  color:       var(--color-text-grey-dark);
+}
+
+.ds-token-preview {
+  display:     flex;
+  align-items: center;
+  flex:        1;
+}
+
+/* ── Colour tile ────────────────────────────────────────────── */
+
+.ds-colour-tile {
+  position:       relative;
+  flex:           1;
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--spacing-sm);
+  padding:        var(--spacing-lg);
+}
+
+.ds-colour-tile__swatch {
+  width:       62px;
+  height:      62px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  border:      1px solid rgba(0,0,0,0.08);
+}
+
+.ds-colour-tile__swatch--text {
+  background-color: var(--color-bg-light);
+  border:           1px solid var(--color-border-grey-light);
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+}
+
+.ds-colour-tile__swatch--border {
+  background-color: var(--color-bg-light);
+}
+
+.ds-colour-tile__copy-btn {
+  position:         absolute;
+  top:              var(--spacing-sm);
+  right:            var(--spacing-sm);
+  width:            28px;
+  height:           28px;
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  background-color: var(--color-bg-white);
+  border:           1px solid var(--color-border-grey-light);
+  border-radius:    var(--radius-sm);
+  box-shadow:       var(--shadow-xs);
+  cursor:           pointer;
+  padding:          0;
+  opacity:          0;
+  transition:       opacity var(--transition-fast) var(--easing-default);
+}
+
+.ds-colour-tile__copy-icon {
+  font-family:  'Material Symbols Outlined';
+  font-size:    16px;
+  line-height:  1;
+  color:        var(--color-text-grey-dark);
+  user-select:  none;
+  display:      block;
+}
+
+.ds-colour-tile__copy-icon--copied {
+  color: var(--color-status-green);
+}
+
+.ds-colour-tile__meta {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--spacing-0-5);
+}
+
+.ds-colour-tile__label {
+  font-size:   var(--type-size-body-md);
+  line-height: var(--type-lh-body-sm);
+  color:       var(--color-text-dark);
+  font-family: var(--type-family-primary);
+  font-weight: 500;
+  word-break:  break-all;
+}
+
+.ds-colour-tile__hex {
+  font-size:   var(--type-size-body-md);
+  line-height: var(--type-lh-body-sm);
+  color:       var(--color-text-grey-light);
+  font-family: monospace;
+}
+
 /* ── Home page ──────────────────────────────────────────────── */
 
 .ds-home {
@@ -467,10 +610,309 @@
 }
 
 .ds-home__frame {
-  position:   relative;
-  width:      min(1024px, calc(100% - 48px));
-  height:     512px;
+  position:    relative;
+  width:       min(1024px, calc(100% - 48px));
+  height:      512px;
   flex-shrink: 0;
+}
+
+.ds-home__hero {
+  position:        absolute;
+  top:             0;
+  left:            0;
+  right:           0;
+  bottom:          64px;
+  display:         flex;
+  flex-direction:  column;
+  align-items:     flex-start;
+  justify-content: center;
+  padding:         0 64px;
+  gap:             var(--spacing-xs);
+}
+
+.ds-home__headline {
+  margin:      0;
+  font-family: var(--type-family-primary);
+  font-size:   var(--type-size-display-lg);
+  line-height: var(--type-lh-display-md);
+  font-weight: 700;
+  color:       var(--color-text-dark);
+}
+
+.ds-home__headline-gradient {
+  background-image:        linear-gradient(105deg, var(--color-text-dark) 25%, var(--color-brand-primary) 45%, var(--color-brand-primary) 55%, var(--color-text-dark) 75%);
+  background-size:         300% 100%;
+  -webkit-background-clip: text;
+  background-clip:         text;
+  -webkit-text-fill-color: transparent;
+  animation:               text-shimmer 10s ease-in-out infinite;
+}
+
+.ds-home__subtitle {
+  margin:      0;
+  font-family: var(--type-family-primary);
+  font-size:   var(--type-size-title-md);
+  line-height: var(--type-lh-title-md);
+  font-weight: 400;
+  color:       var(--color-text-grey-dark);
+}
+
+.ds-home__divider {
+  position:         absolute;
+  bottom:           64px;
+  left:             0;
+  right:            0;
+  height:           1px;
+  background-color: var(--color-border-grey-light);
+  pointer-events:   none;
+}
+
+.ds-home__ticker {
+  position:   absolute;
+  bottom:     0;
+  left:       0;
+  right:      0;
+  height:     64px;
+  overflow:   hidden;
+  display:    flex;
+  align-items: center;
+}
+
+.ds-home__ticker-track {
+  display:     flex;
+  align-items: center;
+  white-space: nowrap;
+  animation:   ticker-scroll 32s linear infinite;
+  will-change: transform;
+}
+
+.ds-home__ticker-item {
+  font-family:   var(--type-family-primary);
+  font-size:     18px;
+  font-weight:   500;
+  color:         var(--color-text-dark);
+  padding-right: 64px;
+}
+
+.ds-home__outline {
+  position:       absolute;
+  inset:          0;
+  border:         1px solid var(--color-border-grey-light);
+  pointer-events: none;
+}
+
+.ds-home__guide {
+  position:         absolute;
+  background-color: var(--color-border-grey-light);
+  pointer-events:   none;
+}
+
+.ds-home__guide--top    { top: 0;    left: -100vw; right: -100vw; height: 1px; }
+.ds-home__guide--bottom { bottom: 0; left: -100vw; right: -100vw; height: 1px; }
+.ds-home__guide--left   { left: 0;   top: -100vh;  bottom: -100vh; width: 1px; }
+.ds-home__guide--right  { right: 0;  top: -100vh;  bottom: -100vh; width: 1px; }
+
+.ds-colour-tile:hover .ds-colour-tile__copy-btn {
+  opacity: 1;
+}
+
+/* ── Token swatch (small visual preview in foundations rows) ─── */
+
+.ds-token-swatch {
+  width:         48px;
+  height:        48px;
+  border-radius: var(--radius-md);
+  flex-shrink:   0;
+}
+
+/* ── Panel hint (helper text below foundations panels) ──────── */
+
+.ds-panel__hint {
+  font-size:   var(--type-size-body-md);
+  line-height: var(--type-lh-body-sm);
+  color:       var(--color-text-grey);
+  padding:     0 var(--spacing-xs);
+}
+
+/* ── Demo (component showcase row) ─────────────────────────── */
+
+.ds-demo {
+  display:     flex;
+  align-items: stretch;
+}
+
+.ds-demo__cell {
+  display:     flex;
+  flex:        1 0 0;
+  align-items: stretch;
+}
+
+.ds-demo__divider {
+  width:            1px;
+  background-color: var(--color-border-grey-light);
+  flex-shrink:      0;
+  align-self:       stretch;
+}
+
+/* ── Demo group (padded column cell inside Demo) ────────────── */
+
+.ds-demo-group {
+  flex:           1;
+  padding:        var(--spacing-lg);
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--spacing-sm);
+}
+
+.ds-demo-group__label {
+  font-family: var(--type-family-primary);
+  font-size:   var(--type-size-body-sm);
+  line-height: var(--type-lh-body-sm);
+  font-weight: 500;
+  color:       var(--color-text-grey-dark);
+  display:     block;
+}
+
+.ds-demo-group__content {
+  display:     flex;
+  flex-wrap:   wrap;
+  gap:         var(--spacing-sm);
+  align-items: flex-start;
+}
+
+.ds-demo-group__content--column {
+  flex-direction: column;
+}
+
+/* ── Props table ────────────────────────────────────────────── */
+
+.ds-props-table {
+  width:           100%;
+  border-collapse: collapse;
+  font-size:       var(--type-size-body-md);
+  line-height:     var(--type-lh-body-sm);
+}
+
+.ds-props-table thead tr {
+  background-color: var(--color-bg-white);
+  border-bottom:    1px solid var(--color-border-grey-light);
+}
+
+.ds-props-table th {
+  padding:        var(--spacing-xs) var(--spacing-md);
+  text-align:     left;
+  font-size:      var(--type-size-label-md);
+  font-weight:    600;
+  color:          var(--color-text-grey);
+  text-transform: uppercase;
+  white-space:    nowrap;
+}
+
+.ds-props-table tbody tr:nth-child(even) {
+  background-color: var(--color-bg-light);
+}
+
+.ds-props-table tbody tr:not(:last-child) {
+  border-bottom: 1px solid var(--color-border-grey-light);
+}
+
+.ds-props-table td {
+  padding: var(--spacing-xs) var(--spacing-md);
+  color:   var(--color-text-grey-dark);
+}
+
+.ds-props-table td:first-child,
+.ds-props-table td:nth-child(2),
+.ds-props-table td:nth-child(3) {
+  white-space: nowrap;
+}
+
+.ds-props-table__code--prop {
+  font-family:      monospace;
+  font-size:        13px;
+  color:            var(--color-brand-primary);
+  background-color: var(--color-brand-primary-light);
+  padding:          1px 5px;
+  border-radius:    3px;
+}
+
+.ds-props-table__code--type {
+  font-family:      monospace;
+  font-size:        13px;
+  color:            var(--color-accent-teal);
+  background-color: var(--color-accent-teal-light);
+  padding:          1px 5px;
+  border-radius:    3px;
+}
+
+.ds-props-table__code--default {
+  font-family:      monospace;
+  font-size:        13px;
+  color:            var(--color-text-grey-dark);
+  background-color: var(--color-bg-grey-medium);
+  padding:          1px 5px;
+  border-radius:    3px;
+}
+
+/* ── Tokens table ───────────────────────────────────────────── */
+
+.ds-tokens-table {
+  width:           100%;
+  border-collapse: collapse;
+  font-size:       var(--type-size-body-md);
+  line-height:     var(--type-lh-body-sm);
+}
+
+.ds-tokens-table thead tr {
+  background-color: var(--color-bg-white);
+  border-bottom:    1px solid var(--color-border-grey-light);
+}
+
+.ds-tokens-table th {
+  padding:        var(--spacing-xs) var(--spacing-md);
+  text-align:     left;
+  font-size:      var(--type-size-label-md);
+  font-weight:    600;
+  color:          var(--color-text-grey);
+  text-transform: uppercase;
+}
+
+.ds-tokens-table tbody tr:nth-child(even) {
+  background-color: var(--color-bg-light);
+}
+
+.ds-tokens-table tbody tr:not(:last-child) {
+  border-bottom: 1px solid var(--color-border-grey-light);
+}
+
+.ds-tokens-table td {
+  padding: var(--spacing-xs) var(--spacing-md);
+  color:   var(--color-text-grey-dark);
+}
+
+.ds-tokens-table td:first-child {
+  white-space: nowrap;
+}
+
+.ds-tokens-table__token-cell {
+  display:     inline-flex;
+  align-items: center;
+  gap:         var(--spacing-xs);
+}
+
+.ds-tokens-table__swatch {
+  width:            12px;
+  height:           12px;
+  border-radius:    2px;
+  border:           1px solid rgba(0,0,0,0.08);
+  flex-shrink:      0;
+  display:          inline-block;
+}
+
+.ds-tokens-table__code {
+  font-family: monospace;
+  font-size:   13px;
+  color:       var(--color-text-grey-dark);
 }
 
 /* ── Coming soon ────────────────────────────────────────────── */
