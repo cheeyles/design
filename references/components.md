@@ -12,7 +12,7 @@ Status key: ✅ Done | 🔄 In Progress | ⬜ Not started
 ## Imports
 
 ```js
-import { Button, LargeIconButton, FavouriteButton, CardFavouriteButton } from './components/actions/Button/index.js'
+import { Button, IconButton, LargeIconButton, FavouriteButton, CardFavouriteButton } from './components/actions/Button/index.js'
 import { Input, NumberInput, DollarInput, SelectInput, DefinedUnitInput, PasswordInput, EmailInput, UrlInput, TelInput, TextArea } from './components/inputs/Input/index.js'
 import { DatePicker } from './components/inputs/DatePicker/index.js'
 import { Toggle } from './components/inputs/Toggle/index.js'
@@ -38,6 +38,7 @@ import { ProgressIndicator } from './components/feedback/ProgressIndicator/index
 import { ProgressTracker } from './components/feedback/ProgressTracker/index.js'
 import { Announcement } from './components/feedback/Announcement/index.js'
 import { Tab, TabBar } from './components/navigation/Tab/index.js'
+import { NavItem, NavSubItem, NavGroup, NavIconItem } from './components/navigation/NavItem/index.js'
 import { TabbedAccordion } from './components/navigation/TabbedAccordion/index.js'
 import { Breadcrumb } from './components/navigation/Breadcrumb/index.js'
 import { Pagination } from './components/navigation/Pagination/index.js'
@@ -908,6 +909,53 @@ Horizontal trail of links showing the current page location. All items except th
   { label: 'Cattle',   href: '/auctions/cattle' },
   { label: 'Eastern States Cattle Sale' },
 ]} />
+```
+
+---
+
+### NavItem ✅
+`src/components/navigation/NavItem/NavItem.jsx`
+
+Sidebar navigation items for dashboard and admin contexts.
+
+| Export | Use |
+|---|---|
+| `NavItem` | Standard nav item with optional icon, lg or sm size |
+| `NavSubItem` | Indented child item shown inside an open `NavGroup` |
+| `NavGroup` | Collapsible parent item — renders `children` when open |
+| `NavIconItem` | Icon-only button with right-positioned tooltip |
+
+**NavItem props:**
+
+| Prop | Type | Default | Notes |
+|---|---|---|---|
+| `label` | string | — | Item label text |
+| `icon` | string | — | Material Symbol name (optional) |
+| `size` | string | `'lg'` | `'lg'` `'sm'` |
+| `active` | bool | `false` | Highlights item |
+| `disabled` | bool | `false` | Mutes item, disables click |
+| `onClick` | func | — | — |
+| `mx` | string | `'var(--spacing-sm)'` | Side margin — pass `'8px'` for 248px sidebar |
+
+**NavGroup props:** `label`, `icon`, `size`, `mx`, `defaultOpen`, `children`
+
+**NavSubItem props:** `label`, `size`, `active`, `onClick`
+
+**NavIconItem props:** `icon`, `label` (tooltip text), `active`, `onClick`
+
+```jsx
+// 248px sidebar with icons
+<NavItem icon="dashboard" label="Overview" active onClick={...} mx="8px" />
+<NavItem icon="list_alt"  label="My Sales" onClick={...} mx="8px" />
+
+// Collapsible group
+<NavGroup icon="settings" label="Settings" mx="8px" defaultOpen>
+  <NavSubItem label="Profile" />
+  <NavSubItem label="Billing" active />
+</NavGroup>
+
+// Icon-only sidebar (64px wide)
+<NavIconItem icon="dashboard" label="Overview" active onClick={...} />
 ```
 
 ---

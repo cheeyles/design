@@ -161,7 +161,7 @@ export function LotStatusTag({ variant = 'published', className, style }) {
         <span
           aria-hidden="true"
           style={{
-            fontFamily:            "'Material Symbols Outlined'",
+            fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
             fontSize:              'var(--size-icon-sm)',
             lineHeight:            1,
@@ -336,7 +336,7 @@ export function CardKeyInfoTag({ variant = 'buy-now', label, className, style })
       <span
         aria-hidden="true"
         style={{
-          fontFamily:            "'Material Symbols Outlined'",
+          fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
           fontSize:              'var(--size-icon-sm)',
           lineHeight:            1,
@@ -415,7 +415,7 @@ export function PackageTypeTag({ variant = 'premium', className, style }) {
       <span
         aria-hidden="true"
         style={{
-          fontFamily:            "'Material Symbols Outlined'",
+          fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
           fontSize:              'var(--size-icon-xs)',
           lineHeight:            1,

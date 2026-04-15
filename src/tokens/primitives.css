@@ -8,59 +8,55 @@
 
   /* --- COLOUR PRIMITIVES --- */
 
-  --primitive-white:  #FFFFFF;
-  --primitive-black:  #000000;
+  --primitive-white: #FFFFFF;
+  --primitive-black: #000000;
 
-  /* Blue */
-  --primitive-blue-dark:    #1542A7;
-  --primitive-blue-default: #1971D8;
-  --primitive-blue-light:   #E3F2FE;
+  /* Brand Primary (Blue) */
+  --primitive-brand-primary-50:  #E3F2FE;
+  --primitive-brand-primary-700: #1971D8;
+  --primitive-brand-primary-900: #1542A7;
 
-  /* Dark Navy */
-  --primitive-dark-dark:    #002341;
-  --primitive-dark-default: #013C65;
-  --primitive-dark-light:   #E4E8ED;
+  /* Brand Dark (Navy) */
+  --primitive-brand-dark-50:  #E4E8ED;
+  --primitive-brand-dark-700: #013C65;
+  --primitive-brand-dark-900: #002341;
 
-  /* Red */
-  --primitive-red-dark:  #CD002B;
-  --primitive-red-light: #FFECF1;
+  /* Negative (Red) */
+  --primitive-negative-50:  #FFECF1;
+  --primitive-negative-900: #CD002B;
 
-  /* Orange */
-  --primitive-orange-dark:  #D96725;
-  --primitive-orange-light: #FDF4E3;
+  /* Warning (Orange) */
+  --primitive-warning-50:  #FDF4E3;
+  --primitive-warning-900: #D96725;
 
-  /* Green */
-  --primitive-green-dark:    #006728;
-  --primitive-green-default: #00873D;
-  --primitive-green-light:   #E7F7EB;
+  /* Positive (Green) */
+  --primitive-positive-50:  #E7F7EB;
+  --primitive-positive-800: #00873D;
+  --primitive-positive-900: #006728;
 
-  /* Grey */
-  --primitive-grey-dark:        #3D4041;
-  --primitive-grey-default:     #5C5E60;
-  --primitive-grey-medium:      #B7BABC;
-  --primitive-grey-light:       #DBDEE0;
-  --primitive-grey-extra-light: #F4F4F4;
-  --primitive-grey-super-light: #F7FAFC;
-
-  /* Legacy aliases — kept so existing components don't break */
-  --primitive-grey-outline-1: var(--primitive-grey-medium);
-  --primitive-grey-outline-2: var(--primitive-grey-light);
+  /* Gray */
+  --primitive-gray-50:  #F7FAFC;
+  --primitive-gray-100: #F4F4F4;
+  --primitive-gray-300: #DBDEE0;
+  --primitive-gray-400: #B7BABC;
+  --primitive-gray-700: #5C5E60;
+  --primitive-gray-800: #3D4041;
 
   /* Yellow */
-  --primitive-yellow-dark:  #FFB700;
-  --primitive-yellow-light: #FFF9E1;
+  --primitive-yellow-50:  #FFF9E1;
+  --primitive-yellow-600: #FFB700;
 
   /* Teal */
-  --primitive-teal-dark:  #005147;
-  --primitive-teal-light: #DDEEED;
+  --primitive-teal-50:  #DDEEED;
+  --primitive-teal-800: #005147;
 
   /* Pink */
-  --primitive-pink-dark:  #760046;
-  --primitive-pink-light: #F3E0EA;
+  --primitive-pink-50:  #F3E0EA;
+  --primitive-pink-800: #760046;
 
   /* Purple */
-  --primitive-purple-dark:  #6A1B9A;
-  --primitive-purple-light: #F3E5F5;
+  --primitive-purple-50:  #F3E5F5;
+  --primitive-purple-800: #6A1B9A;
 
   /* --- SPACING PRIMITIVES --- */
 
@@ -101,14 +97,10 @@
   --primitive-border-focus:   3px;
 
   /* --- SHADOW PRIMITIVES --- */
-  /* Navy-tinted shadows — sourced from Figma Elevation page (node 85:5483)
-     Shadow color: rgba(17,51,83,x) — dark navy (same hue as brand dark)        */
 
-  --primitive-shadow-xs: 0px 1px 6px 0px rgba(17,51,83,0.06);
-  --primitive-shadow-sm: 0px 4px 12px 0px rgba(17,51,83,0.02), 0px 4px 12px 0px rgba(17,51,83,0.02);
-  --primitive-shadow-md: 0px 4px 12px 0px rgba(17,51,83,0.04), 0px 4px 12px 0px rgba(17,51,83,0.04);
-  --primitive-shadow-lg: 0px 4px 12px 0px rgba(17,51,83,0.06), 0px 4px 12px 0px rgba(17,51,83,0.06);
-  --primitive-shadow-xl: 0px 10px 24px 0px rgba(17,51,83,0.08), 0px 4px 12px 0px rgba(17,51,83,0.06);
+  --primitive-shadow-soft:  0px 4px 12px 0px rgba(17, 51, 83, 0.04);
+  --primitive-shadow-light: 0px 4px 12px 0px rgba(17, 51, 83, 0.125);
+  --primitive-shadow-top:   0 -4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 
   /* --- TYPOGRAPHY PRIMITIVES --- */
 

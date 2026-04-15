@@ -30,7 +30,7 @@ export function Message({ variant = 'info', heading, cta, children, className, s
         display:         'flex',
         alignItems:      'flex-start',
         gap:             'var(--spacing-sm)',
-        padding:         'var(--spacing-sm)',
+        padding:         'var(--spacing-sm-md) var(--spacing-sm)',
         borderRadius:    'var(--radius-sm)',
         border:          `1px solid ${v.border}`,
         backgroundColor: v.bg,
@@ -38,7 +38,7 @@ export function Message({ variant = 'info', heading, cta, children, className, s
       }}
     >
       <span style={{
-        fontFamily:            "'Material Symbols Outlined'",
+        fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
         fontSize:              '18px',
         lineHeight:            1,

@@ -39,7 +39,7 @@ function AccordionItem({ id, title, icon, content, open, onToggle, isLast }) {
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--spacing-sm)' }}>
           {icon && (
             <span aria-hidden="true" style={{
-              fontFamily:            "'Material Symbols Outlined'",
+              fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
               fontSize:              '22px',
               lineHeight:            1,
@@ -52,7 +52,7 @@ function AccordionItem({ id, title, icon, content, open, onToggle, isLast }) {
         <span
           aria-hidden="true"
           style={{
-            fontFamily:            "'Material Symbols Outlined'",
+            fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
             fontSize:              '24px',
             lineHeight:            1,

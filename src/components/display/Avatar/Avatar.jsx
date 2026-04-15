@@ -47,7 +47,7 @@ export function Avatar({
           <span
             aria-hidden="true"
             style={{
-              fontFamily:            "'Material Symbols Outlined'",
+              fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
               fontSize:              Math.round(size * 0.55) + 'px',
               lineHeight:            1,
@@ -79,7 +79,7 @@ export function Avatar({
           <span
             aria-hidden="true"
             style={{
-              fontFamily:            "'Material Symbols Outlined'",
+              fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
               fontSize:              Math.round(badgeSize * 0.6) + 'px',
               lineHeight:            1,

@@ -84,7 +84,7 @@ export function Tooltip({ content, placement = 'top', children, style }) {
             fontWeight:      500,
             padding:         'var(--spacing-xs) var(--spacing-sm)',
             borderRadius:    'var(--radius-sm)',
-            boxShadow:       'var(--shadow-md)',
+            boxShadow:       'var(--shadow-light)',
             ...BUBBLE[placement],
             ...style,
           }}

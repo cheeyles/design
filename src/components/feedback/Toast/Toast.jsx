@@ -25,7 +25,7 @@ function ToastCard({ title, message, variant = 'info', exiting, onDismiss, actio
         width:           '320px',
         backgroundColor: 'var(--color-bg-white)',
         borderRadius:    'var(--radius-md)',
-        boxShadow:       'var(--shadow-lg)',
+        boxShadow:       'var(--shadow-light)',
         border:          '1px solid var(--color-border-grey-light)',
         padding:         'var(--spacing-md)',
       }}
@@ -33,7 +33,7 @@ function ToastCard({ title, message, variant = 'info', exiting, onDismiss, actio
       <span
         aria-hidden="true"
         style={{
-          fontFamily:            "'Material Symbols Outlined'",
+          fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
           fontSize:              '20px',
           lineHeight:            1,
@@ -105,7 +105,7 @@ function ToastCard({ title, message, variant = 'info', exiting, onDismiss, actio
         <span
           aria-hidden="true"
           style={{
-            fontFamily:            "'Material Symbols Outlined'",
+            fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
             fontSize:              '18px',
             lineHeight:            1,

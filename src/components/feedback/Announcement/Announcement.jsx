@@ -88,7 +88,7 @@ export function Announcement({ title, message, action, onDismiss, style }) {
           color:      'rgba(255,255,255,0.7)',
         }}>
           <span aria-hidden="true" style={{
-            fontFamily:            "'Material Symbols Outlined'",
+            fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
             fontSize:              '18px',
             lineHeight:            1,

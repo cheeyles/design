@@ -30,7 +30,7 @@ export function Checkbox({ label, checked, onChange, disabled, indeterminate, st
       />
       <span
         style={{
-          fontFamily:            'Material Symbols Outlined',
+          fontFamily:            'Material Symbols Rounded',
           fontSize:              'var(--size-icon-lg)',
           lineHeight:            1,
           color:                 iconColor,

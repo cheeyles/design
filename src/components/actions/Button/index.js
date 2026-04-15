@@ -1,1 +1,1 @@
-export { Button, LargeIconButton, FavouriteButton, CardFavouriteButton } from './Button.jsx'
+export { Button, IconButton, LargeIconButton, FavouriteButton, CardFavouriteButton } from './Button.jsx'

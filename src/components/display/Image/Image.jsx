@@ -24,7 +24,7 @@ function Placeholder({ radius, icon = false }) {
     >
       {icon && (
         <span style={{
-          fontFamily:            "'Material Symbols Outlined'",
+          fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
           fontSize:              '32px',
           lineHeight:            1,

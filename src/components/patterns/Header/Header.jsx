@@ -11,7 +11,7 @@ import { Avatar } from '../../display/Avatar/index.js'
 
 const matIcon = (name, size = '24px', color = 'var(--color-text-white)') => (
   <span style={{
-    fontFamily:            "'Material Symbols Outlined'",
+    fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
     fontSize:              size,
     lineHeight:            1,
@@ -65,11 +65,8 @@ const TOP_LINKS = [
 ]
 
 const BOTTOM_LEFT = [
-  { label: 'Livestock',         dropdown: true  },
-  { label: 'Machinery',         dropdown: true  },
-  { label: 'Livestock Finance', dropdown: false },
-  { label: 'Wool',              dropdown: false },
-  { label: 'Forward+ Sheep',    dropdown: false },
+  { label: 'Livestock', dropdown: true  },
+  { label: 'Machinery', dropdown: true  },
 ]
 
 const BOTTOM_RIGHT = [
@@ -95,7 +92,7 @@ export function TopBarNav({ links = TOP_LINKS }) {
             {label}
             {dropdown && (
               <span style={{
-                fontFamily:            "'Material Symbols Outlined'",
+                fontFamily:            "'Material Symbols Rounded'",
                 fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
                 fontSize:              '18px',
                 lineHeight:            1,

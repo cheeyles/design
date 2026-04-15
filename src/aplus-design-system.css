@@ -67,7 +67,7 @@
 /* ── Sidebar ────────────────────────────────────────────────── */
 
 .ds-sidebar {
-  width:            60px;
+  width:            64px;
   background-color: var(--color-bg-white);
   border-right:     var(--border-width-default) solid var(--color-border-grey-light);
   display:          flex;
@@ -115,7 +115,6 @@
   border-radius:    var(--radius-sm);
   background-color: transparent;
   cursor:           pointer;
-  transition:       background-color var(--transition-fast) var(--easing-default);
 }
 
 .ds-nav-icon:hover,
@@ -124,13 +123,12 @@
 }
 
 .ds-nav-icon .ds-nav-icon__symbol {
-  font-family:  'Material Symbols Outlined';
+  font-family:  'Material Symbols Rounded';
   font-size:    var(--type-size-headline-sm);
   line-height:  1;
-  color:        var(--color-text-grey-dark);
+  color:        var(--color-text-dark);
   user-select:  none;
   display:      block;
-  transition:   color var(--transition-fast) var(--easing-default);
 }
 
 .ds-nav-icon:hover .ds-nav-icon__symbol,
@@ -210,14 +208,8 @@
   line-height:   var(--type-lh-body-sm);
   font-weight:   500;
   color:         var(--color-text-dark);
-  transition:    background-color var(--transition-fast) var(--easing-default),
-                 color var(--transition-fast) var(--easing-default);
 }
 
-.ds-section-nav__item:hover {
-  background-color: var(--color-brand-primary-light);
-  color:            var(--color-brand-primary-dark);
-}
 
 .ds-section-nav__item--active {
   background-color: var(--color-brand-primary-light);
@@ -237,7 +229,7 @@
 .ds-section-nav__group-label {
   font-size:     var(--type-size-label-md);
   line-height:   var(--type-lh-label-md);
-  font-weight:   600;
+  font-weight:   500;
   color:         var(--color-text-grey);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -259,7 +251,7 @@
   font-family:     var(--type-family-primary);
   font-size:       var(--type-size-body-sm);
   line-height:     var(--type-lh-body-sm);
-  font-weight:     600;
+  font-weight:     500;
   color:           var(--color-text-dark);
 }
 
@@ -302,7 +294,6 @@
   color:       var(--color-text-grey);
   font-family: var(--type-family-primary);
   white-space: nowrap;
-  transition:  color var(--transition-fast) var(--easing-default);
 }
 
 .ds-tab-bar__tab:hover {
@@ -402,7 +393,6 @@
 .ds-code-block {
   background-color: var(--color-bg-light);
   border-radius:    var(--radius-md);
-  border:           var(--border-width-default) solid var(--color-border-grey-light);
   padding:          var(--spacing-md);
   overflow-x:       auto;
   margin:           0;
@@ -446,7 +436,7 @@
 .ds-group-header__label {
   font-size:   var(--type-size-body-md);
   line-height: var(--type-lh-body-md);
-  font-weight: 600;
+  font-weight: 500;
   color:       var(--color-bg-dark);
 }
 
@@ -462,7 +452,7 @@
 
 .ds-token-row {
   display:     flex;
-  align-items: center;
+  align-items: flex-start;
   padding:     var(--spacing-md) var(--spacing-lg);
   gap:         var(--spacing-lg);
 }
@@ -484,18 +474,19 @@
 }
 
 .ds-token-name {
-  color:       var(--color-bg-dark);
+  color:       var(--color-text-grey-dark);
   font-family: var(--type-family-primary);
   font-weight: 500;
-  font-size:   var(--type-size-body-md);
+  font-size:   var(--type-size-body-sm);
+  line-height: var(--type-lh-body-sm);
   display:     block;
 }
 
 .ds-token-raw {
-  font-size:   var(--type-size-body-md);
+  font-size:   var(--type-size-body-sm);
   line-height: var(--type-lh-body-sm);
-  color:       var(--color-text-grey);
-  font-family: monospace;
+  color:       var(--color-text-grey-dark);
+  font-family: var(--type-family-primary);
 }
 
 .ds-token-desc {
@@ -553,15 +544,14 @@
   background-color: var(--color-bg-white);
   border:           1px solid var(--color-border-grey-light);
   border-radius:    var(--radius-sm);
-  box-shadow:       var(--shadow-xs);
+  box-shadow:       var(--shadow-soft);
   cursor:           pointer;
   padding:          0;
   opacity:          0;
-  transition:       opacity var(--transition-fast) var(--easing-default);
 }
 
 .ds-colour-tile__copy-icon {
-  font-family:  'Material Symbols Outlined';
+  font-family:  'Material Symbols Rounded';
   font-size:    16px;
   line-height:  1;
   color:        var(--color-text-grey-dark);
@@ -580,19 +570,18 @@
 }
 
 .ds-colour-tile__label {
-  font-size:   var(--type-size-body-md);
+  font-size:   var(--type-size-body-sm);
   line-height: var(--type-lh-body-sm);
-  color:       var(--color-text-dark);
+  color:       var(--color-text-grey-dark);
   font-family: var(--type-family-primary);
   font-weight: 500;
   word-break:  break-all;
 }
 
 .ds-colour-tile__hex {
-  font-size:   var(--type-size-body-md);
+  font-size:   var(--type-size-body-sm);
   line-height: var(--type-lh-body-sm);
-  color:       var(--color-text-grey-light);
-  font-family: monospace;
+  color:       var(--color-text-grey-dark);
 }
 
 /* ── Home page ──────────────────────────────────────────────── */

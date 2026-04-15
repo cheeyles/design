@@ -42,7 +42,7 @@ export function Tab({
       {leadingIcon && (
         typeof leadingIcon === 'string' ? (
           <span style={{
-            fontFamily:            "'Material Symbols Outlined'",
+            fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
             fontSize:              '18px',
             lineHeight:            1,

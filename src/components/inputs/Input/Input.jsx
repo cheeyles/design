@@ -31,7 +31,7 @@ const FIELD_STYLE = {
 }
 
 const ICON_STYLE = {
-  fontFamily:            'Material Symbols Outlined',
+  fontFamily:            'Material Symbols Rounded',
   fontSize:              'var(--size-icon-xl)',
   lineHeight:            1,
   color:                 'var(--color-text-grey)',
@@ -323,7 +323,7 @@ export function SelectInput({
             backgroundColor: 'var(--color-bg-white)',
             border:          'var(--border-width-default) solid var(--color-border-grey-light)',
             borderRadius:    'var(--radius-md)',
-            boxShadow:       'var(--shadow-md)',
+            boxShadow:       'var(--shadow-light)',
             padding:         'var(--spacing-xs)',
             display:         'flex',
             flexDirection:   'column',
@@ -518,7 +518,7 @@ export function PasswordInput({
             <span
               aria-hidden="true"
               style={{
-                fontFamily:            'Material Symbols Outlined',
+                fontFamily:            'Material Symbols Rounded',
                 fontSize:              'var(--size-icon-xl)',
                 lineHeight:            1,
                 userSelect:            'none',

@@ -26,7 +26,7 @@ const HINT_STYLE = {
 }
 
 const MAT_ICON = {
-  fontFamily:            'Material Symbols Outlined',
+  fontFamily:            'Material Symbols Rounded',
   lineHeight:            1,
   userSelect:            'none',
 }
@@ -159,7 +159,7 @@ function CalendarPanel({ value, viewDate, onSelect, onPrev, onNext }) {
       border:          `var(--border-width-default) solid var(--color-border-grey-light)`,
       borderRadius:    'var(--radius-md)',
       padding:         'var(--spacing-md)',
-      boxShadow:       'var(--shadow-md)',
+      boxShadow:       'var(--shadow-light)',
       width:           '228px',
       boxSizing:       'border-box',
       display:         'flex',
@@ -207,7 +207,7 @@ function CalendarPanel({ value, viewDate, onSelect, onPrev, onNext }) {
               fontSize:   'var(--type-size-body-sm)',
               lineHeight: 'var(--type-lh-body-sm)',
               fontWeight: 500,
-              color:      'var(--color-text-grey-dark)',
+              color:      'var(--color-text-dark)',
             }}>
               {d}
             </div>

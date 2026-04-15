@@ -38,7 +38,7 @@ export function SearchBar({
     >
       <span
         style={{
-          fontFamily:            'Material Symbols Outlined',
+          fontFamily:            'Material Symbols Rounded',
           fontSize:              s.iconSize,
           lineHeight:            1,
           color:                 'var(--color-text-grey)',

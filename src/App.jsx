@@ -9,7 +9,7 @@ import {
   AuctionTypeTag, PackageTypeTag, BidStatusTag,
   ListingStatusTag, FeederOptimisedTag,
 } from './components/display/Tag/index.js'
-import { Button, LargeIconButton, FavouriteButton, CardFavouriteButton } from './components/actions/Button/index.js'
+import { Button, IconButton, LargeIconButton, FavouriteButton, CardFavouriteButton } from './components/actions/Button/index.js'
 import { Input, NumberInput, DollarInput, SelectInput, DefinedUnitInput, PasswordInput, EmailInput, UrlInput, TelInput, TextArea } from './components/inputs/Input/index.js'
 import { MinMaxInput } from './components/inputs/MinMaxInput/index.js'
 import { DatePicker } from './components/inputs/DatePicker/index.js'
@@ -23,6 +23,7 @@ import { ProgressIndicator } from './components/feedback/ProgressIndicator/index
 import { ProgressTracker } from './components/feedback/ProgressTracker/index.js'
 import { Announcement } from './components/feedback/Announcement/index.js'
 import { Tab, TabBar } from './components/navigation/Tab/index.js'
+import { NavItem, NavSubItem, NavGroup, NavIconItem } from './components/navigation/NavItem/index.js'
 import { TabbedAccordion } from './components/navigation/TabbedAccordion/index.js'
 import { Breadcrumb } from './components/navigation/Breadcrumb/index.js'
 import { Pagination } from './components/navigation/Pagination/index.js'
@@ -93,7 +94,7 @@ function AppShell() {
         <nav className="ds-sidebar">
           <div className="ds-sidebar__nav">
             {SECTIONS.map(({ id, label, matIcon }) => (
-              <Tooltip key={id} content={label} placement="right" style={{ left: 'calc(100% - -12px)' }}>
+              <Tooltip key={id} content={label} placement="right" style={{ left: 'calc(100% + 16px)' }}>
                 <button
                   className={`ds-nav-icon${id === activeSection ? ' ds-nav-icon--active' : ''}`}
                   onClick={() => setActiveSection(id)}
@@ -314,7 +315,8 @@ const COMP_NAV = [
     ],
   },
   { id: 'tags',      label: 'Tags & Badges', done: true },
-  { id: 'menu-item', label: 'Nav Item',     done: true },
+  { id: 'menu-item',  label: 'Nav Items',   done: true },
+  { id: 'scrollbar', label: 'Scrollbar',   done: true },
   { id: 'tab',        label: 'Tab',           done: true },
   { id: 'image',     label: 'Image',         done: true },
   { id: 'avatar',     label: 'Avatar',        done: true },
@@ -338,7 +340,7 @@ function ComponentsSection() {
               className="ds-section-nav__group-toggle"
             >
               {item.label}
-              <span style={{ fontFamily: "'Material Symbols Outlined'", fontSize: '18px', lineHeight: 1 }}>
+              <span style={{ fontFamily: "'Material Symbols Rounded'", fontSize: '18px', lineHeight: 1 }}>
                 {openGroups[item.id] ? 'expand_less' : 'expand_more'}
               </span>
             </button>
@@ -380,6 +382,7 @@ function ComponentsSection() {
         {active === 'message'         && <MessageDoc />}
         {active === 'tooltip'         && <TooltipDoc />}
         {active === 'menu-item'       && <MenuItemDoc />}
+        {active === 'scrollbar'       && <ScrollbarDoc />}
       </div>
     </div>
   )
@@ -494,7 +497,7 @@ function PatternsSection() {
               className="ds-section-nav__group-toggle"
             >
               {label}
-              <span style={{ fontFamily: "'Material Symbols Outlined'", fontSize: '18px', lineHeight: 1 }}>
+              <span style={{ fontFamily: "'Material Symbols Rounded'", fontSize: '18px', lineHeight: 1 }}>
                 {openGroups[id] ? 'expand_less' : 'expand_more'}
               </span>
             </button>
@@ -545,11 +548,11 @@ function HeaderDoc() {
   const isDesktop = view === 'desktop'
   return (
     <DocPage
-      title="Header"
+      title=""
       description="Global navigation bar with logo, search, nav links, and user controls."
       figmaNodeId="2286:14218"
     >
-      <DocSection title="Interactive">
+      <DocSection title="Website Header">
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-md)', padding: 'var(--spacing-lg)' }}>
           <Toggle
             label="Mobile view"
@@ -911,12 +914,12 @@ function tokenizeJSX(code) {
     comment:   'var(--color-text-grey)',
     string:    'var(--color-text-green)',
     keyword:   'var(--color-accent-purple)',
-    component: 'var(--color-brand-primary)',
+    component: 'var(--color-text-brand-primary)',
     tag:       'var(--color-text-grey-dark)',
     punct:     'var(--color-text-grey)',
-    prop:      'var(--color-bg-dark)',
+    prop:      'var(--color-accent-teal)',
     expr:      'var(--color-text-orange)',
-    plain:     'var(--color-text-grey-dark)',
+    plain:     'var(--color-text-dark)',
   }
 
   const tokens = []
@@ -1764,7 +1767,7 @@ function SelectDemoBtn({ label, selected = false, disabled = false, onClick }) {
       }}
     >
       <span aria-hidden="true" style={{
-        fontFamily:            "'Material Symbols Outlined'",
+        fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
         fontSize:              '16px',
         lineHeight:            1,
@@ -1927,7 +1930,7 @@ function ButtonDoc() {
             ))}
           </DemoGroup>
         </Demo>
-        <CodeBlock code={`<button style={{ width: '44px', height: '44px', borderRadius: 'var(--radius-sm)', backgroundColor: 'transparent' }}>\n  <span style={{ fontFamily: "'Material Symbols Outlined'", color: 'var(--color-text-grey-dark)' }}>tune</span>\n</button>`} />
+        <CodeBlock code={`<button style={{ width: '44px', height: '44px', borderRadius: 'var(--radius-sm)', backgroundColor: 'transparent' }}>\n  <span style={{ fontFamily: "'Material Symbols Rounded'", color: 'var(--color-text-grey-dark)' }}>tune</span>\n</button>`} />
       </DocSection>
 
       <DocSection title="Select button variants">
@@ -2511,7 +2514,7 @@ function AnnouncementsDoc() {
 
 function EngagementCell({ views, secondary, secondaryIcon = 'gavel' }) {
   const iconStyle = {
-    fontFamily:            "'Material Symbols Outlined'",
+    fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
     fontSize:              '14px',
     lineHeight:            1,
@@ -2782,6 +2785,7 @@ function SideNav({ children }) {
 }
 
 function SideNavDoc() {
+  const [active, setActive] = useState('overview')
   return (
     <DocPage
       title="Side Navigation"
@@ -2790,19 +2794,24 @@ function SideNavDoc() {
       <DocSection title="Default">
         <Demo style={{ padding: 'var(--spacing-lg)', alignItems: 'flex-start' }}>
           <SideNav>
-            <NavItemDemo icon="dashboard"     label="Overview"            active />
-            <NavItemDemo icon="list_alt"      label="My Sales" />
-            <NavItemDemo icon="shopping_bag"  label="My Purchases" />
-            <NavItemDemo icon="notifications" label="Notification Centre" />
+            <NavItem icon="dashboard"     label="Overview"            active={active === 'overview'}   onClick={() => setActive('overview')} />
+            <NavItem icon="list_alt"      label="My Sales"            active={active === 'sales'}      onClick={() => setActive('sales')} />
+            <NavItem icon="shopping_bag"  label="My Purchases"        active={active === 'purchases'}  onClick={() => setActive('purchases')} />
+            <NavItem icon="notifications" label="Notification Centre" active={active === 'notif'}      onClick={() => setActive('notif')} />
             <hr style={{ border: 'none', borderTop: '1px solid var(--color-border-grey-light)', margin: 'var(--spacing-sm) 0' }} />
-            <NavGroupDemo icon="person"       label="My Account" />
-            <NavItemDemo icon="insights"      label="Market Insights" />
-            <NavGroupDemo icon="menu_book"    label="Help & Resources" />
-            <NavItemDemo icon="settings"      label="Communication Settings" />
+            <NavGroup icon="person"       label="My Account">
+              <NavSubItem label="Profile" />
+              <NavSubItem label="Billing" />
+            </NavGroup>
+            <NavItem icon="insights"      label="Market Insights"     active={active === 'insights'}   onClick={() => setActive('insights')} />
+            <NavGroup icon="menu_book"    label="Help & Resources">
+              <NavSubItem label="Documentation" />
+              <NavSubItem label="Support" />
+            </NavGroup>
+            <NavItem icon="settings"      label="Communication Settings" active={active === 'settings'} onClick={() => setActive('settings')} />
           </SideNav>
         </Demo>
       </DocSection>
-
     </DocPage>
   )
 }
@@ -2908,7 +2917,7 @@ function FieldGrid({ items, cols = 4 }) {
         <span key={`${label}-l`} style={{ ...LABEL_STYLE, display: 'inline-flex', alignItems: 'center', gap: 'var(--spacing-sm)' }}>
           {icon && (
             <span aria-hidden="true" style={{
-              fontFamily:            "'Material Symbols Outlined'",
+              fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
               fontSize:              '18px',
               lineHeight:            1,
@@ -3031,7 +3040,7 @@ function CatalogueHeader({ style }) {
           }}>Eastern States Cattle Sale</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-xs)' }}>
             <span style={{
-              fontFamily:            "'Material Symbols Outlined'",
+              fontFamily:            "'Material Symbols Rounded'",
               fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
               fontSize:              '18px',
               lineHeight:            1,
@@ -3062,7 +3071,7 @@ function CatalogueHeader({ style }) {
                 color:          'var(--color-text-grey-dark)',
               }}>
                 <span style={{
-                  fontFamily:            "'Material Symbols Outlined'",
+                  fontFamily:            "'Material Symbols Rounded'",
                   fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
                   fontSize:              '22px',
                   lineHeight:            1,
@@ -3143,7 +3152,7 @@ function StudProfileHeader({ style }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-md)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-xs)' }}>
               <span style={{
-                fontFamily:            "'Material Symbols Outlined'",
+                fontFamily:            "'Material Symbols Rounded'",
                 fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
                 fontSize:              '18px',
                 lineHeight:            1,
@@ -3155,7 +3164,7 @@ function StudProfileHeader({ style }) {
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-xs)' }}>
               <span style={{
-                fontFamily:            "'Material Symbols Outlined'",
+                fontFamily:            "'Material Symbols Rounded'",
                 fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
                 fontSize:              '18px',
                 lineHeight:            1,
@@ -3210,7 +3219,7 @@ function StudProfileHeader({ style }) {
                 color:          'var(--color-text-grey-dark)',
               }}>
                 <span style={{
-                  fontFamily:            "'Material Symbols Outlined'",
+                  fontFamily:            "'Material Symbols Rounded'",
                   fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
                   fontSize:              '22px',
                   lineHeight:            1,
@@ -3346,7 +3355,7 @@ function FilterAccordionItem({ item, values, onChange }) {
     }}>
       {item.label}
       <span aria-hidden="true" style={{
-        fontFamily:            "'Material Symbols Outlined'",
+        fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
         fontSize:              '18px',
         lineHeight:            1,
@@ -3458,7 +3467,7 @@ function FlyoutFilter({ open, onClose }) {
           backgroundColor: 'var(--color-bg-white)',
           display:         'flex',
           flexDirection:   'column',
-          boxShadow:       'var(--shadow-xl)',
+          boxShadow:       'var(--shadow-light)',
           zIndex:          1,
         }}
       >
@@ -3505,7 +3514,7 @@ function FlyoutFilter({ open, onClose }) {
             color:      'var(--color-text-grey)',
           }}>
             <span aria-hidden="true" style={{
-              fontFamily:            "'Material Symbols Outlined'",
+              fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
               fontSize:              '22px',
               lineHeight:            1,
@@ -3799,6 +3808,70 @@ function TooltipDoc() {
   )
 }
 
+function ScrollbarDoc() {
+  const [activeTab, setActiveTab] = useState('overview')
+  const [activeNav, setActiveNav] = useState('Item 1')
+  const tabs = [
+    { value: 'overview',  label: 'Overview'  },
+    { value: 'listings',  label: 'Listings'  },
+    { value: 'results',   label: 'Results'   },
+    { value: 'auctions',  label: 'Auctions'  },
+    { value: 'agents',    label: 'Agents'    },
+    { value: 'news',      label: 'News'      },
+    { value: 'reports',   label: 'Reports'   },
+    { value: 'settings',  label: 'Settings'  },
+    { value: 'help',      label: 'Help'      },
+  ]
+  const navLabels = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 7', 'Item 8', 'Item 9']
+  return (
+    <DocPage
+      title="Scrollbar"
+      description="Custom scrollbar style used across the doc site. 4px thin thumb with rounded cap on a transparent track."
+    >
+      <DocSection title="Vertical">
+        <Demo>
+          <DemoGroup>
+            <div style={{
+              height:          '200px',
+              width:           '200px',
+              overflowY:       'auto',
+              backgroundColor: 'var(--color-bg-white)',
+              borderRadius:    'var(--radius-sm)',
+              border:          '1px solid var(--color-border-grey-light)',
+              padding:         'var(--spacing-sm) 0',
+            }}>
+              {navLabels.map(label => (
+                <NavItem
+                  key={label}
+                  label={label}
+                  size="sm"
+                  active={activeNav === label}
+                  onClick={() => setActiveNav(label)}
+                />
+              ))}
+            </div>
+          </DemoGroup>
+        </Demo>
+        <CodeBlock code={`::-webkit-scrollbar {\n  width: 4px;\n  height: 4px;\n}\n\n::-webkit-scrollbar-track {\n  background: transparent;\n}\n\n::-webkit-scrollbar-thumb {\n  background: var(--color-bg-grey-light);\n  border-radius: var(--radius-full);\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: var(--color-border-grey-light);\n}`} />
+      </DocSection>
+
+      <DocSection title="Horizontal">
+        <Demo>
+          <DemoGroup>
+            <div style={{ width: '320px', overflowX: 'auto' }}>
+              <TabBar
+                tabs={tabs}
+                value={activeTab}
+                onChange={setActiveTab}
+              />
+            </div>
+          </DemoGroup>
+        </Demo>
+      </DocSection>
+    </DocPage>
+  )
+}
+
 function DocGroup({ title }) {
   return (
     <div style={{ paddingBottom: 'var(--spacing-xs)', paddingTop: 'var(--spacing-sm)' }}>
@@ -3810,163 +3883,6 @@ function DocGroup({ title }) {
         color:      'var(--color-text-dark)',
       }}>{title}</span>
     </div>
-  )
-}
-
-function NavItemDemo({ label, active = false, disabled = false, icon, size = 'lg' }) {
-  const sm = size === 'sm'
-  return (
-    <button
-      disabled={disabled}
-      style={{
-        display:      'flex',
-        alignItems:   'center',
-        gap:          icon ? (sm ? 'var(--spacing-xs)' : 'var(--spacing-sm-md)') : 0,
-        padding:      sm
-          ? 'var(--spacing-sm) calc(var(--spacing-sm) + var(--spacing-xs))'
-          : 'var(--spacing-sm-md)',
-        margin:       'var(--spacing-0-5) var(--spacing-sm)',
-        width:        'calc(100% - 2 * var(--spacing-sm))',
-        borderRadius: 'var(--radius-sm)',
-        background:   active ? 'var(--color-brand-primary-light)' : 'none',
-        border:       'none',
-        cursor:       disabled ? 'default' : 'pointer',
-        textAlign:    'left',
-        fontFamily:   'var(--type-family-primary)',
-        fontSize:     sm ? 'var(--type-size-body-sm)' : 'var(--type-size-body-md)',
-        lineHeight:   sm ? 'var(--type-lh-body-sm)' : 1,
-        fontWeight:   500,
-        color:        active ? 'var(--color-brand-primary-dark)' : disabled ? 'var(--color-text-grey)' : 'var(--color-text-grey-dark)',
-      }}
-    >
-      {icon && (
-        <span style={{
-          fontFamily:            "'Material Symbols Outlined'",
-    fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
-          fontSize:              sm ? 'var(--size-icon-md)' : 'var(--size-icon-xl)',
-          lineHeight:            1,
-          color:                 'inherit',
-          flexShrink:            0,
-        }} aria-hidden="true">{icon}</span>
-      )}
-      {label}
-    </button>
-  )
-}
-
-function NavIconOnlyDemo({ icon, active = false }) {
-  return (
-    <button
-      style={{
-        display:        'flex',
-        alignItems:     'center',
-        justifyContent: 'center',
-        margin:         'var(--spacing-0-5) var(--spacing-sm)',
-        padding:        'var(--spacing-sm-md)',
-        borderRadius:   'var(--radius-sm)',
-        background:     active ? 'var(--color-brand-primary-light)' : 'none',
-        border:         'none',
-        cursor:         'pointer',
-        color:          active ? 'var(--color-brand-primary-dark)' : 'var(--color-text-grey-dark)',
-      }}
-    >
-      <span style={{
-        fontFamily:            "'Material Symbols Outlined'",
-    fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
-        fontSize:              'var(--size-icon-xl)',
-        lineHeight:            1,
-      }} aria-hidden="true">{icon}</span>
-    </button>
-  )
-}
-
-function NavGroupDemo({ label, icon, size = 'lg' }) {
-  const [open, setOpen] = useState(false)
-  const sm = size === 'sm'
-  return (
-    <div>
-      <button
-        onClick={() => setOpen(o => !o)}
-        style={{
-          display:        'flex',
-          alignItems:     'center',
-          gap:            icon ? (sm ? 'var(--spacing-xs)' : 'var(--spacing-sm-md)') : 0,
-          padding:        sm
-            ? 'var(--spacing-sm) calc(var(--spacing-sm) + var(--spacing-xs))'
-            : 'var(--spacing-sm-md)',
-          margin:         'var(--spacing-0-5) var(--spacing-sm)',
-          width:          'calc(100% - 2 * var(--spacing-sm))',
-          borderRadius:   'var(--radius-sm)',
-          background:     'none',
-          border:         'none',
-          cursor:         'pointer',
-          textAlign:      'left',
-          fontFamily:     'var(--type-family-primary)',
-          fontSize:       sm ? 'var(--type-size-body-sm)' : 'var(--type-size-body-md)',
-          lineHeight:     sm ? 'var(--type-lh-body-sm)' : 1,
-          fontWeight:     500,
-          color:          'var(--color-text-dark)',
-        }}
-      >
-        {icon && (
-          <span style={{
-            fontFamily:            "'Material Symbols Outlined'",
-    fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
-            fontSize:              sm ? 'var(--size-icon-md)' : 'var(--size-icon-xl)',
-            lineHeight:            1,
-            color:                 'inherit',
-            flexShrink:            0,
-          }} aria-hidden="true">{icon}</span>
-        )}
-        {label}
-        <span style={{
-          fontFamily:            "'Material Symbols Outlined'",
-    fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
-          fontSize:              sm ? 'var(--size-icon-md)' : 'var(--size-icon-xl)',
-          lineHeight:            1,
-          color:                 'var(--color-text-grey-dark)',
-          marginLeft:            'auto',
-        }}>
-          {open ? 'expand_less' : 'expand_more'}
-        </span>
-      </button>
-      {open && (
-        <>
-          <NavSubItemDemo label="Child item one" size={size} />
-          <NavSubItemDemo label="Child item two" active size={size} />
-        </>
-      )}
-    </div>
-  )
-}
-
-function NavSubItemDemo({ label, active = false, size = 'lg' }) {
-  const sm = size === 'sm'
-  return (
-    <button
-      style={{
-        display:      'flex',
-        alignItems:   'center',
-        padding:      sm
-          ? 'var(--spacing-sm) calc(var(--spacing-sm) + var(--spacing-xs))'
-          : 'var(--spacing-sm-md)',
-        paddingLeft:  'var(--spacing-2xl)',
-        margin:       'var(--spacing-0-5) var(--spacing-sm)',
-        width:        'calc(100% - 2 * var(--spacing-sm))',
-        borderRadius: 'var(--radius-sm)',
-        background:   active ? 'var(--color-brand-primary-light)' : 'none',
-        border:       'none',
-        cursor:       'pointer',
-        textAlign:    'left',
-        fontFamily:   'var(--type-family-primary)',
-        fontSize:     sm ? 'var(--type-size-body-sm)' : 'var(--type-size-body-md)',
-        lineHeight:   sm ? 'var(--type-lh-body-sm)' : 1,
-        fontWeight:   500,
-        color:        active ? 'var(--color-brand-primary-dark)' : 'var(--color-text-dark)',
-      }}
-    >
-      {label}
-    </button>
   )
 }
 
@@ -4054,43 +3970,45 @@ function HeaderNavBottomActiveDemo() {
 }
 
 function MenuItemDoc() {
+  const [activeIcon, setActiveIcon] = useState('dashboard')
+  const [activeNav, setActiveNav] = useState('My Sales')
   return (
     <DocPage
-      title="Nav Item"
+      title=""
       description="Navigation elements for sidebar, header, and footer contexts."
     >
-      <DocSection title="Sidebar item - Large with icon">
+      <DocSection title="Dashboard sidebar - Nav item - Large">
         <Demo>
           <DemoGroup column>
-            <div style={{ width: '200px', backgroundColor: 'var(--color-bg-white)', borderRadius: 'var(--radius-sm)', overflow: 'hidden', padding: 'var(--spacing-sm) 0', border: '1px solid var(--color-border-grey-light)' }}>
-              <NavItemDemo icon="dashboard" label="Overview" />
-              <NavItemDemo icon="list_alt" label="My Sales" active />
-              <NavItemDemo icon="shopping_bag" label="My Purchases" />
-              <NavItemDemo icon="notifications" label="Notifications" disabled />
+            <div style={{ width: '248px', backgroundColor: 'var(--color-bg-white)', borderRadius: 'var(--radius-sm)', overflow: 'hidden', padding: 'var(--spacing-sm) 0', border: '1px solid var(--color-border-grey-light)' }}>
+              <NavItem icon="dashboard" label="Overview" active={activeNav === 'Overview'} onClick={() => setActiveNav('Overview')} mx="8px" />
+              <NavItem icon="list_alt" label="My Sales" active={activeNav === 'My Sales'} onClick={() => setActiveNav('My Sales')} mx="8px" />
+              <NavItem icon="shopping_bag" label="My Purchases" active={activeNav === 'My Purchases'} onClick={() => setActiveNav('My Purchases')} mx="8px" />
             </div>
           </DemoGroup>
         </Demo>
       </DocSection>
 
-      <DocSection title="Sidebar item - Large icon">
+      <DocSection title="Dashboard sidebar - Nav item - Icon">
         <Demo>
           <DemoGroup column>
-            <div style={{ display: 'inline-flex', flexDirection: 'column', backgroundColor: 'var(--color-bg-white)', borderRadius: 'var(--radius-sm)', overflow: 'hidden', padding: 'var(--spacing-sm) 0', border: '1px solid var(--color-border-grey-light)' }}>
-              <NavIconOnlyDemo icon="dashboard" active />
-              <NavIconOnlyDemo icon="list_alt" />
-              <NavIconOnlyDemo icon="shopping_bag" />
+            <div style={{ display: 'inline-flex', flexDirection: 'column', width: '64px', backgroundColor: 'var(--color-bg-white)', borderRadius: 'var(--radius-sm)', padding: 'var(--spacing-sm) 0', border: '1px solid var(--color-border-grey-light)' }}>
+              <NavIconItem icon="dashboard" label="Overview" active={activeIcon === 'dashboard'} onClick={() => setActiveIcon('dashboard')} />
+              <NavIconItem icon="list_alt" label="My Sales" active={activeIcon === 'list_alt'} onClick={() => setActiveIcon('list_alt')} />
+              <NavIconItem icon="shopping_bag" label="My Purchases" active={activeIcon === 'shopping_bag'} onClick={() => setActiveIcon('shopping_bag')} />
             </div>
           </DemoGroup>
         </Demo>
       </DocSection>
 
-      <DocSection title="Sidebar item - Large with icon and child">
+      <DocSection title="Dashboard sidebar - Nav item - Large with child">
         <Demo>
           <DemoGroup label="Click to expand" column>
-            <div style={{ width: '200px', backgroundColor: 'var(--color-bg-white)', borderRadius: 'var(--radius-sm)', overflow: 'hidden', padding: 'var(--spacing-sm) 0', border: '1px solid var(--color-border-grey-light)' }}>
-              <NavItemDemo icon="dashboard" label="Overview" />
-              <NavGroupDemo icon="tune" label="Inputs" />
-              <NavItemDemo icon="shopping_bag" label="My Purchases" />
+            <div style={{ width: '248px', backgroundColor: 'var(--color-bg-white)', borderRadius: 'var(--radius-sm)', overflow: 'hidden', padding: 'var(--spacing-sm) 0', border: '1px solid var(--color-border-grey-light)' }}>
+              <NavGroup icon="settings" label="Parent" mx="6px" defaultOpen>
+                <NavSubItem label="Child one" />
+                <NavSubItem label="Child two" active />
+              </NavGroup>
             </div>
           </DemoGroup>
         </Demo>
@@ -4100,10 +4018,9 @@ function MenuItemDoc() {
         <Demo>
           <DemoGroup column>
             <div style={{ width: '200px', backgroundColor: 'var(--color-bg-white)', borderRadius: 'var(--radius-sm)', overflow: 'hidden', padding: 'var(--spacing-sm) 0', border: '1px solid var(--color-border-grey-light)' }}>
-              <NavItemDemo label="Overview" size="sm" />
-              <NavItemDemo label="My Sales" active size="sm" />
-              <NavItemDemo label="My Purchases" size="sm" />
-              <NavItemDemo label="Notifications" disabled size="sm" />
+              <NavItem label="Item 1" size="sm" />
+              <NavItem label="Item 2" active size="sm" />
+              <NavItem label="Item 3" size="sm" />
             </div>
           </DemoGroup>
         </Demo>
@@ -4113,9 +4030,10 @@ function MenuItemDoc() {
         <Demo>
           <DemoGroup label="Click to expand" column>
             <div style={{ width: '200px', backgroundColor: 'var(--color-bg-white)', borderRadius: 'var(--radius-sm)', overflow: 'hidden', padding: 'var(--spacing-sm) 0', border: '1px solid var(--color-border-grey-light)' }}>
-              <NavItemDemo label="Overview" size="sm" />
-              <NavGroupDemo label="Inputs" size="sm" />
-              <NavItemDemo label="My Purchases" size="sm" />
+              <NavGroup label="Parent" size="sm" defaultOpen>
+                <NavSubItem label="Child 1" size="sm" />
+                <NavSubItem label="Child 2" active size="sm" />
+              </NavGroup>
             </div>
           </DemoGroup>
         </Demo>
@@ -4133,14 +4051,6 @@ function MenuItemDoc() {
         <Demo>
           <DemoGroup label="Click to select" column>
             <HeaderSubNavCommodityDemo />
-          </DemoGroup>
-        </Demo>
-      </DocSection>
-
-      <DocSection title="Header item - Top active">
-        <Demo>
-          <DemoGroup label="Click to select" column>
-            <HeaderMainNavDemo />
           </DemoGroup>
         </Demo>
       </DocSection>
@@ -4473,7 +4383,7 @@ function ColourTile({ tok, kind }) {
       {swatch}
       <div className="ds-colour-tile__meta">
         <div className="ds-colour-tile__label">{short}</div>
-        {hex && <div className="ds-colour-tile__hex">{hex}</div>}
+        {hex && <div className="ds-colour-tile__hex ds-token-raw">{hex}</div>}
       </div>
     </div>
   )
@@ -4521,7 +4431,9 @@ function TypographyPanel() {
             <span className="ds-token-raw">Roboto</span>
           </div>
           <p className="ds-token-preview" style={{ fontSize: 'var(--type-size-title-lg)', lineHeight: 'var(--type-lh-title-lg)', fontFamily: 'var(--type-family-primary)', color: 'var(--color-text-dark)', margin: 0 }}>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789
+            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+            abcdefghijklmnopqrstuvwxyz<br />
+            0123456789
           </p>
         </div>
       </Card>
@@ -4622,11 +4534,9 @@ function SpacingPanel() {
    ───────────────────────────────────────────────────────────── */
 
 const SHADOWS = [
-  { token: '--shadow-xs', label: 'shadow-xs', desc: '0 1px 2px · 5% black' },
-  { token: '--shadow-sm', label: 'shadow-sm', desc: '0 1px 3px · 10%' },
-  { token: '--shadow-md', label: 'shadow-md', desc: '0 4px 6px · 7%' },
-  { token: '--shadow-lg', label: 'shadow-lg', desc: '0 10px 15px · 10%' },
-  { token: '--shadow-xl', label: 'shadow-xl', desc: '0 20px 25px · 10%' },
+  { token: '--shadow-soft',  label: 'shadow-soft',  desc: 'Subtle — cards, containers' },
+  { token: '--shadow-light', label: 'shadow-light', desc: 'Elevated — dropdowns, modals' },
+  { token: '--shadow-top',   label: 'shadow-top',   desc: 'Directional — bottom bars, trays' },
 ]
 
 function ShadowsPanel() {
@@ -4829,11 +4739,9 @@ function OpacityPanel() {
    ───────────────────────────────────────────────────────────── */
 
 const TRANSITIONS = [
-  { token: '--transition-fast',  label: 'transition-fast',  raw: '100ms ease',     use: 'Micro-interactions — hover colour, icon swap' },
-  { token: '--transition-base',  label: 'transition-base',  raw: '150ms ease',     use: 'Standard UI — button hover, menu highlight' },
-  { token: '--transition-enter', label: 'transition-enter', raw: '200ms ease-out', use: 'Elements entering — menus, tooltips appearing' },
-  { token: '--transition-exit',  label: 'transition-exit',  raw: '150ms ease-in',  use: 'Elements leaving — menus, tooltips dismissing' },
-  { token: '--transition-slow',  label: 'transition-slow',  raw: '300ms ease',     use: 'Content reveals — panels, accordions, modals' },
+  { token: '--transition-instant', label: 'transition-instant', raw: '0ms',         use: 'No animation — instant state change' },
+  { token: '--transition-base',    label: 'transition-base',    raw: '150ms ease',  use: 'Standard UI — button hover, menu highlight' },
+  { token: '--transition-slow',    label: 'transition-slow',    raw: '300ms ease',  use: 'Content reveals — panels, accordions, modals' },
 ]
 
 function TransitionDemo({ token, raw }) {
@@ -4843,12 +4751,13 @@ function TransitionDemo({ token, raw }) {
       onMouseEnter={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
       style={{
-        width: '56px',
-        height: '32px',
-        borderRadius: 'var(--radius-sm)',
-        border: 'none',
-        cursor: 'pointer',
+        width:           '56px',
+        height:          '32px',
+        borderRadius:    'var(--radius-sm)',
+        border:          'none',
+        cursor:          'pointer',
         backgroundColor: active ? 'var(--color-brand-primary)' : 'var(--color-brand-primary-light)',
+        transition:      `background-color var(${token})`,
       }}
     />
   )
@@ -5007,26 +4916,24 @@ const COMMODITY_ICONS = {
 }
 
 
-function MatIcon({ name, weight, fill = 0 }) {
-  return (
-    <span style={{
-      fontFamily: "'Material Symbols Outlined'",
-      fontSize: 'var(--type-size-headline-sm)',
-      lineHeight: 'var(--type-lh-headline-sm)',
-      color: 'var(--color-text-grey-dark)',
-      userSelect: 'none',
-      display: 'block',
-    }}>
-      {name}
-    </span>
-  )
-}
-
 function CommodityIcon({ id }) {
   const src = COMMODITY_ICONS[id]
   if (!src) return null
   return (
-    <img src={src} alt={id} width="24" height="24" style={{ display: 'block', objectFit: 'contain' }} />
+    <div style={{
+      width:              '24px',
+      height:             '24px',
+      backgroundColor:    'var(--color-text-dark)',
+      WebkitMaskImage:    `url(${src})`,
+      maskImage:          `url(${src})`,
+      WebkitMaskSize:     'contain',
+      maskSize:           'contain',
+      WebkitMaskRepeat:   'no-repeat',
+      maskRepeat:         'no-repeat',
+      WebkitMaskPosition: 'center',
+      maskPosition:       'center',
+      flexShrink:         0,
+    }} />
   )
 }
 
@@ -5065,12 +4972,12 @@ function IconTile({ name, kind, weight }) {
               backgroundColor: 'var(--color-bg-white)',
               border: '1px solid var(--color-border-grey-light)',
               borderRadius: 'var(--radius-sm)',
-              boxShadow: 'var(--shadow-xs)',
+              boxShadow: 'var(--shadow-soft)',
               cursor: 'pointer', padding: 0,
             }}
           >
             <span style={{
-              fontFamily: "'Material Symbols Outlined'",
+              fontFamily: "'Material Symbols Rounded'",
               fontSize: '16px', lineHeight: 1,
               color: copied ? 'var(--color-status-green)' : 'var(--color-text-grey-dark)',
               userSelect: 'none', display: 'block',
@@ -5080,11 +4987,13 @@ function IconTile({ name, kind, weight }) {
           </button>
         )}
         <div style={{
-          width: '40px', height: '40px',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          backgroundColor: 'var(--color-bg-light)',
-          borderRadius: 'var(--radius-xs)',
-          border: '1px solid var(--color-border-grey-light)',
+          width:           '40px',
+          height:          '40px',
+          display:         'flex',
+          alignItems:      'center',
+          justifyContent:  'center',
+          border:          '1px solid var(--color-border-grey-light)',
+          borderRadius:    'var(--radius-sm)',
         }}>
           <CommodityIcon id={name} />
         </div>
@@ -5112,12 +5021,12 @@ function IconTile({ name, kind, weight }) {
             backgroundColor: 'var(--color-bg-white)',
             border: '1px solid var(--color-border-grey-light)',
             borderRadius: 'var(--radius-sm)',
-            boxShadow: 'var(--shadow-xs)',
+            boxShadow: 'var(--shadow-soft)',
             cursor: 'pointer', padding: 0,
           }}
         >
           <span style={{
-            fontFamily: "'Material Symbols Outlined'",
+            fontFamily: "'Material Symbols Rounded'",
             fontSize: '14px', lineHeight: 1,
             color: copied ? 'var(--color-status-green)' : 'var(--color-text-grey-dark)',
             userSelect: 'none', display: 'block',
@@ -5126,16 +5035,8 @@ function IconTile({ name, kind, weight }) {
           </span>
         </button>
       )}
-      <div style={{
-        width: '40px', height: '40px',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        backgroundColor: 'var(--color-bg-light)',
-        borderRadius: 'var(--radius-xs)',
-        border: '1px solid var(--color-border-grey-light)',
-      }}>
-        <MatIcon name={baseName} weight={weight} fill={isFilled ? 1 : 0} />
-      </div>
-      <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-grey)', fontFamily: 'monospace', fontWeight: 400 }}>{weight}</span>
+      <IconButton icon={baseName} size="md" variant="outlined" aria-label={baseName} />
+      <span className="ds-token-raw">{weight}</span>
       <span style={{ fontSize: 'var(--type-size-body-md)', color: 'var(--color-text-dark)', fontFamily: 'var(--type-family-primary)', fontWeight: 400, wordBreak: 'break-all' }}>
         {name}
       </span>

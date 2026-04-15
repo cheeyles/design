@@ -17,7 +17,7 @@ const FIELD_STYLE = {
   fontFamily: 'var(--type-family-primary)',
   fontSize:   'var(--type-size-body-md)',
   lineHeight: 'var(--type-lh-body-md)',
-  color:      'var(--color-text-dark)',
+  color:      'var(--color-text-grey-dark)',
   minWidth:   0,
   width:      '100%',
 }

@@ -31,14 +31,20 @@ Connects a Figma file to code via Figma MCP and Code Connect.
 
 ## Quick Start Workflow
 
-1. Read `references/html-structure.md` — HTML/flexbox rules
-2. Read `src/tokens/semantics.css` — exact CSS variable names
-3. Get Figma node ID from `references/components.md`
-4. Pull Figma design context with that node ID
-5. Map Figma variables → CSS variables (see Token Mapping)
-6. Build flat component, inline styles, CSS variables only
-7. Write `src/components/[category]/[Name]/[Name].jsx` + `index.js`
-8. Add to `src/App.jsx` showcase under correct section
+**Every task — component, pattern, shell, screen, or prototype — must follow these steps in order. No skipping.**
+
+1. Read `references/html-structure.md` — HTML/flexbox rules, nesting rules
+2. Read `references/tokens.md` — token names and values, never guess
+3. Read `references/components.md` — check what already exists, always reuse before rebuilding
+4. Build flat component, inline styles, CSS variables only
+5. Write `src/components/[category]/[Name]/[Name].jsx` + `index.js`
+6. Add to `src/App.jsx` showcase under correct section
+7. Update `references/components.md` — set status ✅, add file path
+
+## Figma Rules
+
+- **Never call Figma tools automatically** — only use `get_design_context` or any other Figma MCP tool when the user explicitly asks (e.g. "check Figma", "pull from Figma", or provides a Figma URL)
+- When Figma is needed, get the node ID from `references/components.md`
 
 ---
 
@@ -64,6 +70,24 @@ src/
   index.css             ← tokens + Tailwind base
   App.jsx               ← component showcase
 ```
+
+---
+
+## Icons
+
+Always use **Material Symbols Rounded**. Never Outlined, never Sharp.
+
+```jsx
+// ✅ CORRECT
+<span style={{ fontFamily: "'Material Symbols Rounded'", fontSize: 'var(--size-icon-xl)', lineHeight: 1 }}>
+  dashboard
+</span>
+
+// ❌ WRONG
+<span style={{ fontFamily: "'Material Symbols Outlined'" }}>dashboard</span>
+```
+
+Font is loaded in `src/index.css`. Size should always use a `--size-icon-` token.
 
 ---
 

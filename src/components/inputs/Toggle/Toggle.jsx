@@ -145,7 +145,7 @@ export function Toggle({
           left:            checked ? s.handleOnL : s.handleOffL,
           backgroundColor: handleBg,
           opacity:         disabled && !checked ? 0.38 : 1,
-          boxShadow:       checked && !disabled ? 'var(--shadow-xs)' : 'none',
+          boxShadow:       checked && !disabled ? 'var(--shadow-soft)' : 'none',
           transition:      'left 0.15s ease, width 0.15s ease, height 0.15s ease, background-color 0.15s ease',
         }} />
 

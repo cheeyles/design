@@ -192,7 +192,7 @@ export function LotCard({
             {breeder && (
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-xs)' }}>
                 <span aria-hidden="true" style={{
-                  fontFamily:            "'Material Symbols Outlined'",
+                  fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
                   fontSize:              '16px',
                   lineHeight:            1,

@@ -5,8 +5,9 @@
 
 import { Logo } from '../../display/Logo/index.js'
 
-const APP_STORE_URL   = '/badges/app-store.svg'
-const GOOGLE_PLAY_URL = '/badges/google-play.svg'
+const BASE = import.meta.env.BASE_URL
+const APP_STORE_URL   = `${BASE}badges/app-store.svg`
+const GOOGLE_PLAY_URL = `${BASE}badges/google-play.svg`
 
 const NAV_COLUMNS = [
   {

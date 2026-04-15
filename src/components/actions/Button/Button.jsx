@@ -13,7 +13,7 @@ import { useState } from 'react'
 /* ── Shared constants ──────────────────────────────────────── */
 
 const ICON_STYLE = {
-  fontFamily:            "'Material Symbols Outlined'",
+  fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
   fontSize:              'var(--size-icon-md)',
   lineHeight:            1,
@@ -251,7 +251,7 @@ export function FavouriteButton({ selected = false, onClick, 'aria-label': ariaL
       <span
         aria-hidden="true"
         style={{
-          fontFamily:            "'Material Symbols Outlined'",
+          fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
           fontSize:              'var(--size-icon-xl)',
           lineHeight:            1,
@@ -259,6 +259,67 @@ export function FavouriteButton({ selected = false, onClick, 'aria-label': ariaL
       >
         star
       </span>
+    </button>
+  )
+}
+
+/* ── IconButton ────────────────────────────────────────────── */
+/*
+  Square button containing a single Material Symbol icon.
+
+  icon:     Material Symbol name string
+  size:     'sm' (32px) | 'md' (40px, default) | 'lg' (48px)
+  variant:  'default' (ghost) | 'outlined' (with border)
+  active:   boolean — brand-primary-light background
+  disabled: boolean
+  onClick:  handler
+  style:    overrides
+*/
+
+export function IconButton({
+  icon,
+  size     = 'md',
+  variant  = 'default',
+  active   = false,
+  disabled = false,
+  onClick,
+  style,
+  'aria-label': ariaLabel,
+}) {
+  const dim = size === 'sm' ? '32px' : size === 'lg' ? '48px' : '40px'
+  const iconSize = size === 'sm' ? 'var(--size-icon-md)' : size === 'lg' ? 'var(--size-icon-xl)' : 'var(--size-icon-lg)'
+
+  return (
+    <button
+      type="button"
+      disabled={disabled}
+      onClick={onClick}
+      aria-label={ariaLabel ?? icon}
+      style={{
+        display:         'inline-flex',
+        alignItems:      'center',
+        justifyContent:  'center',
+        width:           dim,
+        height:          dim,
+        flexShrink:      0,
+        border:          variant === 'outlined' ? '1px solid var(--color-border-grey-light)' : 'none',
+        borderRadius:    'var(--radius-sm)',
+        backgroundColor: active ? 'var(--color-brand-primary-light)' : 'transparent',
+        cursor:          disabled ? 'not-allowed' : 'pointer',
+        opacity:         disabled ? 'var(--opacity-disabled)' : 1,
+        padding:         0,
+        ...style,
+      }}
+    >
+      <span style={{
+        fontFamily:            "'Material Symbols Rounded'",
+        fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
+        fontSize:              iconSize,
+        lineHeight:            1,
+        color:                 active ? 'var(--color-brand-primary-dark)' : 'var(--color-text-dark)',
+        userSelect:            'none',
+        display:               'block',
+      }} aria-hidden="true">{icon}</span>
     </button>
   )
 }
@@ -368,7 +429,7 @@ export function CardFavouriteButton({ selected = false, onClick, 'aria-label': a
       <span
         aria-hidden="true"
         style={{
-          fontFamily:            "'Material Symbols Outlined'",
+          fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
           fontSize:              'var(--size-icon-xl)',
           lineHeight:            1,

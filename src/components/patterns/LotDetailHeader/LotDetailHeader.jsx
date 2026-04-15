@@ -6,7 +6,7 @@
 
 const matIcon = (name, size = '24px', color = 'var(--color-text-grey-dark)') => (
   <span style={{
-    fontFamily:            "'Material Symbols Outlined'",
+    fontFamily:            "'Material Symbols Rounded'",
     fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
     fontSize:              size,
     lineHeight:            1,
