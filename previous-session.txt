@@ -1,0 +1,121 @@
+# Design System — Session Context
+Last updated: 2026-04-16
+
+This file is the canonical context handoff. Read this at the start of every session.
+
+---
+
+## Project overview
+
+AuctionsPlus design system at `~/Desktop/design-system`.
+React + Vite + Tailwind v3 doc site. Production app is Angular 17.1.2 + Tailwind + Angular Material.
+GitHub: https://github.com/auctionsplus/design (branch: main, GitHub Pages deployed)
+
+Always read before building:
+- `references/html-structure.md` — HTML/flexbox rules
+- `references/tokens.md` — every token name and value
+- `references/components.md` — what already exists
+- `SKILL.md` — full workflow and styling rules
+
+---
+
+## What has been completed
+
+### Session 1 (2026-04-14/15) — Component work
+- Renamed project from "Design Crush" to "Design System"
+- Built: DataTable (2 variants), TabbedAccordion, Announcement banner, ProgressIndicator, ProgressTracker, FlyoutFilter
+- Various nav, Input, DatePicker label colour fixes
+- Footer badges replaced with branded dark-navy SVGs (from wagyu-genetics prototype), BASE_URL path fixed
+- Doc site CSS fixes: token tiles, colour tiles, section nav font weight (500), Message padding (12px top/bottom)
+
+### Session 2 (2026-04-15) — Token system + production audit
+Full audit of production Angular app against design system tokens. Key findings:
+
+**What aligns:**
+- All hex colour values match between design system and production Tailwind config
+- Typography scale values match
+- Spacing values use the same underlying 4px base scale
+
+**What doesn't align:**
+- Primitive naming — production uses numeric scale (brand-primary-700, gray-800). Design system used descriptive names (blue-default, grey-dark). **Fixed: all primitives renamed to numeric scale.**
+- Shadows — production has 3 (soft, light, top). Design system had 5 (xs→xl). **Fixed: consolidated to 3 matching production values.**
+- Spacing — production uses raw Tailwind default classes (px-3, py-2.5), not tokens. Values happen to align but tokens have no leverage. Fix is to map tokens into tailwind.config.js — not done yet.
+- Icons — production uses Material Symbols Outlined (`icon-outlined`). Design system enforces Rounded. **Unresolved — needs a decision.**
+
+**Changes made:**
+- `src/tokens/primitives.css` — full rename to numeric scale + shadow consolidation
+- `src/tokens/semantics.css` — all primitive references updated, shadow tokens reduced to 3
+- `src/App.jsx` — SHADOWS doc array updated to soft/light/top
+- All component files updated from old shadow tokens to new names
+- Committed as `712c239` — "feat: nav components, icon button, token rename, shadow consolidation"
+
+---
+
+## Current primitive token names (post-rename)
+
+Colors follow production's Tailwind config convention:
+- Brand primary: `--primitive-brand-primary-50/700/900`
+- Brand dark: `--primitive-brand-dark-50/700/900`
+- Negative: `--primitive-negative-50/900`
+- Warning: `--primitive-warning-50/900`
+- Positive: `--primitive-positive-50/800/900`
+- Gray: `--primitive-gray-50/100/300/400/700/800`
+- Yellow: `--primitive-yellow-50/600`
+- Teal: `--primitive-teal-50/800`
+- Pink: `--primitive-pink-50/800`
+- Purple: `--primitive-purple-50/800`
+
+Shadows:
+- `--primitive-shadow-soft` — 0px 4px 12px 0px rgba(17, 51, 83, 0.04)
+- `--primitive-shadow-light` — 0px 4px 12px 0px rgba(17, 51, 83, 0.125)
+- `--primitive-shadow-top` — 0 -4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)
+
+Semantic shadows:
+- `--shadow-soft`, `--shadow-light`, `--shadow-top`
+
+---
+
+## Action items (priority order)
+
+### 1. Audit doc site token coverage
+Go through every token category in the doc site and identify gaps:
+- Spacing — all tokens documented with clear usage guidance?
+- Layout tokens — padding, margin, gap, width, max-width
+- Responsive breakpoints — defined in primitives but not yet documented
+- Tokens in semantics.css not yet shown in the doc site?
+
+### 2. Address Tailwind responsive prefixes
+Document how Tailwind's `sm:` / `lg:` / `xl:` maps to design system breakpoints.
+Options: document only, or build responsive behaviour into components.
+Check whether design system breakpoints in primitives.css match production's Tailwind defaults (sm: 640px, lg: 1024px, xl: 1280px).
+
+### 3. Expand layout token documentation
+Production's main UI problems are spacing/layout — excess padding, inconsistent margins.
+Doc site needs:
+- All spacing tokens with real-world usage examples (when to use sm vs md vs lg)
+- Page layout patterns — max-width, content padding, section gaps
+- Component-level spacing rules — internal padding, gap between elements
+- When to use padding vs margin vs gap
+
+### 4. Map spacing tokens into Tailwind config
+Once documented, wire up `tailwind.config.js` in the Angular production app so `p-sm` uses `var(--spacing-sm)`. This is what gives tokens actual leverage over production layout.
+
+### 5. Angular migration
+Once token documentation is complete:
+- Target Angular 17.1.2 (matches production)
+- Standalone components, `ChangeDetectionStrategy.OnPush`
+- Selector prefix `ap-`
+- Map React component APIs to Angular `@Input()` equivalents
+- Keep React doc site as spec reference while building Angular component library in parallel
+- See `angular/REFERENCE.md` for production HTML patterns and class conventions
+
+---
+
+## Outstanding nav items (doc site — "Coming soon")
+Mega Menu, Navigation, Side Navigation, Tabbed Navigation, Commodity Navigation, Modal, Search Modal, Fly-Out Drawer
+
+---
+
+## Unresolved decisions
+- **Icon variant** — production uses Material Symbols Outlined, design system enforces Rounded. Needs a call before Angular migration.
+- **gray-100 value** — design system has `#F4F4F4`, production has `#f1f4f6`. Deliberately left as-is, needs a decision.
