@@ -1,0 +1,22 @@
+<label class="radio-root" [class.radio-root--disabled]="disabled" (click)="$event.preventDefault(); !disabled && checkedChange.emit()">
+  <input
+    type="radio"
+    class="radio-native"
+    [checked]="checked"
+    [disabled]="disabled"
+    [name]="name || ''"
+    [value]="value || ''"
+  />
+  <span
+    class="radio-ring"
+    [class.radio-ring--checked]="checked"
+    aria-hidden="true"
+  >
+    @if (checked) {
+      <span class="radio-dot"></span>
+    }
+  </span>
+  @if (label) {
+    <span class="radio-label">{{ label }}</span>
+  }
+</label>

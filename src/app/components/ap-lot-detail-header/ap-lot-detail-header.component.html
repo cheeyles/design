@@ -1,0 +1,36 @@
+<div class="ldh-root">
+
+  <!-- Left: title + metadata -->
+  <div class="ldh-left">
+    <span class="ldh-title">{{ title }}</span>
+    <div class="ldh-meta">
+      <div class="ldh-meta-item">
+        <span class="icon-outlined ldh-meta-icon">location_on</span>
+        <span class="ldh-meta-text">{{ location }}</span>
+      </div>
+      <div class="ldh-meta-item">
+        <span class="icon-outlined ldh-meta-icon">tag</span>
+        <span class="ldh-meta-text">{{ lotNumber }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: icon buttons + CTA -->
+  <div class="ldh-right">
+    <div class="ldh-actions">
+      <button class="ldh-icon-btn" aria-label="Favourite">
+        <span class="icon-outlined" style="font-size:22px;line-height:1;color:var(--color-text-grey-dark)">star</span>
+      </button>
+      <button class="ldh-icon-btn" aria-label="Share">
+        <span class="icon-outlined" style="font-size:22px;line-height:1;color:var(--color-text-grey-dark)">ios_share</span>
+      </button>
+      <button class="ldh-icon-btn" aria-label="More options">
+        <span class="icon-outlined" style="font-size:22px;line-height:1;color:var(--color-text-grey-dark)">more_vert</span>
+      </button>
+    </div>
+    @if (ctaLabel) {
+      <button class="ldh-cta">{{ ctaLabel }}</button>
+    }
+  </div>
+
+</div>

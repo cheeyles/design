@@ -1,0 +1,42 @@
+<div class="input-field">
+  @if (label) {
+    <label class="input-label">{{ label }}</label>
+  }
+  <div
+    class="input-wrapper"
+    [class.input-wrapper--sm]="size === 'sm'"
+    [class.input-wrapper--focused]="focused()"
+    [class.input-wrapper--error]="state === 'error'"
+    [class.input-wrapper--disabled]="state === 'disabled'"
+  >
+    @if (type === 'email') {
+      <span class="icon-outlined input-icon" aria-hidden="true">mail</span>
+    } @else if (type === 'url') {
+      <span class="icon-outlined input-icon" aria-hidden="true">link</span>
+    } @else if (type === 'tel') {
+      <span class="icon-outlined input-icon" aria-hidden="true">call</span>
+    }
+    <input
+      class="input-control"
+      [class.input-control--sm]="size === 'sm'"
+      [type]="inputType"
+      [placeholder]="placeholder"
+      [disabled]="state === 'disabled'"
+      (focus)="focused.set(true)"
+      (blur)="focused.set(false)"
+    />
+    @if (type === 'password' && state !== 'disabled') {
+      <button
+        type="button"
+        class="input-toggle"
+        (click)="showPassword.update(v => !v)"
+        [attr.aria-label]="showPassword() ? 'Hide password' : 'Show password'"
+      >
+        <span class="icon-outlined" aria-hidden="true">{{ showPassword() ? 'visibility_off' : 'visibility' }}</span>
+      </button>
+    }
+  </div>
+  @if (hint) {
+    <span class="input-hint" [class.input-hint--error]="state === 'error'">{{ hint }}</span>
+  }
+</div>

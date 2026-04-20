@@ -1,0 +1,87 @@
+@if (open) {
+  <div class="filter-overlay" (click)="closed.emit()"></div>
+
+  <div class="filter-panel">
+
+    <!-- Header -->
+    <div class="filter-header">
+      <div class="flex items-center" style="gap:var(--spacing-sm)">
+        <span class="filter-title">Filters</span>
+        @if (activeCount > 0) {
+          <span class="filter-count">{{ activeCount }}</span>
+        }
+      </div>
+      <button class="filter-close" aria-label="Close filters" (click)="closed.emit()">
+        <span class="icon-outlined" style="font-size:22px;line-height:1;color:var(--color-text-grey)">close</span>
+      </button>
+    </div>
+
+    <!-- Accordion body -->
+    <div class="filter-body">
+      @for (item of filterItems; track item.id) {
+        <div class="filter-accordion-item">
+
+          <button class="filter-acc-header" (click)="toggleItem(item.id)">
+            {{ item.label }}
+            <span
+              class="icon-outlined filter-acc-chevron"
+              [class.filter-acc-chevron--open]="isItemOpen(item.id)"
+              aria-hidden="true"
+            >expand_more</span>
+          </button>
+
+          @if (isItemOpen(item.id)) {
+            <div class="filter-acc-body">
+
+              @if (item.type === 'checkboxes') {
+                @for (opt of item.options; track opt) {
+                  <ap-checkbox
+                    [label]="opt"
+                    [checked]="isChecked(item.id, opt)"
+                    (checkedChange)="toggleCheck(item.id, opt)"
+                  />
+                }
+              }
+
+              @if (item.type === 'minmax') {
+                <ap-min-max-input
+                  [minPlaceholder]="'Min ' + (item.unit ?? '')"
+                  [maxPlaceholder]="'Max ' + (item.unit ?? '')"
+                />
+              }
+
+              @if (item.type === 'number') {
+                <ap-number-input size="sm" />
+              }
+
+              @if (item.type === 'text') {
+                <ap-input
+                  size="sm"
+                  [placeholder]="'Enter ' + item.label.toLowerCase()"
+                />
+              }
+
+              @if (item.type === 'toggle') {
+                <ap-toggle
+                  [label]="item.label"
+                  [checked]="getToggle(item.id)"
+                  size="sm"
+                  (checkedChange)="setToggle(item.id, $event)"
+                />
+              }
+
+            </div>
+          }
+
+        </div>
+      }
+    </div>
+
+    <!-- Footer -->
+    <div class="filter-footer">
+      <ap-button color="secondary" (clicked)="clearAll()" style="flex:1">Clear all</ap-button>
+      <ap-button color="primary"   (clicked)="closed.emit()" style="flex:1">Apply filters</ap-button>
+    </div>
+
+  </div>
+}

@@ -1,0 +1,29 @@
+/* Sidebar container — width controlled here so it can transition */
+.nav-wrap {
+  width: 260px;
+  padding-top: var(--spacing-md-lg);
+  padding-bottom: var(--spacing-md-lg);
+  transition: width var(--transition-base) var(--easing-default);
+  overflow: hidden; /* clips item text during collapse transition */
+  flex-shrink: 0;
+}
+
+/* Collapsed — React NavIconItem sidebar: 8px margin * 2 + 48px item = 64px */
+:host.is-collapsed .nav-wrap {
+  width: 64px;
+}
+
+/* Collapse toggle footer — 6px padding has no exact token */
+.collapse-footer {
+  padding: 6px;
+}
+
+/* Collapse button — 12px horizontal = --spacing-sm-md */
+.collapse-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0 var(--spacing-sm-md);
+  color: inherit;
+}

@@ -1,0 +1,13 @@
+.logo-bg {
+  padding:       var(--spacing-md);
+  border-radius: var(--radius-sm);
+  display:       inline-flex;
+}
+
+.logo-bg--white {
+  background-color: var(--color-bg-white);
+}
+
+.logo-bg--dark {
+  background-color: var(--color-bg-dark);
+}

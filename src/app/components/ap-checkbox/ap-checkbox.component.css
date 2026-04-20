@@ -1,0 +1,29 @@
+.cb-root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+}
+
+.cb-root--disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+.cb-native {
+  display: none;
+}
+
+.cb-icon {
+  font-size: var(--size-icon-lg);
+  line-height: 1;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.cb-label {
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-sm);
+  line-height: var(--type-lh-body-sm);
+  color: var(--color-text-grey-dark);
+}

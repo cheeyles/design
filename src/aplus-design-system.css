@@ -314,37 +314,6 @@
   max-width:      100%;
 }
 
-.ds-doc-page__header {
-  display:        flex;
-  flex-direction: column;
-  gap:            var(--spacing-xs);
-  padding-bottom: var(--spacing-md);
-  border-bottom:  var(--border-width-default) solid var(--color-border-grey-light);
-}
-
-.ds-doc-page__title {
-  font-size:   var(--type-size-headline-sm);
-  line-height: var(--type-lh-headline-sm);
-  font-weight: 600;
-  color:       var(--color-text-dark);
-  margin:      0;
-}
-
-.ds-doc-page__desc {
-  font-size:   var(--type-size-body-md);
-  line-height: var(--type-lh-body-md);
-  color:       var(--color-text-grey-dark);
-  margin:      0;
-}
-
-.ds-doc-page__figma {
-  display:     inline-flex;
-  align-items: center;
-  gap:         var(--spacing-xs);
-  font-size:   var(--type-size-body-sm);
-  color:       var(--color-text-brand-primary);
-  margin-top:  var(--spacing-xs);
-}
 
 /* ── Doc section ────────────────────────────────────────────── */
 
@@ -389,6 +358,12 @@
 }
 
 /* ── Code block ─────────────────────────────────────────────── */
+/* Separator between Demo and CodeBlock inside a doc section card */
+.ds-card > ap-code-block {
+  display:    block;
+  border-top: var(--border-width-default) solid var(--color-border-grey-light);
+}
+
 
 .ds-code-block {
   background-color: var(--color-bg-light);
@@ -402,6 +377,15 @@
   color:            var(--color-text-grey-dark);
   white-space:      pre;
 }
+
+.ds-code-block code { font: inherit; }
+
+/* ── Syntax highlighting ─────────────────────────────────────── */
+.hl-tag     { color: #1565C0; }          /* tag names  — blue           */
+.hl-attr    { color: #7B1FA2; }          /* attr names — purple         */
+.hl-string  { color: #2E7D32; }          /* attr values — green         */
+.hl-comment { color: #9E9E9E; font-style: italic; } /* comments — grey  */
+.hl-punct   { color: #546E7A; }          /* < > = /    — blue-grey      */
 
 /* ── Card ───────────────────────────────────────────────────── */
 
@@ -743,6 +727,17 @@
   align-self:       stretch;
 }
 
+/* ap-demo-group as cell — Angular uses projected custom elements, not ds-demo__cell wrappers */
+.ds-demo > ap-demo-group {
+  flex:        1 0 0;
+  display:     flex;
+  align-items: stretch;
+}
+
+.ds-demo > ap-demo-group:not(:last-child) {
+  border-right: var(--border-width-default) solid var(--color-border-grey-light);
+}
+
 /* ── Demo group (padded column cell inside Demo) ────────────── */
 
 .ds-demo-group {
@@ -922,4 +917,45 @@
   line-height: var(--type-lh-body-sm);
   font-weight: 500;
   color:       var(--color-text-grey);
+}
+
+/* ── Angular doc site — dividers between demo rows inside a card ─ */
+
+ap-demo + ap-demo,
+ap-demo + ap-code-block,
+ap-code-block + ap-demo {
+  border-top: var(--border-width-default) solid var(--color-border-grey-light);
+  display: block;
+}
+
+ap-demo,
+ap-code-block,
+ap-doc-section,
+ap-doc-page,
+ap-demo-group,
+ap-coming-soon,
+ap-ds-home,
+ap-foundations-section,
+ap-components-section,
+ap-patterns-section,
+ap-experiences-section {
+  display: block;
+}
+
+/* --- SHIMMER --- */
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-grey-light) 25%,
+    var(--color-bg-white)      50%,
+    var(--color-bg-grey-light) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
 }

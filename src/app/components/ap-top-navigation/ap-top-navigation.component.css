@@ -1,0 +1,25 @@
+/* Desktop nav bar — React Header: paddingLeft/Right var(--spacing-lg) = 24px */
+.nav-bar {
+  padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+/* Title / app-name divider */
+.title-divider {
+  margin: 0 6px; /* 6px has no exact token — sits between xs(4px) and sm(8px) */
+}
+
+/* Desktop right-side nav links container */
+.nav-links {
+  gap: 28px; /* gap-x-7 = 28px, no exact token — sits between lg(24px) and xl(32px) */
+}
+
+/* Mobile menu button */
+.menu-btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+/* Mobile right-side actions */
+.mobile-actions {
+  gap: var(--spacing-md-lg);
+  padding: var(--spacing-sm) var(--spacing-md);
+}

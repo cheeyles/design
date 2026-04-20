@@ -1,0 +1,69 @@
+<div class="icons-panel">
+  @for (group of groups; track group.id) {
+    <div class="ds-card" style="padding:0;overflow:hidden">
+      <div class="ds-group-header"><span class="ds-group-header__label">{{ group.label }}</span></div>
+
+      @for (row of group.rows; track $index) {
+        <div class="icon-row" [class.icon-row--border-top]="$index > 0">
+
+          @for (tile of row.tiles; track $index) {
+            <div class="icon-col">
+
+              @if (tile) {
+                @if (group.kind === 'custom') {
+                  <!-- Commodity tile -->
+                  <div class="icon-tile icon-tile--commodity">
+                    <button type="button"
+                            class="icon-tile__copy-btn"
+                            title="Copy icon name"
+                            (click)="copyIcon(tile.name)">
+                      <span class="icon-tile__copy-icon"
+                            [class.icon-tile__copy-icon--copied]="isCopied(tile.name + '_copy')">
+                        {{ isCopied(tile.name + '_copy') ? 'check' : 'content_copy' }}
+                      </span>
+                    </button>
+                    <div class="commodity-box">
+                      <div class="commodity-icon"
+                           [style.-webkit-mask-image]="'url(' + commoditySrc(tile.name) + ')'"
+                           [style.mask-image]="'url(' + commoditySrc(tile.name) + ')'">
+                      </div>
+                    </div>
+                    <span class="icon-tile__name">{{ tile.name }}</span>
+                  </div>
+                } @else {
+                  <!-- Material icon tile -->
+                  <div class="icon-tile icon-tile--material">
+                    <button type="button"
+                            class="icon-tile__copy-btn"
+                            title="Copy icon name"
+                            (click)="copyIconW(tile.name!, tile.weight!)">
+                      <span class="icon-tile__copy-icon"
+                            [class.icon-tile__copy-icon--copied]="isCopied(tile.name + '_' + tile.weight + '_copy')">
+                        {{ isCopied(tile.name + '_' + tile.weight + '_copy') ? 'check' : 'content_copy' }}
+                      </span>
+                    </button>
+                    <div class="material-icon-wrap">
+                      <span class="material-icon"
+                            [style.font-variation-settings]="isFilled(tile.name!) ? '\'FILL\' 1, \'wght\' ' + tile.weight : '\'FILL\' 0, \'wght\' ' + tile.weight">
+                        {{ baseName(tile.name!) }}
+                      </span>
+                    </div>
+                    <span class="icon-tile__weight">{{ tile.weight }}</span>
+                    <span class="icon-tile__name">{{ tile.name }}</span>
+                  </div>
+                }
+              } @else {
+                <div class="icon-spacer"></div>
+              }
+
+              @if ($index < (group.kind === 'custom' ? 3 : 7)) {
+                <div class="icon-divider"></div>
+              }
+
+            </div>
+          }
+        </div>
+      }
+    </div>
+  }
+</div>

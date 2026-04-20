@@ -1,0 +1,40 @@
+<div class="ds-panel">
+  <div class="ds-card" style="padding:0;overflow:hidden">
+    <div class="ds-group-header"><span class="ds-group-header__label">Layout Tokens</span></div>
+    <div class="note">
+      <p class="note__text">
+        Page-level structural tokens. Use these for shells, sidebars, and section rhythm — not component-level spacing (use spacing tokens for that).
+      </p>
+    </div>
+    @for (t of layoutTokens; track t.token) {
+      <div class="ds-token-row">
+        <div class="ds-token-cell">
+          <code class="ds-token-name">{{ t.label }}</code>
+          <span class="ds-token-raw">{{ t.use }}</span>
+        </div>
+        <div class="ds-token-preview">
+          <div class="layout-bar" [style.width]="'calc(var(' + t.token + ') / 10)'"></div>
+        </div>
+        <span class="layout-raw">{{ t.raw }}</span>
+      </div>
+    }
+  </div>
+
+  <div class="ds-card" style="padding:0;overflow:hidden">
+    <div class="ds-group-header"><span class="ds-group-header__label">Page Layout Pattern</span></div>
+    <div class="layout-demo-wrap">
+      <div class="layout-demo">
+        <div class="layout-sidebar">
+          <span class="layout-sidebar__label">sidebar<br/>240px</span>
+        </div>
+        <div class="layout-content">
+          <div class="layout-section">
+            <span class="layout-section__label">section — layout-section-gap (32px) between</span>
+          </div>
+          <div class="layout-section"></div>
+        </div>
+      </div>
+      <p class="layout-hint">page-padding-x: 24px · sidebar: 240px · content-gap: 24px · section-gap: 32px</p>
+    </div>
+  </div>
+</div>

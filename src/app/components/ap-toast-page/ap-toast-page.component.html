@@ -1,0 +1,32 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Toast — Variants">
+    <ap-demo>
+      <ap-demo-group label="Success">
+        <ap-button color="positive" (clicked)="showSuccess()">Show success</ap-button>
+      </ap-demo-group>
+      <ap-demo-group label="Error">
+        <ap-button color="destructive" (clicked)="showError()">Show error</ap-button>
+      </ap-demo-group>
+      <ap-demo-group label="Warning">
+        <ap-button color="secondary" (clicked)="showWarning()">Show warning</ap-button>
+      </ap-demo-group>
+      <ap-demo-group label="Info">
+        <ap-button color="secondary" (clicked)="showInfo()">Show info</ap-button>
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+  <ap-doc-section title="Toast — With action">
+    <ap-demo>
+      <ap-demo-group label="Action button">
+        <ap-button color="primary" (clicked)="showWithAction()">Publish lot</ap-button>
+      </ap-demo-group>
+      <ap-demo-group label="Persistent">
+        <ap-button color="secondary" (clicked)="showPersistent()">Show persistent</ap-button>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="code" />
+  </ap-doc-section>
+
+</ap-doc-page>

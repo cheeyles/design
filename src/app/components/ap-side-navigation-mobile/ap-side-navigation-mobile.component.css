@@ -1,0 +1,5 @@
+/* py-5 = 20px = --spacing-md-lg */
+.drawer-panel {
+  padding-top: var(--spacing-md-lg);
+  padding-bottom: var(--spacing-md-lg);
+}

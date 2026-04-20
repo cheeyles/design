@@ -1,0 +1,59 @@
+<div class="ds-section-layout">
+
+  <nav class="ds-section-nav">
+    @for (group of nav; track group.id) {
+      <div>
+        <button
+          class="ds-section-nav__group-toggle"
+          (click)="toggleGroup(group.id)"
+        >
+          {{ group.label }}
+          <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">
+            {{ openGroups()[group.id] ? 'expand_less' : 'expand_more' }}
+          </span>
+        </button>
+        @if (openGroups()[group.id]) {
+          @for (child of group.children; track child.id) {
+            <button
+              class="ds-section-nav__item"
+              [class.ds-section-nav__item--active]="active() === child.id"
+              style="padding-left:var(--spacing-lg)"
+              (click)="active.set(child.id)"
+            >{{ child.label }}</button>
+          }
+        }
+      </div>
+    }
+  </nav>
+
+  <div class="ds-section-content">
+    @switch (active()) {
+      @case ('pat-header')             { <ap-header-page /> }
+      @case ('pat-footer')             { <ap-footer-page /> }
+      @case ('pat-side-nav')           { <ap-side-nav-page /> }
+      @case ('pat-tabbed-nav')         { <ap-tab-navigation-page /> }
+      @case ('pat-breadcrumbs')        { <ap-breadcrumb-page /> }
+      @case ('pat-commodity-nav')      { <ap-commodity-nav-page /> }
+      @case ('pat-pagination')         { <ap-pagination-page /> }
+      @case ('pat-header-content')     { <ap-page-header-page /> }
+      @case ('pat-flyout-filter')      { <ap-filter-page /> }
+      @case ('pat-tabbed-accordion')   { <ap-tabbed-accordion-page /> }
+      @case ('pat-table')              { <ap-table-page /> }
+      @case ('pat-modal')              { <ap-modal-page /> }
+      @case ('pat-search-modal')       { <ap-search-modal-page /> }
+      @case ('pat-flyout')             { <ap-drawer-page /> }
+      @case ('pat-toast')              { <ap-toast-page /> }
+      @case ('pat-announcements')      { <ap-announcement-page /> }
+      @case ('pat-empty-state')        { <ap-empty-state-page /> }
+      @case ('pat-progress-indicator') { <ap-progress-indicator-page /> }
+      @case ('pat-progress-tracker')   { <ap-progress-tracker-page /> }
+      @case ('pat-contact-card')       { <ap-contact-card-page /> }
+      @case ('pat-action-card')        { <ap-action-card-page /> }
+      @case ('pat-lot-card')           { <ap-lot-card-page /> }
+      @case ('pat-auction-card')       { <ap-auction-card-page /> }
+      @case ('pat-advertising-card')   { <ap-advertising-card-page /> }
+      @default                         { <ap-coming-soon [title]="activeLabel" /> }
+    }
+  </div>
+
+</div>

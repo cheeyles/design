@@ -1,0 +1,12 @@
+.footer-controls {
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.footer-preview {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.footer-preview--mobile {
+  max-width: 390px;
+}

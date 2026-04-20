@@ -1,0 +1,184 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Tags & Badges - Price type">
+    <ap-demo>
+      <ap-demo-group label="Variants">
+        <ap-tag variant="price" label="$/Head" />
+        <ap-tag variant="price" label="$/Lot" />
+        <ap-tag variant="price" label="$/Unit" />
+        <ap-tag variant="price" label="c/kg L" />
+        <ap-tag variant="price" label="c/kg D" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="priceCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Tags & Badges - Assessment type">
+    <ap-demo>
+      <ap-demo-group label="Variants">
+        <ap-tag variant="assessment" label="Assessed" />
+        <ap-tag variant="assessment" label="Described" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="assessmentCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Tags & Badges - Accreditation">
+    <ap-demo>
+      <ap-demo-group label="Livestock">
+        <ap-tag variant="accreditation" label="EU" />
+        <ap-tag variant="accreditation" label="PCAS Elig" />
+        <ap-tag variant="accreditation" label="PCAS Cert" />
+        <ap-tag variant="accreditation" label="NE" />
+        <ap-tag variant="accreditation" label="WHP/ESI" />
+        <ap-tag variant="feeder-optimised" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="accreditationCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Tags & Badges - Lot status">
+    <ap-demo>
+      <ap-demo-group label="Variants">
+        <ap-lot-status variant="published" />
+        <ap-lot-status variant="in-progress" />
+        <ap-lot-status variant="live" />
+        <ap-lot-status variant="stud-verified" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="lotStatusCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Tags & Badges - Percentile">
+    <ap-demo>
+      <ap-demo-group label="Small (default)">
+        <ap-percentile-tag [percentile]="5"  size="sm" />
+        <ap-percentile-tag [percentile]="10" size="sm" />
+        <ap-percentile-tag [percentile]="20" size="sm" />
+        <ap-percentile-tag [percentile]="50" size="sm" />
+      </ap-demo-group>
+      <ap-demo-group label="Large">
+        <ap-percentile-tag [percentile]="5"  size="md" />
+        <ap-percentile-tag [percentile]="10" size="md" />
+        <ap-percentile-tag [percentile]="20" size="md" />
+        <ap-percentile-tag [percentile]="50" size="md" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="percentileCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Tags & Badges - Bid status">
+    <ap-demo>
+      <ap-demo-group label="Variants">
+        <ap-status-tag variant="sold" />
+        <ap-status-tag variant="passed-in" />
+        <ap-status-tag variant="withdrawn" />
+        <ap-status-tag variant="no-bids" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="bidStatusCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Tags & Badges - New / beta">
+    <ap-demo>
+      <ap-demo-group label="Variants">
+        <ap-tag variant="new" />
+        <ap-tag variant="beta" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="newCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Tags & Badges - Card key">
+    <ap-demo>
+      <ap-demo-group label="Variants" [column]="true">
+        <ap-card-info-tag variant="buy-now"    label="Buy Now for $1,150.00/Head" />
+        <ap-card-info-tag variant="make-offer" />
+        <ap-card-info-tag variant="reoffered"  label="Reoffered in 776 — Weaner &amp; Yearling Sale" />
+        <ap-card-info-tag variant="withdrawn"  label="Lot has been withdrawn from this auction" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="cardKeyCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Tags & Badges - Auction type">
+    <ap-demo>
+      <ap-demo-group label="Variants">
+        <ap-auction-status variant="stud" />
+        <ap-auction-status variant="commercial" />
+        <ap-auction-status variant="machinery" />
+        <ap-auction-status variant="property" />
+        <ap-auction-status variant="special-commercial" />
+        <ap-auction-status variant="charity" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="auctionCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Tags & Badges - Package type">
+    <ap-demo>
+      <ap-demo-group label="Variants">
+        <ap-package-tag variant="premium" />
+        <ap-package-tag variant="prime" />
+        <ap-package-tag variant="classic" />
+        <ap-package-tag variant="sim-online" />
+        <ap-package-tag variant="attended" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="packageCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Tags & Badges - Listing status">
+    <ap-demo>
+      <ap-demo-group label="Variants">
+        <ap-listing-status variant="published" />
+        <ap-listing-status variant="draft" />
+        <ap-listing-status variant="unpublished" />
+        <ap-listing-status variant="withdrawn" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="listingCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Tags & Badges - Badge">
+    <ap-demo>
+      <ap-demo-group label="Blue (default)">
+        <ap-badge [count]="1" color="blue" />
+        <ap-badge [count]="10" color="blue" />
+        <ap-badge [count]="100" color="blue" />
+      </ap-demo-group>
+      <ap-demo-group label="Red">
+        <ap-badge [count]="1" color="red" />
+        <ap-badge [count]="10" color="red" />
+        <ap-badge [count]="100" color="red" />
+      </ap-demo-group>
+      <ap-demo-group label="Yellow">
+        <ap-badge [count]="1" color="yellow" />
+        <ap-badge [count]="10" color="yellow" />
+        <ap-badge [count]="100" color="yellow" />
+      </ap-demo-group>
+      <ap-demo-group label="Grey">
+        <ap-badge [count]="1" color="grey" />
+        <ap-badge [count]="10" color="grey" />
+        <ap-badge [count]="100" color="grey" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="badgeCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Tags & Badges - Chip">
+    <ap-demo>
+      <ap-demo-group label="With remove">
+        <ap-chip label="Dubbo" (remove)="0" />
+        <ap-chip label="NSW" (remove)="0" />
+        <ap-chip label="Angus × Hereford" (remove)="0" />
+      </ap-demo-group>
+      <ap-demo-group label="Without remove">
+        <ap-chip label="Dubbo" />
+        <ap-chip label="NSW" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="chipCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

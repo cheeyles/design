@@ -1,0 +1,102 @@
+.sm-root {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10vh;
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+}
+
+.sm-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.45);
+  animation: overlay-in 0.15s ease;
+}
+
+.sm-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-heavy);
+  overflow: hidden;
+  z-index: 1;
+  animation: modal-in 0.18s ease;
+}
+
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: scale(0.97) translateY(-8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.sm-input-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border-grey-light);
+}
+
+.sm-search-icon {
+  font-size: 22px;
+  line-height: 1;
+  color: var(--color-text-grey);
+  flex-shrink: 0;
+}
+
+.sm-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-lg);
+  color: var(--color-text-dark);
+  background: transparent;
+}
+
+.sm-input::placeholder {
+  color: var(--color-text-grey-light);
+}
+
+.sm-clear {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.sm-kbd-hint {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+kbd {
+  font-family: var(--type-family-mono, monospace);
+  font-size: 11px;
+  color: var(--color-text-grey);
+  background-color: var(--color-bg-grey-light);
+  border: 1px solid var(--color-border-grey-light);
+  border-radius: var(--radius-sm);
+  padding: 2px 6px;
+}
+
+.sm-body {
+  padding: var(--spacing-md) var(--spacing-lg);
+  min-height: 80px;
+  max-height: 50vh;
+  overflow-y: auto;
+}

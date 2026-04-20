@@ -1,0 +1,31 @@
+<div
+  class="img-wrap"
+  [style.aspect-ratio]="aspectRatio"
+  [style.border-radius]="radiusValue"
+>
+  <!-- Loading skeleton -->
+  @if (status() === 'loading') {
+    <div class="img-placeholder shimmer" [style.border-radius]="radiusValue"></div>
+  }
+
+  <!-- Error fallback -->
+  @if (status() === 'error') {
+    <div class="img-placeholder img-placeholder--error" [style.border-radius]="radiusValue">
+      <span class="icon-outlined img-broken-icon" aria-hidden="true">broken_image</span>
+    </div>
+  }
+
+  <!-- Image — always rendered when src is set so onLoad/onError fire -->
+  @if (src) {
+    <img
+      [src]="src"
+      [alt]="alt"
+      class="img-el"
+      [class.img-el--visible]="status() === 'loaded'"
+      [style.border-radius]="radiusValue"
+      [style.object-fit]="fit"
+      (load)="onLoad()"
+      (error)="onError()"
+    />
+  }
+</div>

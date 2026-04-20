@@ -1,0 +1,133 @@
+<div class="lc-root">
+
+  <!-- ── Image area ── -->
+  <div class="lc-image-area">
+
+    @if (!imgLoaded() && src) {
+      <div class="lc-shimmer"></div>
+    }
+
+    @if (src) {
+      <img
+        class="lc-image"
+        [src]="src"
+        [alt]="title ?? ''"
+        [style.object-position]="imgObjectPosition"
+        [style.display]="imgLoaded() ? 'block' : 'none'"
+        (load)="imgLoaded.set(true)"
+      />
+    }
+
+    <!-- Favourite button -->
+    <button
+      class="lc-fav-btn"
+      type="button"
+      [attr.aria-pressed]="fav()"
+      aria-label="Favourite"
+      (click)="toggleFav()"
+    >
+      <span
+        class="lc-fav-icon"
+        aria-hidden="true"
+        [style.color]="favIconColor"
+        [style.font-variation-settings]="favFill"
+      >star</span>
+    </button>
+
+    <!-- Image carousel dots -->
+    @if (images.length > 1) {
+      <div class="lc-dots">
+        @for (img of images; track $index; let i = $index) {
+          <button
+            class="lc-dot"
+            type="button"
+            [attr.aria-label]="'Image ' + (i + 1)"
+            [class.lc-dot--active]="imgIndex() === i"
+            (click)="setImage(i)"
+          ></button>
+        }
+      </div>
+    }
+
+  </div>
+
+  <!-- ── Info area ── -->
+  <div class="lc-info">
+
+    <!-- Title block -->
+    <div class="lc-title-block">
+      <div class="lc-title-inner">
+        @if (location) {
+          <span class="lc-location">{{ location }}</span>
+        }
+        @if (title) {
+          <span class="lc-title">{{ title }}</span>
+        }
+        @if (breeder) {
+          <div class="lc-breeder-row">
+            <span class="icon-outlined lc-breeder-icon" aria-hidden="true">business_center</span>
+            <span class="lc-breeder">{{ breeder }}</span>
+          </div>
+        }
+      </div>
+
+      <!-- Specs -->
+      @if (specRows.length > 0) {
+        <div class="lc-spec-grid">
+          @for (row of specRows; track $index) {
+            <div class="lc-spec-row">
+              @for (col of row; track $index) {
+                <div class="lc-spec-col">
+                  <span class="lc-spec-key">{{ col.key }}:</span>
+                  <span class="lc-spec-val">{{ col.value }}</span>
+                </div>
+              }
+            </div>
+          }
+        </div>
+      }
+
+      <!-- ABVs -->
+      @if (abvRows.length > 0) {
+        <div class="lc-spec-grid">
+          @for (row of abvRows; track $index) {
+            <div class="lc-spec-row">
+              @for (col of row; track $index) {
+                <div class="lc-abv-col">
+                  <span class="lc-spec-key">{{ col.key }}:</span>
+                  <span class="lc-spec-val">{{ col.value }}</span>
+                  @if (col.percentile) {
+                    <ap-percentile-tag [percentile]="col.percentile" size="sm" />
+                  }
+                </div>
+              }
+            </div>
+          }
+        </div>
+      }
+    </div>
+
+    <!-- Lot type tags -->
+    @if (tags.length > 0) {
+      <div class="lc-tags">
+        @for (tag of tags; track tag) {
+          <span class="lc-tag">{{ tag }}</span>
+        }
+      </div>
+    }
+
+    <!-- Agency footer -->
+    @if (agencyLogo || agencyName) {
+      <div class="lc-agency-divider"></div>
+      <div class="lc-agency">
+        @if (agencyLogo) {
+          <img class="lc-agency-logo" [src]="agencyLogo" [alt]="agencyName ?? 'Agency'" />
+        }
+        @if (agencyName) {
+          <span class="lc-agency-name">{{ agencyName }}</span>
+        }
+      </div>
+    }
+
+  </div>
+</div>

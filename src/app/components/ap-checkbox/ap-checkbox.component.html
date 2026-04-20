@@ -1,0 +1,16 @@
+<label class="cb-root" [class.cb-root--disabled]="disabled" (click)="$event.preventDefault(); !disabled && checkedChange.emit(!checked)">
+  <input
+    type="checkbox"
+    class="cb-native"
+    [checked]="checked"
+    [disabled]="disabled"
+  />
+  <span
+    class="icon-outlined cb-icon"
+    [style.color]="iconColor"
+    aria-hidden="true"
+  >{{ iconName }}</span>
+  @if (label) {
+    <span class="cb-label">{{ label }}</span>
+  }
+</label>

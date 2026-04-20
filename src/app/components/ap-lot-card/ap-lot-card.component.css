@@ -1,0 +1,234 @@
+.lc-root {
+  display:          flex;
+  flex-direction:   column;
+  background-color: var(--color-bg-white);
+  border-radius:    var(--radius-md);
+  overflow:         hidden;
+  width:            300px;
+  flex-shrink:      0;
+}
+
+/* ── Image ── */
+.lc-image-area {
+  position:   relative;
+  height:     200px;
+  flex-shrink: 0;
+  background-color: var(--color-bg-lighter);
+}
+
+.lc-shimmer {
+  position: absolute;
+  inset:    0;
+  background: linear-gradient(90deg, var(--color-bg-lighter) 25%, var(--color-bg-light) 50%, var(--color-bg-lighter) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.lc-image {
+  position:       absolute;
+  inset:          0;
+  width:          100%;
+  height:         100%;
+  object-fit:     cover;
+}
+
+.lc-fav-btn {
+  position:   absolute;
+  top:        var(--spacing-sm);
+  right:      var(--spacing-sm);
+  display:    inline-flex;
+  align-items: center;
+  background: none;
+  border:     none;
+  padding:    0;
+  cursor:     pointer;
+}
+
+.lc-fav-icon {
+  font-family:            'Material Symbols Rounded';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-size:              var(--size-icon-xl);
+  line-height:            1;
+  filter:                 drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+}
+
+.lc-dots {
+  position:        absolute;
+  bottom:          var(--spacing-md);
+  left:            0;
+  right:           0;
+  display:         flex;
+  justify-content: center;
+  gap:             4px;
+}
+
+.lc-dot {
+  height:        6px;
+  width:         6px;
+  border-radius: 3px;
+  background:    rgba(255,255,255,0.55);
+  border:        none;
+  padding:       0;
+  cursor:        pointer;
+  transition:    width 0.2s ease;
+  flex-shrink:   0;
+}
+
+.lc-dot--active {
+  width:      16px;
+  background: white;
+}
+
+/* ── Info ── */
+.lc-info {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--spacing-md);
+  padding:        var(--spacing-md);
+}
+
+.lc-title-block {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--spacing-sm);
+}
+
+.lc-title-inner {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--spacing-xs);
+}
+
+.lc-location {
+  font-family:  var(--type-family-primary);
+  font-size:    var(--type-size-label-md);
+  line-height:  var(--type-lh-label-md);
+  font-weight:  500;
+  color:        var(--color-border-grey);
+}
+
+.lc-title {
+  font-family:  var(--type-family-primary);
+  font-size:    var(--type-size-title-md);
+  line-height:  var(--type-lh-title-md);
+  font-weight:  500;
+  color:        var(--color-text-dark);
+}
+
+.lc-breeder-row {
+  display:     flex;
+  align-items: center;
+  gap:         var(--spacing-xs);
+}
+
+.lc-breeder-icon {
+  font-size:   16px;
+  line-height: 1;
+  color:       var(--color-text-dark);
+  flex-shrink: 0;
+}
+
+.lc-breeder {
+  font-family:  var(--type-family-primary);
+  font-size:    var(--type-size-label-md);
+  line-height:  var(--type-lh-label-md);
+  font-weight:  400;
+  color:        var(--color-text-dark);
+}
+
+/* ── Specs / ABVs ── */
+.lc-spec-grid {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--spacing-xs);
+}
+
+.lc-spec-row {
+  display: flex;
+}
+
+.lc-spec-col {
+  display: flex;
+  gap:     var(--spacing-xs);
+  flex:    1;
+  min-width: 135px;
+}
+
+.lc-abv-col {
+  display:     flex;
+  align-items: center;
+  gap:         var(--spacing-xs);
+  flex:        1;
+  min-width:   135px;
+}
+
+.lc-spec-key {
+  font-family:  var(--type-family-primary);
+  font-size:    var(--type-size-label-md);
+  line-height:  var(--type-lh-label-md);
+  font-weight:  500;
+  color:        var(--color-text-grey);
+  white-space:  nowrap;
+}
+
+.lc-spec-val {
+  font-family:  var(--type-family-primary);
+  font-size:    var(--type-size-label-md);
+  line-height:  var(--type-lh-label-md);
+  font-weight:  400;
+  color:        var(--color-text-grey);
+  flex:         1;
+}
+
+/* ── Tags ── */
+.lc-tags {
+  display:   flex;
+  gap:       var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.lc-tag {
+  font-family:      var(--type-family-primary);
+  font-size:        var(--type-size-label-md);
+  line-height:      var(--type-lh-label-md);
+  font-weight:      600;
+  color:            var(--color-text-grey-dark);
+  background-color: var(--color-brand-primary-light);
+  border-radius:    var(--radius-xs);
+  padding:          0 var(--spacing-xs);
+  white-space:      nowrap;
+}
+
+/* ── Agency ── */
+.lc-agency-divider {
+  height:      1px;
+  background:  var(--color-border-grey-light);
+  margin-left:  calc(-1 * var(--spacing-md));
+  margin-right: calc(-1 * var(--spacing-md));
+}
+
+.lc-agency {
+  display:     flex;
+  align-items: center;
+  gap:         var(--spacing-sm);
+}
+
+.lc-agency-logo {
+  height:      24px;
+  width:       auto;
+  object-fit:  contain;
+  flex-shrink: 0;
+}
+
+.lc-agency-name {
+  font-family:  var(--type-family-primary);
+  font-size:    var(--type-size-body-sm);
+  line-height:  var(--type-lh-body-sm);
+  font-weight:  400;
+  color:        var(--color-text-grey);
+}

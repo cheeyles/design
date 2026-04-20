@@ -1,0 +1,32 @@
+<ap-doc-page
+  title="Tab"
+  description="Tab strip for switching between related content sections."
+>
+
+  <ap-doc-section title="Tab - variants">
+    <ap-demo>
+      <ap-demo-group label="Text tabs" [column]="true">
+        <ap-tab-navigation
+          [tabs]="textTabs"
+          [activeIndex]="tab1()"
+          (tabChange)="tab1.set($event)"
+        />
+      </ap-demo-group>
+      <ap-demo-group label="With leading icon" [column]="true">
+        <ap-tab-navigation
+          [tabs]="iconTabs"
+          [activeIndex]="tab2()"
+          (tabChange)="tab2.set($event)"
+        />
+      </ap-demo-group>
+      <ap-demo-group label="With trailing badge" [column]="true">
+        <ap-tab-navigation
+          [tabs]="badgeTabs"
+          [activeIndex]="tab3()"
+          (tabChange)="tab3.set($event)"
+        />
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+</ap-doc-page>

@@ -1,0 +1,5 @@
+.commodity-demo {
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-border-grey-light);
+  border-radius: var(--radius-lg);
+}

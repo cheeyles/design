@@ -1,0 +1,60 @@
+<ap-doc-page title="Logo" description="AuctionsPlus logo in dark, light, and white variants.">
+
+  <ap-doc-section title="Logo - Variants">
+    <ap-demo>
+      <ap-demo-group label="Dark (default)">
+        <div class="logo-bg logo-bg--white">
+          <ap-logo variant="dark" width="175px" />
+        </div>
+      </ap-demo-group>
+      <ap-demo-group label="Light — on dark background">
+        <div class="logo-bg logo-bg--dark">
+          <ap-logo variant="light" width="175px" />
+        </div>
+      </ap-demo-group>
+      <ap-demo-group label="White — on brand background">
+        <div class="logo-bg logo-bg--dark">
+          <ap-logo variant="white" width="175px" />
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="variantsCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Logo - Icon only">
+    <ap-demo>
+      <ap-demo-group label="Dark">
+        <div class="logo-bg logo-bg--white">
+          <ap-logo variant="dark" [iconOnly]="true" width="32px" />
+        </div>
+      </ap-demo-group>
+      <ap-demo-group label="Light — on dark background">
+        <div class="logo-bg logo-bg--dark">
+          <ap-logo variant="light" [iconOnly]="true" width="32px" />
+        </div>
+      </ap-demo-group>
+      <ap-demo-group label="White — on brand background">
+        <div class="logo-bg logo-bg--dark">
+          <ap-logo variant="white" [iconOnly]="true" width="32px" />
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="iconOnlyCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Logo - Sizing">
+    <ap-demo>
+      <ap-demo-group label="Small">
+        <ap-logo width="120px" />
+      </ap-demo-group>
+      <ap-demo-group label="Default (175px)">
+        <ap-logo />
+      </ap-demo-group>
+      <ap-demo-group label="Large">
+        <ap-logo width="240px" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="sizingCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

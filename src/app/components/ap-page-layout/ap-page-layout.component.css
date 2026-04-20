@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  height:  100%;
+}
+
+.layout-body {
+  height: 100%;
+}
+
+/* Content area padding — 24px = --spacing-lg on sm+ (640px+) */
+@media (min-width: 640px) {
+  .content-area {
+    padding: var(--spacing-lg);
+  }
+}

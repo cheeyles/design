@@ -1,0 +1,54 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Progress Indicator — Variants">
+    <ap-demo>
+      <ap-demo-group label="Default">
+        <div class="pi-demo-col">
+          <ap-progress-indicator [value]="68" label="Upload progress" />
+        </div>
+      </ap-demo-group>
+      <ap-demo-group label="Success">
+        <div class="pi-demo-col">
+          <ap-progress-indicator [value]="100" variant="success" label="Complete" />
+        </div>
+      </ap-demo-group>
+      <ap-demo-group label="Warning">
+        <div class="pi-demo-col">
+          <ap-progress-indicator [value]="45" variant="warning" label="Capacity" />
+        </div>
+      </ap-demo-group>
+      <ap-demo-group label="Error">
+        <div class="pi-demo-col">
+          <ap-progress-indicator [value]="12" variant="error" label="Storage" />
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="code" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Progress Indicator — Sizes">
+    <ap-demo>
+      <ap-demo-group label="Small (4px)">
+        <div class="pi-demo-col">
+          <ap-progress-indicator [value]="60" size="sm" label="Uploading…" />
+        </div>
+      </ap-demo-group>
+      <ap-demo-group label="Medium (8px)">
+        <div class="pi-demo-col">
+          <ap-progress-indicator [value]="60" size="md" label="Uploading…" />
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+  <ap-doc-section title="Progress Indicator — Without label">
+    <ap-demo>
+      <ap-demo-group>
+        <div class="pi-demo-col">
+          <ap-progress-indicator [value]="33" [showValue]="false" />
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+</ap-doc-page>

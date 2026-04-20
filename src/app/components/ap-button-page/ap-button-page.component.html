@@ -1,0 +1,86 @@
+<ap-doc-page
+  title="Button"
+  description="Action element with CTA, text, and icon variants."
+>
+
+  <ap-doc-section title="Button - Variants">
+    <ap-demo>
+      <ap-demo-group label="Medium — enabled">
+        <ap-button color="primary">Primary</ap-button>
+        <ap-button color="secondary">Secondary</ap-button>
+        <ap-button color="positive">Positive</ap-button>
+        <ap-button color="destructive">Destructive</ap-button>
+      </ap-demo-group>
+      <ap-demo-group label="Medium — disabled">
+        <ap-button color="primary" [disabled]="true">Primary</ap-button>
+        <ap-button color="secondary" [disabled]="true">Secondary</ap-button>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-demo>
+      <ap-demo-group label="Small — enabled">
+        <ap-button color="primary" size="sm">Primary</ap-button>
+        <ap-button color="secondary" size="sm">Secondary</ap-button>
+        <ap-button color="positive" size="sm">Positive</ap-button>
+        <ap-button color="destructive" size="sm">Destructive</ap-button>
+      </ap-demo-group>
+      <ap-demo-group label="Small — disabled">
+        <ap-button color="primary" size="sm" [disabled]="true">Primary</ap-button>
+        <ap-button color="secondary" size="sm" [disabled]="true">Secondary</ap-button>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="variantsCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Button - With Icons - variants">
+    <ap-demo>
+      <ap-demo-group label="Leading icon">
+        <ap-button color="primary" leadingIcon="add">Create Lot</ap-button>
+        <ap-button color="secondary" leadingIcon="filter_list">Filter</ap-button>
+        <ap-button color="positive" leadingIcon="check">Confirm</ap-button>
+      </ap-demo-group>
+      <ap-demo-group label="Trailing icon">
+        <ap-button color="primary" trailingIcon="keyboard_arrow_down">More</ap-button>
+        <ap-button color="secondary" trailingIcon="keyboard_arrow_down">Sort</ap-button>
+      </ap-demo-group>
+      <ap-demo-group label="Icon only">
+        <ap-button color="primary"     leadingIcon="add"         class="icon-btn" />
+        <ap-button color="secondary"   leadingIcon="filter_list" class="icon-btn" />
+        <ap-button color="positive"    leadingIcon="check"       class="icon-btn" />
+        <ap-button color="destructive" leadingIcon="delete"      class="icon-btn" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="iconsCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Icon Button - Variants">
+    <ap-coming-soon title="Icon Button" description="Commodity icon buttons — coming soon." />
+  </ap-doc-section>
+
+  <ap-doc-section title="Button - Select - States">
+    <ap-coming-soon title="Select Button" description="Pill-shaped multi-select toggle buttons — coming soon." />
+  </ap-doc-section>
+
+  <ap-doc-section title="Button - Radio - States">
+    <ap-coming-soon title="Radio Button" description="Pill-shaped single-select radio buttons — coming soon." />
+  </ap-doc-section>
+
+  <ap-doc-section title="Button - Split select - variants">
+    <ap-coming-soon title="Split Select" description="Segmented split-select button group — coming soon." />
+  </ap-doc-section>
+
+  <ap-doc-section title="Button - Text - variants">
+    <ap-demo>
+      <ap-demo-group label="Link" [gap]="'var(--spacing-lg)'">
+        <ap-button color="text">View today's auctions</ap-button>
+      </ap-demo-group>
+      <ap-demo-group label="Leading icon" [gap]="'var(--spacing-lg)'">
+        <ap-button color="text" leadingIcon="keyboard_arrow_down">Expand</ap-button>
+      </ap-demo-group>
+      <ap-demo-group label="Trailing icon" [gap]="'var(--spacing-lg)'">
+        <ap-button color="text" trailingIcon="chevron_right">View today's auctions</ap-button>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="textCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

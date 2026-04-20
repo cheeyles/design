@@ -1,0 +1,39 @@
+<nav class="pagination" aria-label="Pagination">
+
+  <!-- Previous -->
+  <button
+    class="page-nav page-nav--first"
+    aria-label="Previous page"
+    [disabled]="page <= 1"
+    [class.page-nav--disabled]="page <= 1"
+    (click)="go(page - 1)"
+  >
+    <span class="icon-outlined" style="font-size:var(--size-icon-xl);line-height:1">chevron_left</span>
+  </button>
+
+  <!-- Page items -->
+  @for (p of pages; track $index) {
+    @if (isEllipsis(p)) {
+      <span class="page-ellipsis">…</span>
+    } @else {
+      <button
+        class="page-btn"
+        [class.page-btn--active]="p === page"
+        [attr.aria-current]="p === page ? 'page' : null"
+        (click)="go(+p)"
+      >{{ p }}</button>
+    }
+  }
+
+  <!-- Next -->
+  <button
+    class="page-nav page-nav--last"
+    aria-label="Next page"
+    [disabled]="page >= total"
+    [class.page-nav--disabled]="page >= total"
+    (click)="go(page + 1)"
+  >
+    <span class="icon-outlined" style="font-size:var(--size-icon-xl);line-height:1">chevron_right</span>
+  </button>
+
+</nav>

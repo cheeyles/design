@@ -1,0 +1,12 @@
+<div class="ds-demo-group">
+  @if (label) {
+    <span class="ds-demo-group__label">{{ label }}</span>
+  }
+  <div
+    class="ds-demo-group__content"
+    [class.ds-demo-group__content--column]="column"
+    [style.gap]="gap ?? null"
+  >
+    <ng-content />
+  </div>
+</div>

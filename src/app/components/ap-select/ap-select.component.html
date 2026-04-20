@@ -1,0 +1,50 @@
+<div class="sel-root" (keydown.escape)="close()">
+  @if (label) {
+    <label class="sel-label">{{ label }}</label>
+  }
+
+  <div class="sel-trigger-wrap">
+    <button
+      type="button"
+      class="sel-trigger"
+      [class.sel-trigger--open]="open()"
+      [class.sel-trigger--error]="state === 'error'"
+      [class.sel-trigger--disabled]="state === 'disabled'"
+      [disabled]="state === 'disabled'"
+      (click)="toggle()"
+      aria-haspopup="listbox"
+      [attr.aria-expanded]="open()"
+    >
+      <span class="sel-value" [class.sel-value--placeholder]="!selected">
+        {{ selected ? selected.label : placeholder }}
+      </span>
+      <span class="icon-outlined sel-chevron" [class.sel-chevron--open]="open()" aria-hidden="true">keyboard_arrow_down</span>
+    </button>
+
+    @if (open()) {
+      <div
+        class="sel-dropdown"
+        role="listbox"
+        (mouseleave)="hovered.set(null)"
+      >
+        @for (item of items; track item.value) {
+          <div
+            class="sel-option"
+            [class.sel-option--selected]="item.value === value"
+            [class.sel-option--hovered]="hovered() === item.value"
+            role="option"
+            [attr.aria-selected]="item.value === value"
+            (click)="select(item)"
+            (mouseenter)="hovered.set(item.value)"
+          >
+            {{ item.label }}
+          </div>
+        }
+      </div>
+    }
+  </div>
+
+  @if (hint) {
+    <span class="sel-hint" [class.sel-hint--error]="state === 'error'">{{ hint }}</span>
+  }
+</div>

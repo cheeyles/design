@@ -1,0 +1,15 @@
+.swatch-cell {
+  width:           80px;
+  flex-shrink:     0;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+}
+
+.shadow-swatch {
+  width:            48px;
+  height:           48px;
+  background-color: var(--color-bg-white);
+  border:           1px solid var(--color-border-grey-light);
+  border-radius:    var(--radius-sm);
+}

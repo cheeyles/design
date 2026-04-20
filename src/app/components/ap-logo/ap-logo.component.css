@@ -1,0 +1,29 @@
+.logo-container {
+  position: relative;
+  aspect-ratio: 103 / 14;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 17.48%;
+  height: 100%;
+}
+
+.logo-wordmark {
+  position: absolute;
+  top: 7.14%;
+  right: 0;
+  bottom: 7.14%;
+  left: 17.48%;
+  width: 82.52%;
+  height: 85.72%;
+}
+
+.logo-icon-only {
+  aspect-ratio: 30.5825 / 23.7864;
+  flex-shrink: 0;
+  display: block;
+}

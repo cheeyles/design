@@ -1,0 +1,12 @@
+.header-controls {
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.header-preview {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.header-preview--mobile {
+  max-width: 390px;
+}

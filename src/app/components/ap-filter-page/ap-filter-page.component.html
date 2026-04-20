@@ -1,0 +1,19 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Filter - Interactive">
+    <ap-demo>
+      <ap-demo-group>
+        <div class="filter-demo">
+          <ap-button
+            color="secondary"
+            leadingIcon="filter_list"
+            (clicked)="open.set(true)"
+          >Open filters</ap-button>
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-filter [open]="open()" (closed)="open.set(false)" />
+    <ap-code-block [code]="code" />
+  </ap-doc-section>
+
+</ap-doc-page>

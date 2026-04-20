@@ -1,0 +1,18 @@
+<div
+  class="msg-root"
+  role="status"
+  [style.background-color]="config.bg"
+  [style.border-color]="config.border"
+>
+  <span class="icon-outlined msg-icon" [style.color]="config.color" aria-hidden="true">{{ config.icon }}</span>
+
+  <div class="msg-body">
+    @if (heading) {
+      <span class="msg-heading">{{ heading }}</span>
+    }
+    <span class="msg-text"><ng-content /></span>
+    @if (hasCta) {
+      <button type="button" class="msg-cta" (click)="ctaClick.emit()">{{ ctaLabel }}</button>
+    }
+  </div>
+</div>

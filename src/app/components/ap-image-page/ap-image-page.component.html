@@ -1,0 +1,48 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Image - Aspect ratios">
+    <ap-demo>
+      <ap-demo-group label="3/2 — lot cards (default)" [column]="true">
+        <ap-image [src]="imgSrc" alt="Cattle" aspectRatio="3/2" class="img-demo-w-240" />
+      </ap-demo-group>
+      <ap-demo-group label="16/9 — banners" [column]="true">
+        <ap-image [src]="imgSrc" alt="Cattle" aspectRatio="16/9" class="img-demo-w-240" />
+      </ap-demo-group>
+      <ap-demo-group label="1/1 — avatars" [column]="true">
+        <ap-image [src]="imgSrc" alt="Cattle" aspectRatio="1/1" class="img-demo-w-120" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="ratioCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Image - Border radius">
+    <ap-demo>
+      <ap-demo-group label="none (default)" [column]="true">
+        <ap-image [src]="imgSrc" alt="Cattle" aspectRatio="3/2" radius="none" class="img-demo-w-180" />
+      </ap-demo-group>
+      <ap-demo-group label="md" [column]="true">
+        <ap-image [src]="imgSrc" alt="Cattle" aspectRatio="3/2" radius="md" class="img-demo-w-180" />
+      </ap-demo-group>
+      <ap-demo-group label="lg" [column]="true">
+        <ap-image [src]="imgSrc" alt="Cattle" aspectRatio="3/2" radius="lg" class="img-demo-w-180" />
+      </ap-demo-group>
+      <ap-demo-group label="full" [column]="true">
+        <ap-image [src]="imgSrc" alt="Cattle" aspectRatio="1/1" radius="full" class="img-demo-w-120" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="radiusCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Image - Loading & fallback states">
+    <ap-demo>
+      <ap-demo-group label="Loading skeleton (no src)" [column]="true">
+        <ap-image aspectRatio="3/2" class="img-demo-w-240" />
+      </ap-demo-group>
+      <ap-demo-group label="Error fallback (bad src)" [column]="true">
+        <ap-image src="https://broken.url/image.jpg" alt="Broken" aspectRatio="3/2" class="img-demo-w-240" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="statesCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

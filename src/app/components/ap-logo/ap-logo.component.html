@@ -1,0 +1,18 @@
+@if (iconOnly) {
+  <img
+    [src]="iconSrc"
+    alt="AuctionsPlus"
+    class="logo-icon-only"
+    [style.width]="width"
+  />
+} @else {
+  <div
+    role="img"
+    aria-label="AuctionsPlus"
+    class="logo-container"
+    [style.width]="width"
+  >
+    <img [src]="iconSrc" alt="" aria-hidden="true" class="logo-icon" />
+    <img [src]="wordmarkSrc" alt="" aria-hidden="true" class="logo-wordmark" />
+  </div>
+}

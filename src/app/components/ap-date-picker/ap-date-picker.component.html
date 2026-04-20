@@ -1,0 +1,73 @@
+<div class="dp-root" (keydown.escape)="close()">
+  @if (label) {
+    <label class="dp-label">{{ label }}</label>
+  }
+
+  <div class="dp-trigger-wrap">
+    <button
+      type="button"
+      class="dp-trigger"
+      [class.dp-trigger--open]="open()"
+      [class.dp-trigger--error]="state === 'error'"
+      [class.dp-trigger--disabled]="state === 'disabled'"
+      [disabled]="state === 'disabled'"
+      (click)="toggle()"
+      aria-haspopup="true"
+      [attr.aria-expanded]="open()"
+    >
+      <span class="icon-outlined dp-cal-icon" aria-hidden="true">calendar_month</span>
+      <span class="dp-value" [class.dp-value--placeholder]="!value">
+        {{ value ? displayValue : placeholder }}
+      </span>
+    </button>
+
+    @if (open()) {
+      <div class="dp-calendar">
+        <!-- Month/year header -->
+        <div class="dp-header">
+          <button type="button" class="dp-nav-btn" (click)="prevMonth()" aria-label="Previous month">
+            <span class="icon-outlined dp-nav-icon" aria-hidden="true">chevron_left</span>
+          </button>
+          <span class="dp-month-label">{{ monthLabel }}</span>
+          <button type="button" class="dp-nav-btn" (click)="nextMonth()" aria-label="Next month">
+            <span class="icon-outlined dp-nav-icon" aria-hidden="true">chevron_right</span>
+          </button>
+        </div>
+
+        <!-- Day grid -->
+        <div class="dp-grid">
+          <!-- Day-of-week labels -->
+          <div class="dp-dow-row">
+            @for (d of dayLabels; track $index) {
+              <div class="dp-dow-cell">{{ d }}</div>
+            }
+          </div>
+          <!-- Day rows -->
+          @for (week of weeks; track $index) {
+            <div class="dp-week-row">
+              @for (day of week; track $index) {
+                <button
+                  type="button"
+                  class="dp-day"
+                  [class.dp-day--out]="!day.inMonth"
+                  [class.dp-day--selected]="isSelected(day.date)"
+                  [class.dp-day--today]="isToday(day.date) && !isSelected(day.date)"
+                  [class.dp-day--hovered]="hoveredDay()?.getTime() === day.date.getTime() && !isSelected(day.date)"
+                  (click)="selectDay(day.date)"
+                  (mouseenter)="hoveredDay.set(day.date)"
+                  (mouseleave)="hoveredDay.set(null)"
+                >
+                  {{ day.date.getDate() }}
+                </button>
+              }
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+
+  @if (hint) {
+    <span class="dp-hint" [class.dp-hint--error]="state === 'error'">{{ hint }}</span>
+  }
+</div>

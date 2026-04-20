@@ -1,0 +1,20 @@
+<div class="ac-root">
+
+  <div class="ac-icon-circle">
+    <span class="icon-outlined ac-icon" aria-hidden="true">{{ icon }}</span>
+  </div>
+
+  <div class="ac-text">
+    <span class="ac-title">{{ title }}</span>
+    @if (description) {
+      <span class="ac-description">{{ description }}</span>
+    }
+  </div>
+
+  @if (actionLabel) {
+    <ap-button [color]="actionColor" size="sm" (clicked)="actionClick.emit()">
+      {{ actionLabel }}
+    </ap-button>
+  }
+
+</div>

@@ -1,0 +1,60 @@
+<div class="ds-panel">
+
+  <!-- Font Family -->
+  <div class="ds-card" style="padding:0;overflow:hidden">
+    <div class="ds-group-header"><span class="ds-group-header__label">Font Family</span></div>
+    <div class="ds-token-row">
+      <div class="ds-token-cell">
+        <code class="ds-token-name">type-family-primary</code>
+        <span class="ds-token-raw">Roboto</span>
+      </div>
+      <p class="font-preview">
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+        abcdefghijklmnopqrstuvwxyz<br />
+        0123456789
+      </p>
+    </div>
+  </div>
+
+  <!-- Font Weights -->
+  <div class="ds-card" style="padding:0;overflow:hidden">
+    <div class="ds-group-header"><span class="ds-group-header__label">Font Weight</span></div>
+    @for (w of weights; track w.token) {
+      <div class="ds-token-row">
+        <div class="ds-token-cell">
+          <code class="ds-token-name">{{ w.token }}</code>
+          <span class="ds-token-raw">{{ w.weight }}</span>
+        </div>
+        <p class="weight-preview" [style.font-weight]="w.weight">
+          {{ w.label }} — The quick brown fox
+        </p>
+      </div>
+    }
+  </div>
+
+  <!-- Type scale groups -->
+  @for (group of typeGroups; track group.label) {
+    <div class="ds-card" style="padding:0;overflow:hidden">
+      <div class="ds-group-header"><span class="ds-group-header__label">{{ group.label }}</span></div>
+      @for (tok of group.tokens; track tok.label) {
+        <div class="ds-token-row">
+          <div class="ds-token-cell">
+            <code class="ds-token-name">{{ tok.label }}</code>
+            <span class="ds-token-raw">{{ tok.raw }}px</span>
+          </div>
+          <div class="ds-token-cell" style="width:120px">
+            <span class="ds-token-desc">Roboto</span>
+            <span class="ds-token-raw">{{ weightLabel(tok.weight) }}</span>
+          </div>
+          <p class="type-preview"
+             [style.font-size]="'var(' + tok.size + ')'"
+             [style.line-height]="'var(' + tok.lh + ')'"
+             [style.font-weight]="tok.weight">
+            The quick brown fox
+          </p>
+        </div>
+      }
+    </div>
+  }
+
+</div>

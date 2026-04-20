@@ -1,0 +1,10 @@
+@if (open) {
+  <!-- Backdrop -->
+  <div class="fixed inset-0 bg-black/40 z-40 xl:hidden" (click)="closeDrawer.emit()"></div>
+
+  <!-- Drawer panel -->
+  <div class="drawer-panel fixed top-0 left-0 h-full w-260px bg-white z-50 xl:hidden
+              flex flex-col overflow-y-auto shadow-lg">
+    <ng-content />
+  </div>
+}

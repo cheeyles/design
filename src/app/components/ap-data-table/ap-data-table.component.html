@@ -1,0 +1,50 @@
+<div class="dt-wrapper">
+  <table class="dt-table">
+
+    <thead>
+      <tr>
+        @for (col of columns; track col.id) {
+          <th
+            class="dt-th"
+            [style.width]="col.width ? col.width + 'px' : null"
+            [style.min-width]="col.minWidth ? col.minWidth + 'px' : null"
+            [style.text-align]="col.align ?? 'left'"
+          >
+            @if (col.sortable) {
+              <button
+                class="dt-sort-btn"
+                [class.dt-sort-btn--active]="sortBy === col.id"
+                (click)="sortChange.emit(col.id)"
+              >
+                {{ col.label }}
+                <span
+                  class="icon-outlined dt-sort-icon"
+                  [class.dt-sort-icon--active]="sortBy === col.id"
+                  aria-hidden="true"
+                >
+                  {{ sortBy === col.id && sortDir === 'desc' ? 'arrow_downward' : 'arrow_upward' }}
+                </span>
+              </button>
+            } @else {
+              {{ col.label }}
+            }
+          </th>
+        }
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (row of rows; track $index) {
+        <tr class="dt-tr">
+          @for (col of columns; track col.id) {
+            <td
+              class="dt-td"
+              [style.text-align]="col.align ?? 'left'"
+            >{{ cellValue(row, col) }}</td>
+          }
+        </tr>
+      }
+    </tbody>
+
+  </table>
+</div>

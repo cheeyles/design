@@ -1,0 +1,101 @@
+.header-root {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-bg-dark);
+}
+
+.top-bar--desktop {
+  align-items: stretch;
+  min-height: 56px;
+  padding: 0 var(--spacing-lg);
+  gap: var(--spacing-lg);
+}
+
+.bottom-bar {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 48px;
+  padding: 0 var(--spacing-lg);
+  background-color: var(--color-bg-dark);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  flex-shrink: 0;
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: transparent;
+  border: none;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-md);
+  font-weight: 400;
+  color: var(--color-text-white);
+  padding: 0;
+  white-space: nowrap;
+}
+
+.nav-btn--active-top {
+  border-top-color: var(--color-brand-primary);
+}
+
+.nav-btn--active-bottom {
+  border-bottom-color: var(--color-brand-primary);
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--color-text-white);
+  opacity: 0.3;
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+
+.avatar-stub {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-border-grey-light);
+  flex-shrink: 0;
+}
+
+.search-stub {
+  width: 450px;
+  height: 36px;
+  flex-shrink: 0;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.2);
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-sm);
+  color: rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-sm);
+}

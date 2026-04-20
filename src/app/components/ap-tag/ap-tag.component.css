@@ -1,0 +1,19 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-0-5) var(--spacing-xs);
+  border-radius: var(--radius-xs);
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-label-md);
+  line-height: var(--type-lh-label-md);
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--color-text-grey-dark);
+}
+
+.tag--price       { background-color: var(--color-brand-primary-light); }
+.tag--assessment  { background-color: var(--color-brand-primary-light); }
+.tag--accreditation { background-color: var(--color-bg-grey-light); }
+.tag--feeder-optimised { background-color: var(--color-accent-teal-light); }
+.tag--new  { background-color: var(--color-bg-green); color: var(--color-text-white); }
+.tag--beta { background-color: var(--color-brand-primary-dark); color: var(--color-text-white); }

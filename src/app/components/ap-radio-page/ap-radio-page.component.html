@@ -1,0 +1,33 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Radio Button - States">
+    <ap-demo>
+      <ap-demo-group label="Unchecked">
+        <ap-radio label="Option A" />
+      </ap-demo-group>
+      <ap-demo-group label="Checked">
+        <ap-radio label="Option B" [checked]="true" />
+      </ap-demo-group>
+      <ap-demo-group label="Disabled">
+        <ap-radio label="Option C" [disabled]="true" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="statesCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Radio Button - Group">
+    <ap-demo>
+      <ap-demo-group label="Radio group">
+        <ap-radio-group
+          label="Select a breed"
+          name="breed-demo"
+          [options]="breedOptions"
+          [value]="groupValue()"
+          (valueChange)="groupValue.set($event)"
+        />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="groupCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

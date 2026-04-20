@@ -1,0 +1,17 @@
+<div class="ds-panel">
+  <div class="ds-card" style="padding:0;overflow:hidden">
+    <div class="ds-group-header"><span class="ds-group-header__label">Spacing Scale</span></div>
+    @for (s of spacing; track s.token) {
+      <div class="ds-token-row">
+        <div class="ds-token-cell">
+          <code class="ds-token-name">{{ s.label }}</code>
+          <span class="ds-token-raw">{{ s.use }}</span>
+        </div>
+        <div class="ds-token-preview">
+          <div class="spacing-bar" [style.width]="'var(' + s.token + ')'"></div>
+        </div>
+        <span class="spacing-raw">{{ s.raw }}</span>
+      </div>
+    }
+  </div>
+</div>

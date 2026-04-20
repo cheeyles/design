@@ -1,0 +1,66 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Fly-Out Drawer — Sizes">
+    <ap-demo>
+      <ap-demo-group label="Small (400px)">
+        <ap-button color="secondary" leadingIcon="tune" (clicked)="openSm.set(true)">Open SM</ap-button>
+      </ap-demo-group>
+      <ap-demo-group label="Medium (480px)">
+        <ap-button color="primary" leadingIcon="tune" (clicked)="openMd.set(true)">Open MD</ap-button>
+      </ap-demo-group>
+      <ap-demo-group label="Large (640px)">
+        <ap-button color="secondary" leadingIcon="tune" (clicked)="openLg.set(true)">Open LG</ap-button>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="code" />
+  </ap-doc-section>
+
+</ap-doc-page>
+
+<!-- SM -->
+<ap-drawer
+  [open]="openSm()"
+  title="Filter lots"
+  size="sm"
+  primaryAction="Apply"
+  secondaryAction="Reset"
+  (close)="openSm.set(false)"
+  (primaryClick)="openSm.set(false)"
+  (secondaryClick)="openSm.set(false)"
+>
+  <p style="color:var(--color-text-grey);font-family:var(--type-family-primary);font-size:var(--type-size-body-sm)">
+    Filter controls appear here.
+  </p>
+</ap-drawer>
+
+<!-- MD -->
+<ap-drawer
+  [open]="openMd()"
+  title="Filter lots"
+  size="md"
+  primaryAction="Apply"
+  secondaryAction="Reset"
+  (close)="openMd.set(false)"
+  (primaryClick)="openMd.set(false)"
+  (secondaryClick)="openMd.set(false)"
+>
+  <p style="color:var(--color-text-grey);font-family:var(--type-family-primary);font-size:var(--type-size-body-sm)">
+    Filter controls appear here.
+  </p>
+</ap-drawer>
+
+<!-- LG -->
+<ap-drawer
+  [open]="openLg()"
+  title="Filter lots"
+  size="lg"
+  primaryAction="Apply"
+  secondaryAction="Reset"
+  (close)="openLg.set(false)"
+  (primaryClick)="openLg.set(false)"
+  (secondaryClick)="openLg.set(false)"
+>
+  <p style="color:var(--color-text-grey);font-family:var(--type-family-primary);font-size:var(--type-size-body-sm)">
+    Filter controls appear here.
+  </p>
+</ap-drawer>

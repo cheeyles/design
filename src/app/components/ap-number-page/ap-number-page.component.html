@@ -1,0 +1,81 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Number Input - Default">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-number-input class="demo-input" label="Quantity" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-number-input class="demo-input" label="Error" state="error" hint="Enter a valid number" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-number-input class="demo-input" label="Disabled" state="disabled" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="numberCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Number Input - Small">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-number-input class="demo-input demo-input--sm" label="Quantity" size="sm" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-number-input class="demo-input demo-input--sm" label="Error" size="sm" state="error" hint="Enter a valid number" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-number-input class="demo-input demo-input--sm" label="Disabled" size="sm" state="disabled" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="smallCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Number Input - Currency">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-dollar-input class="demo-input" label="Price" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-dollar-input class="demo-input" label="Error" state="error" hint="Enter a valid amount" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-dollar-input class="demo-input" label="Disabled" state="disabled" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="currencyCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Number Input - Tagged">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-unit-input class="demo-input" label="Rate" unit="$/Head" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-unit-input class="demo-input" label="Weight" unit="kg" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-unit-input class="demo-input" label="Error" unit="$/Head" state="error" hint="Enter a valid rate" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-unit-input class="demo-input" label="Disabled" unit="$/Head" state="disabled" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="unitCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Number Input - Min / Max">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-min-max-input class="demo-input" label="Weight range" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-min-max-input class="demo-input" label="Error" state="error" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-min-max-input class="demo-input" label="Disabled" state="disabled" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="minMaxCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

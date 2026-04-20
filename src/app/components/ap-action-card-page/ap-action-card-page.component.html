@@ -1,0 +1,47 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Action Card — Default">
+    <ap-demo>
+      <ap-demo-group label="With CTA button">
+        <ap-action-card
+          icon="gavel"
+          title="Create a new sale"
+          description="Set up an auction, forward+ or pre-auction listing."
+          actionLabel="Get started"
+        />
+      </ap-demo-group>
+      <ap-demo-group label="No button">
+        <ap-action-card
+          icon="bar_chart"
+          title="Sale results"
+          description="View clearance rates, average prices, and bidding history."
+        />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="code" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Action Card — Variants">
+    <ap-demo>
+      <ap-demo-group label="Positive action">
+        <ap-action-card
+          icon="add_circle"
+          title="List a lot"
+          description="Add individual lots to an existing sale."
+          actionLabel="List now"
+          actionColor="positive"
+        />
+      </ap-demo-group>
+      <ap-demo-group label="Secondary action">
+        <ap-action-card
+          icon="notifications"
+          title="Notification centre"
+          description="Manage how you receive updates on lots and auctions."
+          actionLabel="Manage"
+          actionColor="secondary"
+        />
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+</ap-doc-page>

@@ -1,0 +1,38 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Announcement — Basic">
+    <ap-demo>
+      <ap-demo-group>
+        @if (showBasic()) {
+          <ap-announcement
+            title="Scheduled maintenance"
+            message="The platform will be unavailable on Saturday 26 Apr from 2:00–4:00 AM AEST."
+            (dismiss)="showBasic.set(false)"
+          />
+        } @else {
+          <ap-button color="secondary" (clicked)="showBasic.set(true)">Reset</ap-button>
+        }
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+  <ap-doc-section title="Announcement — With action">
+    <ap-demo>
+      <ap-demo-group>
+        @if (showAction()) {
+          <ap-announcement
+            title="New feature available"
+            message="Forward+ bidding is now live across all eligible auctions."
+            actionLabel="Learn more"
+            (dismiss)="showAction.set(false)"
+            (actionClick)="showAction.set(false)"
+          />
+        } @else {
+          <ap-button color="secondary" (clicked)="showAction.set(true)">Reset</ap-button>
+        }
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="code" />
+  </ap-doc-section>
+
+</ap-doc-page>

@@ -1,0 +1,57 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Lot Card — Sheep genetics">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-lot-card
+          [images]="sheepImages"
+          imgObjectPosition="center calc(100% + 50px)"
+          location="Elmore, VIC"
+          title="Lot 12 - Pepperton Tag 512"
+          breeder="Pepperton Poll Dorsets"
+          [specs]="sheepSpecs"
+          [abvs]="sheepAbvs"
+          [tags]="['$/Head', 'Assessed']"
+          agencyName="Elders Bendigo"
+        />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="code" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Lot Card — Standard cattle">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-lot-card
+          [images]="cattleImages"
+          location="Wagga Wagga, NSW"
+          title="Lot 4 - Angus Steers"
+          breeder="Hillside Pastoral"
+          [specs]="cattleSpecs"
+          [tags]="['$/kg']"
+          agencyName="Elders Wagga"
+        />
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+  <ap-doc-section title="Lot Card — No image">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-lot-card
+          location="Roma, QLD"
+          title="Lot 7 - Santa Gertrudis Cows"
+          breeder="Glenmore Station"
+          [specs]="[
+            { key: 'Breed', value: 'Santa Gertrudis' },
+            { key: 'Type',  value: 'Cow'             },
+            { key: 'Age',   value: '4 years'         },
+          ]"
+          [tags]="['$/Head']"
+          agencyName="Elders Roma"
+        />
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+</ap-doc-page>

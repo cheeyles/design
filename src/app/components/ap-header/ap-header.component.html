@@ -1,0 +1,100 @@
+<!-- Mobile header -->
+@if (mobile) {
+  <header class="header-root">
+    <div class="top-bar">
+      <div class="flex items-center" style="gap:8px">
+        <button class="icon-btn" aria-label="Menu">
+          <span class="icon-outlined" style="color:var(--color-text-white)">menu</span>
+        </button>
+        <ap-logo variant="light" [iconOnly]="true" width="32px" />
+      </div>
+      <div class="flex items-center" style="gap:var(--spacing-xs)">
+        <button class="icon-btn" aria-label="Favourites">
+          <span class="icon-outlined" style="color:var(--color-text-white)">star</span>
+        </button>
+        <button class="icon-btn" aria-label="Notifications">
+          <span class="icon-outlined" style="color:var(--color-text-white)">notifications</span>
+        </button>
+        <div class="avatar-stub"></div>
+      </div>
+    </div>
+  </header>
+}
+
+<!-- Desktop header -->
+@if (!mobile) {
+  <header class="header-root">
+
+    <!-- Top bar -->
+    <div class="top-bar top-bar--desktop">
+
+      <!-- Left: logo + search -->
+      <div class="flex items-center" style="gap:var(--spacing-lg);flex-shrink:0;align-self:center">
+        <ap-logo variant="light" width="175px" />
+        <div class="search-stub">Search Upcoming Lots &amp; Auctions</div>
+      </div>
+
+      <!-- Right: nav + icons -->
+      <div class="flex items-stretch" style="gap:var(--spacing-md);flex-shrink:0">
+        <!-- Top nav links -->
+        <nav class="flex items-stretch" style="gap:var(--spacing-lg)">
+          @for (link of topLinks; track link.label) {
+            <button
+              class="nav-btn"
+              [class.nav-btn--active-top]="activeTop() === link.label"
+              (click)="setTop(link.label)"
+            >
+              {{ link.label }}
+              @if (link.dropdown) {
+                <span class="icon-outlined" style="font-size:18px;line-height:1;color:inherit">expand_more</span>
+              }
+            </button>
+          }
+        </nav>
+
+        <!-- Divider + icon buttons -->
+        <div class="flex items-center" style="gap:var(--spacing-sm);align-self:center">
+          <div class="divider"></div>
+          <button class="icon-btn" aria-label="Favourites">
+            <span class="icon-outlined" style="color:var(--color-text-white)">star</span>
+          </button>
+          <button class="icon-btn" aria-label="Notifications">
+            <span class="icon-outlined" style="color:var(--color-text-white)">notifications</span>
+          </button>
+        </div>
+        <div class="avatar-stub" style="align-self:center"></div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="bottom-bar">
+      <nav class="flex items-stretch" style="gap:var(--spacing-lg)">
+        @for (link of bottomLeft; track link.label) {
+          <button
+            class="nav-btn"
+            [class.nav-btn--active-bottom]="activeBottom() === link.label"
+            (click)="setBottom(link.label)"
+          >
+            {{ link.label }}
+            @if (link.dropdown) {
+              <span class="icon-outlined" style="font-size:20px;line-height:1;color:inherit">keyboard_arrow_down</span>
+            }
+          </button>
+        }
+      </nav>
+      <nav class="flex items-stretch" style="gap:var(--spacing-lg)">
+        @for (item of bottomRight; track item.label) {
+          <button
+            class="nav-btn"
+            [class.nav-btn--active-bottom]="activeBottom() === item.label"
+            (click)="setBottom(item.label)"
+          >
+            <span class="icon-outlined" style="font-size:20px;line-height:1;color:var(--color-brand-primary)">{{ item.icon }}</span>
+            {{ item.label }}
+          </button>
+        }
+      </nav>
+    </div>
+
+  </header>
+}

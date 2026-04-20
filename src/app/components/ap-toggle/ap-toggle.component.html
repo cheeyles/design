@@ -1,0 +1,39 @@
+<label
+  class="tog-root"
+  [class.tog-root--disabled]="disabled"
+  (mouseenter)="!disabled && hovered.set(true)"
+  (mouseleave)="hovered.set(false)"
+  (click)="$event.preventDefault(); !disabled && checkedChange.emit(!checked)"
+>
+  <input type="checkbox" class="tog-native" [checked]="checked" [disabled]="disabled" />
+
+  <span
+    class="tog-track"
+    [class.tog-track--lg]="size === 'lg'"
+    [class.tog-track--sm]="size === 'sm'"
+    [class.tog-track--on]="checked"
+  >
+    @if (hovered() && !disabled) {
+      <span
+        class="tog-hover"
+        [class.tog-hover--lg]="size === 'lg'"
+        [class.tog-hover--sm]="size === 'sm'"
+        [class.tog-hover--on]="checked"
+        [class.tog-hover--off]="!checked"
+      ></span>
+    }
+    <span
+      class="tog-thumb"
+      [class.tog-thumb--lg-on]="size === 'lg' && checked"
+      [class.tog-thumb--lg-off]="size === 'lg' && !checked"
+      [class.tog-thumb--sm-on]="size === 'sm' && checked"
+      [class.tog-thumb--sm-off]="size === 'sm' && !checked"
+      [class.tog-thumb--checked]="checked"
+      [class.tog-thumb--disabled-off]="disabled && !checked"
+    ></span>
+  </span>
+
+  @if (label) {
+    <span class="tog-label">{{ label }}</span>
+  }
+</label>

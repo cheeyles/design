@@ -1,0 +1,39 @@
+<div class="ui-root">
+  @if (label) {
+    <label class="ui-label">{{ label }}</label>
+  }
+  <div
+    class="ui-outer"
+    [class.ui-outer--focused]="focused()"
+    [class.ui-outer--error]="state === 'error'"
+  >
+    <div
+      class="ui-field-wrap"
+      [class.ui-field-wrap--error]="state === 'error'"
+      [class.ui-field-wrap--focused]="focused()"
+      [class.ui-field-wrap--disabled]="state === 'disabled'"
+      [class.ui-field-wrap--sm]="size === 'sm'"
+    >
+      <input
+        class="ui-field"
+        [class.ui-field--sm]="size === 'sm'"
+        type="number"
+        [placeholder]="placeholder"
+        [disabled]="state === 'disabled'"
+        (focus)="focused.set(true)"
+        (blur)="focused.set(false)"
+      />
+    </div>
+    <div
+      class="ui-badge"
+      [class.ui-badge--error]="state === 'error'"
+      [class.ui-badge--focused]="focused()"
+      [class.ui-badge--sm]="size === 'sm'"
+    >
+      <span class="ui-badge-text">{{ unit }}</span>
+    </div>
+  </div>
+  @if (hint) {
+    <span class="ui-hint" [class.ui-hint--error]="state === 'error'">{{ hint }}</span>
+  }
+</div>

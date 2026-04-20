@@ -1,0 +1,33 @@
+.lot-status {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 var(--spacing-sm);
+  border-radius: var(--radius-full);
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-label-md);
+  line-height: var(--type-lh-label-md);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.lot-status--has-icon {
+  padding-left: var(--spacing-xs);
+  gap: var(--spacing-0-5);
+}
+
+.lot-status__dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: currentColor;
+  flex-shrink: 0;
+}
+
+.lot-status__verified-icon {
+  font-size: var(--size-icon-sm);
+  line-height: 1;
+  color: var(--color-brand-primary);
+  flex-shrink: 0;
+}

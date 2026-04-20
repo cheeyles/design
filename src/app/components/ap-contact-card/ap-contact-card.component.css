@@ -1,0 +1,100 @@
+.cc-root {
+  display:          flex;
+  flex-direction:   column;
+  background-color: var(--color-bg-white);
+  border-radius:    var(--radius-md);
+  width:            300px;
+  flex-shrink:      0;
+}
+
+.cc-body {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--spacing-md);
+  padding:        var(--spacing-lg);
+}
+
+.cc-identity {
+  display:     flex;
+  align-items: center;
+  gap:         var(--spacing-md);
+}
+
+.cc-name-block {
+  display:        flex;
+  flex-direction: column;
+}
+
+.cc-name {
+  font-family:  var(--type-family-primary);
+  font-size:    var(--type-size-title-md);
+  line-height:  var(--type-lh-title-md);
+  font-weight:  500;
+  color:        var(--color-text-dark);
+}
+
+.cc-role {
+  font-family:  var(--type-family-primary);
+  font-size:    var(--type-size-body-md);
+  line-height:  var(--type-lh-body-md);
+  font-weight:  400;
+  color:        var(--color-text-grey-dark);
+}
+
+.cc-actions {
+  display: flex;
+  gap:     var(--spacing-sm-md);
+}
+
+.cc-action-btn {
+  flex:            1 0 0;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  gap:             var(--spacing-sm);
+  height:          40px;
+  padding-left:    var(--spacing-md);
+  padding-right:   var(--spacing-lg);
+  background:      none;
+  border:          1px solid var(--color-border-grey-light);
+  border-radius:   var(--radius-sm);
+  cursor:          pointer;
+  font-family:     var(--type-family-primary);
+  font-size:       var(--type-size-body-sm);
+  font-weight:     500;
+  color:           var(--color-text-grey-dark);
+  white-space:     nowrap;
+}
+
+.cc-action-btn:hover {
+  background-color: var(--color-bg-lighter);
+}
+
+.cc-action-icon {
+  font-size:   18px;
+  line-height: 1;
+  color:       var(--color-text-grey-dark);
+  flex-shrink: 0;
+}
+
+.cc-footer {
+  display:     flex;
+  align-items: center;
+  gap:         var(--spacing-sm);
+  padding:     var(--spacing-sm-md) var(--spacing-lg);
+  border-top:  1px solid var(--color-border-grey-light);
+}
+
+.cc-agency-logo {
+  height:      24px;
+  width:       auto;
+  flex-shrink: 0;
+}
+
+.cc-agency-name {
+  font-family:  var(--type-family-primary);
+  font-size:    var(--type-size-body-md);
+  line-height:  var(--type-lh-body-md);
+  font-weight:  500;
+  color:        var(--color-text-dark);
+}

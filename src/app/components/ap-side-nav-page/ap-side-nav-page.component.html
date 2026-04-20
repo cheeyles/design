@@ -1,0 +1,51 @@
+<ap-doc-page
+  title="Side Navigation"
+  description="Vertical nav panel for dashboard and admin page routing."
+>
+
+  <ap-doc-section title="Side Navigation - Default">
+    <ap-demo>
+      <ap-demo-group>
+        <div class="side-nav-demo">
+
+          <ap-sidenav-item icon="dashboard"     title="Overview"              [active]="active() === 'overview'"  (itemClick)="active.set('overview')" />
+          <ap-sidenav-item icon="list_alt"      title="My Sales"              [active]="active() === 'sales'"     (itemClick)="active.set('sales')" />
+          <ap-sidenav-item icon="shopping_bag"  title="My Purchases"          [active]="active() === 'purchases'" (itemClick)="active.set('purchases')" />
+          <ap-sidenav-item icon="notifications" title="Notification Centre"   [active]="active() === 'notif'"     (itemClick)="active.set('notif')" />
+
+          <hr class="nav-divider" />
+
+          <ap-sidenav-item
+            icon="person"
+            title="My Account"
+            [expandable]="true"
+            [expanded]="accountOpen()"
+            (expandedChange)="accountOpen.set($event)"
+          />
+          @if (accountOpen()) {
+            <button class="nav-sub-item">Profile</button>
+            <button class="nav-sub-item">Billing</button>
+          }
+
+          <ap-sidenav-item icon="insights" title="Market Insights" [active]="active() === 'insights'" (itemClick)="active.set('insights')" />
+
+          <ap-sidenav-item
+            icon="menu_book"
+            title="Help &amp; Resources"
+            [expandable]="true"
+            [expanded]="helpOpen()"
+            (expandedChange)="helpOpen.set($event)"
+          />
+          @if (helpOpen()) {
+            <button class="nav-sub-item">Documentation</button>
+            <button class="nav-sub-item">Support</button>
+          }
+
+          <ap-sidenav-item icon="settings" title="Communication Settings" [active]="active() === 'settings'" (itemClick)="active.set('settings')" />
+
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+</ap-doc-page>

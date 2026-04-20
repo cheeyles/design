@@ -1,0 +1,33 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Message - Variants">
+    <ap-demo>
+      <ap-demo-group label="Info" [column]="true">
+        <ap-message class="msg-demo" variant="info" heading="Auction closing soon">This auction closes in 2 hours. Make sure your bids are placed.</ap-message>
+      </ap-demo-group>
+      <ap-demo-group label="Announcement" [column]="true">
+        <ap-message class="msg-demo" variant="announcement" heading="Dubbo Spring Sale">New auction catalogue is now available. Entries close 18 Apr 2026.</ap-message>
+      </ap-demo-group>
+      <ap-demo-group label="Error" [column]="true">
+        <ap-message class="msg-demo" variant="error" heading="Something went wrong">We couldn't process your request. Please try again or contact support.</ap-message>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="variantsCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Message - With link">
+    <ap-demo>
+      <ap-demo-group label="Info" [column]="true">
+        <ap-message class="msg-demo" variant="info" heading="Auction closing soon" ctaLabel="View auction">This auction closes in 2 hours. Make sure your bids are placed.</ap-message>
+      </ap-demo-group>
+      <ap-demo-group label="Announcement" [column]="true">
+        <ap-message class="msg-demo" variant="announcement" heading="Dubbo Spring Sale" ctaLabel="View catalogue">New auction catalogue is now available. Entries close 18 Apr 2026.</ap-message>
+      </ap-demo-group>
+      <ap-demo-group label="Error" [column]="true">
+        <ap-message class="msg-demo" variant="error" heading="Something went wrong" ctaLabel="Contact support">We couldn't process your request. Please try again.</ap-message>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="ctaCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

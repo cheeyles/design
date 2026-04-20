@@ -1,0 +1,84 @@
+/* Nav container — large items demo (248px) */
+.nav-demo {
+  width: 248px;
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  padding: var(--spacing-sm) 0;
+  border: 1px solid var(--color-border-grey-light);
+}
+
+/* Icon-only nav container (64px) — matches NavIconItem column */
+.icon-nav-demo {
+  display: inline-flex;
+  flex-direction: column;
+  width: 64px;
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm) 0;
+  border: 1px solid var(--color-border-grey-light);
+}
+
+/* Icon-only button — matches React NavIconItem: 48×48, margin 0-5 / 8px */
+.nav-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: var(--spacing-0-5) 8px;
+  border-radius: var(--radius-sm);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-dark);
+}
+
+.nav-icon-btn--active {
+  background: var(--color-brand-primary-light);
+  color: var(--color-brand-primary-dark);
+}
+
+/* Sub-item — matches React NavSubItem paddingLeft 2xl, margin sm */
+.nav-sub-item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-sm-md);
+  padding-left: var(--spacing-2xl);
+  min-height: calc(var(--size-icon-xl) + 2 * var(--spacing-sm-md));
+  margin: var(--spacing-0-5) var(--spacing-sm);
+  width: calc(100% - 2 * var(--spacing-sm));
+  border-radius: var(--radius-sm);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-md);
+  font-weight: 500;
+  color: var(--color-text-dark);
+}
+
+.nav-sub-item--active {
+  background: var(--color-brand-primary-light);
+  color: var(--color-brand-primary-dark);
+}
+
+/* Footer links container — dark background */
+.footer-links-demo {
+  padding: var(--spacing-lg);
+  background: var(--color-bg-dark);
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.footer-link {
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-sm);
+  line-height: var(--type-lh-body-sm);
+  font-weight: 400;
+  color: var(--color-border-grey-light);
+  text-decoration: none;
+}

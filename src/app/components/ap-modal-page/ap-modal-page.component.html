@@ -1,0 +1,92 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Modal — Sizes">
+    <ap-demo>
+      <ap-demo-group label="Small">
+        <ap-button color="secondary" (clicked)="openSm.set(true)">Open SM</ap-button>
+      </ap-demo-group>
+      <ap-demo-group label="Medium (default)">
+        <ap-button color="primary" (clicked)="openMd.set(true)">Open MD</ap-button>
+      </ap-demo-group>
+      <ap-demo-group label="Large">
+        <ap-button color="secondary" (clicked)="openLg.set(true)">Open LG</ap-button>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="codeMd" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Modal — Destructive">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-button color="destructive" (clicked)="openDestructive.set(true)">Delete listing</ap-button>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="codeDestructive" />
+  </ap-doc-section>
+
+</ap-doc-page>
+
+<!-- SM -->
+<ap-modal
+  [open]="openSm()"
+  title="Confirm action"
+  size="sm"
+  primaryAction="Confirm"
+  secondaryAction="Cancel"
+  (close)="openSm.set(false)"
+  (primaryClick)="openSm.set(false)"
+  (secondaryClick)="openSm.set(false)"
+>
+  <p style="color:var(--color-text-dark);font-family:var(--type-family-primary);font-size:var(--type-size-body-md)">
+    Are you sure you want to continue?
+  </p>
+</ap-modal>
+
+<!-- MD -->
+<ap-modal
+  [open]="openMd()"
+  title="Confirm action"
+  size="md"
+  primaryAction="Confirm"
+  secondaryAction="Cancel"
+  (close)="openMd.set(false)"
+  (primaryClick)="openMd.set(false)"
+  (secondaryClick)="openMd.set(false)"
+>
+  <p style="color:var(--color-text-dark);font-family:var(--type-family-primary);font-size:var(--type-size-body-md)">
+    Are you sure you want to continue? This action cannot be undone.
+  </p>
+</ap-modal>
+
+<!-- LG -->
+<ap-modal
+  [open]="openLg()"
+  title="Confirm action"
+  size="lg"
+  primaryAction="Confirm"
+  secondaryAction="Cancel"
+  (close)="openLg.set(false)"
+  (primaryClick)="openLg.set(false)"
+  (secondaryClick)="openLg.set(false)"
+>
+  <p style="color:var(--color-text-dark);font-family:var(--type-family-primary);font-size:var(--type-size-body-md)">
+    Are you sure you want to continue? This action will affect all linked records and cannot be undone.
+    Please review the details carefully before confirming.
+  </p>
+</ap-modal>
+
+<!-- Destructive -->
+<ap-modal
+  [open]="openDestructive()"
+  title="Delete listing"
+  primaryAction="Delete"
+  secondaryAction="Cancel"
+  [destructive]="true"
+  (close)="openDestructive.set(false)"
+  (primaryClick)="openDestructive.set(false)"
+  (secondaryClick)="openDestructive.set(false)"
+>
+  <p style="color:var(--color-text-dark);font-family:var(--type-family-primary);font-size:var(--type-size-body-md)">
+    This listing will be permanently removed from the system. This cannot be undone.
+  </p>
+</ap-modal>

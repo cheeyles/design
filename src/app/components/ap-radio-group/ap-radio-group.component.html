@@ -1,0 +1,17 @@
+<div class="rg-root">
+  @if (label) {
+    <span class="rg-label">{{ label }}</span>
+  }
+  <div class="rg-options">
+    @for (item of items; track item.value) {
+      <ap-radio
+        [label]="item.label"
+        [value]="item.value"
+        [name]="name"
+        [checked]="value === item.value"
+        [disabled]="disabled || !!item.disabled"
+        (checkedChange)="select(item.value)"
+      />
+    }
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="di-root">
+  @if (label) {
+    <label class="di-label">{{ label }}</label>
+  }
+  <div
+    class="di-wrapper"
+    [class.di-wrapper--error]="state === 'error'"
+    [class.di-wrapper--focused]="focused()"
+    [class.di-wrapper--disabled]="state === 'disabled'"
+  >
+    <span class="icon-outlined di-icon" aria-hidden="true">attach_money</span>
+    <input
+      class="di-field"
+      type="number"
+      [placeholder]="placeholder"
+      [disabled]="state === 'disabled'"
+      (focus)="focused.set(true)"
+      (blur)="focused.set(false)"
+    />
+  </div>
+  @if (hint) {
+    <span class="di-hint" [class.di-hint--error]="state === 'error'">{{ hint }}</span>
+  }
+</div>

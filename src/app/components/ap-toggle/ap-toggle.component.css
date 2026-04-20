@@ -1,0 +1,71 @@
+.tog-root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+}
+
+.tog-root--disabled {
+  cursor: not-allowed;
+}
+
+.tog-native {
+  display: none;
+}
+
+/* Track */
+.tog-track {
+  position: relative;
+  display: inline-block;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-grey-light);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease;
+}
+
+.tog-track--lg  { width: 52px; height: 32px; }
+.tog-track--sm  { width: 44px; height: 24px; }
+.tog-track--on  { background-color: var(--color-brand-primary); }
+
+/* Hover ripple */
+.tog-hover {
+  position: absolute;
+  border-radius: var(--radius-full);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.tog-hover--lg { width: 40px; height: 40px; }
+.tog-hover--sm { width: 30px; height: 30px; }
+
+.tog-hover--on.tog-hover--lg  { left: 16px;  background-color: color-mix(in srgb, var(--color-brand-primary) 8%, transparent); }
+.tog-hover--off.tog-hover--lg { left: -4px;  background-color: color-mix(in srgb, var(--color-text-grey) 8%, transparent); }
+.tog-hover--on.tog-hover--sm  { left: 16px;  background-color: color-mix(in srgb, var(--color-brand-primary) 8%, transparent); }
+.tog-hover--off.tog-hover--sm { left: -2px;  background-color: color-mix(in srgb, var(--color-text-grey) 8%, transparent); }
+
+/* Thumb */
+.tog-thumb {
+  position: absolute;
+  border-radius: var(--radius-full);
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-bg-white);
+  transition: left 0.15s ease, width 0.15s ease, height 0.15s ease;
+}
+
+.tog-thumb--lg-off { width: 16px; height: 16px; left: 8px; }
+.tog-thumb--lg-on  { width: 24px; height: 24px; left: 24px; }
+.tog-thumb--sm-off { width: 12px; height: 12px; left: 7px; }
+.tog-thumb--sm-on  { width: 18px; height: 18px; left: 22px; }
+
+.tog-thumb--checked { box-shadow: var(--shadow-soft); }
+.tog-thumb--disabled-off { opacity: 0.38; }
+
+.tog-label {
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-sm);
+  line-height: var(--type-lh-body-sm);
+  color: var(--color-text-grey-dark);
+}

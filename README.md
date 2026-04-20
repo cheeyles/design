@@ -1,16 +1,76 @@
-# React + Vite
+# AuctionsPlus Design System — Angular
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The single source of truth for the AuctionsPlus UI component library.
 
-Currently, two official plugins are available:
+Built in Angular 17+. The doc site **is** the production shell — every component you see running here is the same component you push into the production dashboard app.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Goal
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Front-end developers come to this site to:
 
-## Expanding the ESLint configuration
+1. **See** a UI component or pattern rendered correctly
+2. **Inspect** the Angular HTML template that produces it
+3. **Copy** that HTML directly into their production feature
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+There is no gap between the demo and production. The same `ap-button`, `ap-sidenav-item`, `ap-top-navigation` components that render in this doc site are the ones that ship.
+
+---
+
+## Running locally
+
+```bash
+npm install
+ng serve
+```
+
+Opens at `http://localhost:4200`
+
+The React design system (visual reference during build) runs at `http://localhost:5173/design/`
+
+---
+
+## Project structure
+
+```
+src/
+  app/
+    components/
+      ap-*/          ← Production Angular components (ap- prefix)
+      ds-*/          ← Doc site shell components (ds- prefix, not for production use)
+    app.ts           ← Root component + doc site shell wiring
+    app.html         ← Doc site template
+  tokens/
+    primitives.css   ← Raw values — never reference in components
+    semantics.css    ← Semantic aliases — always use these
+  styles.css         ← Global styles, fonts, icon utilities, Tailwind directives
+tailwind.config.js   ← Token bridge — maps Tailwind classes to token values
+CLAUDE.md            ← AI build guide
+TOKENS.md            ← Token strategy and mapping reference
+```
+
+---
+
+## Component prefixes
+
+| Prefix | Purpose |
+|--------|---------|
+| `ap-`  | Production components — used in the dashboard app and documented here |
+| `ds-`  | Doc site infrastructure only — not for production use |
+
+---
+
+## Token system
+
+All visual values flow from `primitives.css` → `semantics.css` → `tailwind.config.js`.
+
+No component uses hardcoded hex values or Tailwind default colour classes (e.g. `blue-500`).
+
+See `TOKENS.md` for the full strategy.
+
+---
+
+## Adding a component
+
+See `CLAUDE.md` for the step-by-step build workflow.

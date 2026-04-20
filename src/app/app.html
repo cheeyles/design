@@ -1,0 +1,61 @@
+<div class="ds-shell">
+
+  <!-- ── Top bar ── -->
+  <header class="ds-topbar">
+    <div class="ds-topbar__logo">
+      <img src="auctionsplus-logo.svg" alt="AuctionsPlus" />
+    </div>
+    <div class="ds-topbar__right">
+      <span class="ds-topbar__title">Design System</span>
+      <span class="ds-topbar__star">☆</span>
+    </div>
+  </header>
+
+  <!-- ── Body ── -->
+  <div class="ds-body">
+
+    <!-- ── Sidebar ── -->
+    <nav class="ds-sidebar">
+      <div class="ds-sidebar__nav">
+        @for (section of sections; track section.id) {
+          <button
+            class="ds-nav-icon"
+            [class.ds-nav-icon--active]="activeSection() === section.id"
+            (click)="activeSection.set(section.id)"
+            [title]="section.label"
+          >
+            <span class="ds-nav-icon__symbol">{{ section.matIcon }}</span>
+          </button>
+        }
+      </div>
+      <div class="ds-sidebar__version">
+        <span>v1</span>
+      </div>
+    </nav>
+
+    <!-- ── Main content ── -->
+    <main class="ds-main">
+
+      <!-- Page header — hidden on home -->
+      @if (activeSection() !== 'home') {
+        <div class="ds-page-header">
+          <h1 class="ds-page-header__title">{{ activeMeta?.label }}</h1>
+          <p class="ds-page-header__desc">{{ activeMeta?.desc }}</p>
+        </div>
+      }
+
+      @switch (activeSection()) {
+        @case ('home')        { <ap-ds-home (getStarted)="activeSection.set('foundations')" /> }
+        @case ('foundations') { <ap-foundations-section /> }
+        @case ('components')  { <ap-components-section /> }
+        @case ('patterns')    { <ap-patterns-section /> }
+        @case ('experiences') { <ap-experiences-section /> }
+      }
+
+    </main>
+  </div>
+
+</div>
+
+<!-- Global toast host — renders outside the layout stack -->
+<ap-toast-host />

@@ -1,0 +1,23 @@
+<div
+  class="av-root"
+  [style.width.px]="size"
+  [style.height.px]="size"
+>
+  <div class="av-circle">
+    @if (src) {
+      <img class="av-img" [src]="src" [alt]="alt" />
+    } @else {
+      <span class="icon-outlined av-fallback" [style.font-size]="iconSize" aria-hidden="true">person</span>
+    }
+  </div>
+
+  @if (verified) {
+    <div
+      class="av-badge"
+      [style.width.px]="badgeSize"
+      [style.height.px]="badgeSize"
+    >
+      <span class="icon-solid av-check" [style.font-size]="checkSize" aria-hidden="true">check</span>
+    </div>
+  }
+</div>

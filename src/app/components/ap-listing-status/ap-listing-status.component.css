@@ -1,0 +1,14 @@
+.lstag {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 var(--spacing-sm);
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-green);
+  color: var(--color-text-white);
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-label-md);
+  line-height: var(--type-lh-label-md);
+  font-weight: 500;
+  white-space: nowrap;
+}

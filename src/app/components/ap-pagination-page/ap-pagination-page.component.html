@@ -1,0 +1,42 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Pagination - Few pages">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-pagination
+          [page]="fewPage()"
+          [total]="5"
+          (pageChange)="fewPage.set($event)"
+        />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="fewCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Pagination - Many pages – start">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-pagination
+          [page]="manyStart()"
+          [total]="24"
+          (pageChange)="manyStart.set($event)"
+        />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="manyStartCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Pagination - Many pages – middle">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-pagination
+          [page]="manyMiddle()"
+          [total]="24"
+          (pageChange)="manyMiddle.set($event)"
+        />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="manyMiddleCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

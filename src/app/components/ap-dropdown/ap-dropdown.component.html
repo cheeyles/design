@@ -1,0 +1,18 @@
+<div class="relative inline-block">
+
+  <div (click)="toggle()">
+    <ng-content select="[trigger]" />
+  </div>
+
+  @if (open()) {
+    <div
+      class="panel absolute top-full min-w-[180px] bg-white border border-gray-300
+             rounded shadow-md z-50 overflow-hidden"
+      [class.left-0]="align === 'left'"
+      [class.right-0]="align === 'right'"
+    >
+      <ng-content />
+    </div>
+  }
+
+</div>

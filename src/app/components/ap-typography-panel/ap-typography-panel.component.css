@@ -1,0 +1,24 @@
+.font-preview {
+  flex:        1;
+  font-size:   var(--type-size-title-lg);
+  line-height: var(--type-lh-title-lg);
+  font-family: var(--type-family-primary);
+  color:       var(--color-text-dark);
+  margin:      0;
+}
+
+.weight-preview {
+  flex:        1;
+  font-size:   var(--type-size-title-lg);
+  line-height: var(--type-lh-title-lg);
+  font-family: var(--type-family-primary);
+  color:       var(--color-text-dark);
+  margin:      0;
+}
+
+.type-preview {
+  flex:        1;
+  font-family: var(--type-family-primary);
+  color:       var(--color-text-dark);
+  margin:      0;
+}

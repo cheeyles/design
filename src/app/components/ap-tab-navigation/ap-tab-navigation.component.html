@@ -1,0 +1,23 @@
+<div class="tab-bar">
+  @for (tab of tabs; track $index) {
+    <button
+      type="button"
+      class="tab-btn"
+      [class.tab-btn--active]="$index === activeIndex"
+      [attr.aria-selected]="$index === activeIndex"
+      (click)="select($index)"
+    >
+      @if (iconOf(tab)) {
+        <span class="tab-icon" aria-hidden="true">{{ iconOf(tab) }}</span>
+      }
+      {{ labelOf(tab) }}
+      @if (badgeOf(tab) !== undefined) {
+        <span
+          class="tab-badge"
+          [class.tab-badge--active]="$index === activeIndex"
+          [class.tab-badge--single]="isSingle(badgeOf(tab)!)"
+        >{{ badgeDisplay(badgeOf(tab)!) }}</span>
+      }
+    </button>
+  }
+</div>

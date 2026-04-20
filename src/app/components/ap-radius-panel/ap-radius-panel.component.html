@@ -1,0 +1,20 @@
+<div class="ds-panel">
+  <div class="ds-card" style="padding:0;overflow:hidden">
+    <div class="ds-group-header"><span class="ds-group-header__label">Border Radius</span></div>
+    @for (r of radii; track r.token) {
+      <div class="ds-token-row">
+        <div class="ds-token-cell">
+          <code class="ds-token-name">{{ r.label }}</code>
+          <span class="ds-token-raw">{{ r.raw }}</span>
+        </div>
+        <div class="swatch-cell">
+          <div class="radius-swatch"
+               [style.border-radius]="'var(' + r.token + ')'"
+               [style.background-color]="'var(--color-brand-primary)'">
+          </div>
+        </div>
+        <div class="ds-token-preview"></div>
+      </div>
+    }
+  </div>
+</div>

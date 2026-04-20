@@ -1,0 +1,20 @@
+.pkg-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-0-5) var(--spacing-xs);
+  border-radius: var(--radius-xs);
+  background-color: var(--color-bg-grey-light);
+  color: var(--color-text-grey-dark);
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-label-md);
+  line-height: var(--type-lh-label-md);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.pkg-tag__icon {
+  font-size: var(--size-icon-xs);
+  line-height: 1;
+  flex-shrink: 0;
+}

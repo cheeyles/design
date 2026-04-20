@@ -1,0 +1,18 @@
+<nav class="commodity-nav">
+  @for (item of items; track item.id) {
+    <button
+      type="button"
+      class="commodity-btn"
+      [class.commodity-btn--active]="value === item.id"
+      (click)="valueChange.emit(item.id)"
+    >
+      <div
+        class="commodity-icon"
+        [style.background-color]="value === item.id ? 'var(--color-brand-primary)' : 'var(--color-text-grey-dark)'"
+        [style.-webkit-mask-image]="'url(' + iconSrc(item.id) + ')'"
+        [style.mask-image]="'url(' + iconSrc(item.id) + ')'"
+      ></div>
+      <span class="commodity-label">{{ item.label }}</span>
+    </button>
+  }
+</nav>

@@ -1,0 +1,91 @@
+.note {
+  padding:          var(--spacing-md);
+  background-color: var(--color-bg-light);
+  margin:           var(--spacing-md);
+  border-radius:    var(--radius-md);
+}
+
+.note__text {
+  margin:      0;
+  font-size:   var(--type-size-body-sm);
+  color:       var(--color-text-grey-dark);
+  line-height: var(--type-lh-body-sm);
+}
+
+.layout-bar {
+  height:           8px;
+  max-width:        100%;
+  min-width:        4px;
+  background-color: var(--color-brand-primary);
+  border-radius:    var(--radius-xs);
+}
+
+.layout-raw {
+  width:       60px;
+  flex-shrink: 0;
+  font-size:   var(--type-size-body-md);
+  color:       var(--color-text-grey-dark);
+  font-family: monospace;
+  text-align:  right;
+}
+
+.layout-demo-wrap {
+  padding: var(--spacing-lg);
+}
+
+.layout-demo {
+  display:       flex;
+  gap:           var(--layout-content-gap);
+  max-width:     100%;
+  border:        1px solid var(--color-border-grey-light);
+  border-radius: var(--radius-md);
+  overflow:      hidden;
+}
+
+.layout-sidebar {
+  width:            var(--layout-sidebar-width);
+  flex-shrink:      0;
+  background-color: var(--color-bg-default);
+  padding:          var(--spacing-md);
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+}
+
+.layout-sidebar__label {
+  font-size:   var(--type-size-label-md);
+  color:       var(--color-text-white);
+  font-family: monospace;
+  text-align:  center;
+}
+
+.layout-content {
+  flex:             1;
+  padding:          var(--layout-page-padding-x);
+  background-color: var(--color-bg-light);
+  display:          flex;
+  flex-direction:   column;
+  gap:              var(--layout-section-gap);
+}
+
+.layout-section {
+  height:           32px;
+  background-color: var(--color-bg-grey-light);
+  border-radius:    var(--radius-sm);
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+}
+
+.layout-section__label {
+  font-size:   var(--type-size-label-md);
+  color:       var(--color-text-grey-dark);
+  font-family: monospace;
+}
+
+.layout-hint {
+  margin:      var(--spacing-sm) 0 0;
+  font-size:   var(--type-size-label-md);
+  color:       var(--color-text-grey);
+  font-family: monospace;
+}

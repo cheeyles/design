@@ -1,0 +1,43 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Empty State — With action">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-empty-state
+          icon="inbox"
+          title="No lots found"
+          message="Try adjusting your filters or search term."
+          actionLabel="Clear filters"
+        />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="code" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Empty State — No action">
+    <ap-demo>
+      <ap-demo-group label="No sales yet">
+        <ap-empty-state
+          icon="gavel"
+          title="No sales yet"
+          message="Your upcoming auctions will appear here once scheduled."
+        />
+      </ap-demo-group>
+      <ap-demo-group label="No results">
+        <ap-empty-state
+          icon="search_off"
+          title="No results"
+          message="No auctions match your current search."
+        />
+      </ap-demo-group>
+      <ap-demo-group label="No notifications">
+        <ap-empty-state
+          icon="notifications_off"
+          title="All caught up"
+          message="You have no new notifications."
+        />
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+</ap-doc-page>

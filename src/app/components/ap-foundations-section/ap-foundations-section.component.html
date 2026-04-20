@@ -1,0 +1,33 @@
+<div class="ds-section-layout">
+
+  <nav class="ds-section-nav">
+    @for (item of nav; track item.id) {
+      <button
+        class="ds-section-nav__item"
+        [class.ds-section-nav__item--active]="active() === item.id"
+        (click)="active.set(item.id)"
+      >{{ item.label }}</button>
+    }
+  </nav>
+
+  <div class="ds-section-content">
+    @switch (active()) {
+      @case ('colours')      { <ap-colours-panel />    }
+      @case ('typography')   { <ap-typography-panel /> }
+      @case ('icons')        { <ap-icons-panel />      }
+      @case ('logo')         { <ap-logo-panel />       }
+      @case ('spacing')      { <ap-spacing-panel />    }
+      @case ('sizing')       { <ap-sizing-panel />     }
+      @case ('shadows')      { <ap-shadows-panel />    }
+      @case ('radius')       { <ap-radius-panel />     }
+      @case ('border-width') { <ap-border-width-panel /> }
+      @case ('opacity')      { <ap-opacity-panel />    }
+      @case ('transition')   { <ap-transition-panel /> }
+      @case ('z-index')      { <ap-z-index-panel />    }
+      @case ('breakpoints')  { <ap-breakpoints-panel /> }
+      @case ('layout')       { <ap-layout-panel />     }
+      @default               { <ap-coming-soon [title]="activeLabel" /> }
+    }
+  </div>
+
+</div>

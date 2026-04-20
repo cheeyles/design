@@ -1,0 +1,36 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Scrollbar - Vertical">
+    <ap-demo>
+      <ap-demo-group>
+        <div class="sb-demo-v">
+          @for (label of navLabels; track label) {
+            <button
+              class="sb-nav-item"
+              [class.sb-nav-item--active]="activeNav() === label"
+              (click)="activeNav.set(label)"
+            >{{ label }}</button>
+          }
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="cssCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Scrollbar - Horizontal">
+    <ap-demo>
+      <ap-demo-group>
+        <div class="sb-demo-h">
+          @for (label of navLabels; track label) {
+            <button
+              class="sb-tab"
+              [class.sb-tab--active]="activeNav() === label"
+              (click)="activeNav.set(label)"
+            >{{ label }}</button>
+          }
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+</ap-doc-page>

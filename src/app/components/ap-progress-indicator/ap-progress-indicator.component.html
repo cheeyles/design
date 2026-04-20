@@ -1,0 +1,23 @@
+<div class="pi-root">
+
+  @if (label || showValue) {
+    <div class="pi-label-row">
+      @if (label) {
+        <span class="pi-label">{{ label }}</span>
+      }
+      @if (showValue) {
+        <span class="pi-value">{{ pct }}%</span>
+      }
+    </div>
+  }
+
+  <div class="pi-track" [style.height]="trackH">
+    <div
+      class="pi-fill"
+      [style.width]="pct + '%'"
+      [style.background-color]="color"
+      [style.height]="trackH"
+    ></div>
+  </div>
+
+</div>

@@ -1,0 +1,43 @@
+@if (open) {
+  <div class="drawer-root">
+
+    <!-- Backdrop -->
+    <div class="drawer-backdrop" (click)="close.emit()"></div>
+
+    <!-- Panel -->
+    <div
+      class="drawer-panel"
+      [style.width]="width"
+      role="dialog"
+      aria-modal="true"
+      [attr.aria-label]="title"
+    >
+
+      <!-- Header -->
+      <div class="drawer-header">
+        <span class="drawer-title">{{ title }}</span>
+        <button class="drawer-close" aria-label="Close" (click)="close.emit()">
+          <span class="icon-outlined" style="font-size:22px;line-height:1;color:var(--color-text-grey)" aria-hidden="true">close</span>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="drawer-body">
+        <ng-content />
+      </div>
+
+      <!-- Footer -->
+      @if (primaryAction || secondaryAction) {
+        <div class="drawer-footer">
+          @if (secondaryAction) {
+            <ap-button color="secondary" style="flex:1" (clicked)="secondaryClick.emit()">{{ secondaryAction }}</ap-button>
+          }
+          @if (primaryAction) {
+            <ap-button color="primary" style="flex:1" (clicked)="primaryClick.emit()">{{ primaryAction }}</ap-button>
+          }
+        </div>
+      }
+
+    </div>
+  </div>
+}

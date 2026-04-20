@@ -1,0 +1,92 @@
+<ap-doc-page>
+
+  <!-- Catalogue header -->
+  <ap-doc-section title="Page Header - Catalogue header">
+    <ap-demo>
+      <ap-demo-group>
+        <div class="catalogue-header">
+          <div class="logo-circle">
+            <ap-logo variant="light" [iconOnly]="true" width="48px" />
+          </div>
+          <div class="ch-content">
+            <div class="ch-left">
+              <span class="ch-title">Eastern States Cattle Sale</span>
+              <div class="ch-meta">
+                <span class="icon-outlined ch-meta-icon">update</span>
+                <span class="ch-meta-text">19 hours 32 minutes</span>
+              </div>
+            </div>
+            <div class="ch-right">
+              <div class="ch-actions">
+                <button class="ch-icon-btn" aria-label="Favourite"><span class="icon-outlined" style="font-size:22px;line-height:1;color:var(--color-text-grey-dark)">star</span></button>
+                <button class="ch-icon-btn" aria-label="Share"><span class="icon-outlined" style="font-size:22px;line-height:1;color:var(--color-text-grey-dark)">ios_share</span></button>
+                <button class="ch-icon-btn" aria-label="More"><span class="icon-outlined" style="font-size:22px;line-height:1;color:var(--color-text-grey-dark)">more_vert</span></button>
+              </div>
+              <button class="ch-cta">View Lots</button>
+            </div>
+          </div>
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+  <!-- Stud profile header -->
+  <ap-doc-section title="Page Header - Stud profile header">
+    <ap-demo>
+      <ap-demo-group>
+        <div class="stud-header">
+          <div class="logo-circle">
+            <span class="icon-outlined" style="font-size:40px;line-height:1;color:var(--color-text-grey-light)">business</span>
+          </div>
+          <div class="ch-content">
+            <div class="ch-left">
+              <span class="ch-title">Te Mania Angus Northern Spring Bull Sale</span>
+              <div class="sh-meta">
+                <div class="ch-meta">
+                  <span class="icon-outlined ch-meta-icon">location_on</span>
+                  <span class="ch-meta-text">Victoria, Australia</span>
+                </div>
+                <div class="ch-meta">
+                  <span class="icon-outlined" style="font-size:18px;line-height:1;color:var(--color-brand-primary)">language</span>
+                  <span class="sh-link">www.temaniaangus.com</span>
+                </div>
+              </div>
+              <div class="sh-social">
+                @for (label of ['Facebook','Instagram','LinkedIn']; track label) {
+                  <button class="sh-social-btn" [attr.aria-label]="label">
+                    <span class="icon-outlined" style="font-size:14px;line-height:1;color:var(--color-text-grey-dark)">share</span>
+                  </button>
+                }
+              </div>
+            </div>
+            <div class="ch-right">
+              <div class="ch-actions">
+                <button class="ch-icon-btn" aria-label="Favourite"><span class="icon-outlined" style="font-size:22px;line-height:1;color:var(--color-text-grey-dark)">star</span></button>
+                <button class="ch-icon-btn" aria-label="Share"><span class="icon-outlined" style="font-size:22px;line-height:1;color:var(--color-text-grey-dark)">ios_share</span></button>
+                <button class="ch-icon-btn" aria-label="More"><span class="icon-outlined" style="font-size:22px;line-height:1;color:var(--color-text-grey-dark)">more_vert</span></button>
+              </div>
+              <button class="ch-cta">View Lots</button>
+            </div>
+          </div>
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+  <!-- Lot detail header -->
+  <ap-doc-section title="Page Header - Lot detail header">
+    <ap-demo>
+      <ap-demo-group>
+        <div class="ldh-wrapper">
+          <ap-lot-detail-header
+            title="Pepperton Poll Dorset - Tag 512"
+            location="Elmore, VIC"
+            lotNumber="Lot 12"
+            ctaLabel="Connect to Bid"
+          />
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+</ap-doc-page>

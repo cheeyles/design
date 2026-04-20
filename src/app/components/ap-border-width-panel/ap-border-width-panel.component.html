@@ -1,0 +1,19 @@
+<div class="ds-panel">
+  <div class="ds-card" style="padding:0;overflow:hidden">
+    <div class="ds-group-header"><span class="ds-group-header__label">Border Width</span></div>
+    @for (bw of borderWidths; track bw.token) {
+      <div class="ds-token-row">
+        <div class="ds-token-cell">
+          <code class="ds-token-name">{{ bw.label }}</code>
+          <span class="ds-token-raw">{{ bw.raw }}</span>
+        </div>
+        <div class="swatch-cell">
+          <div class="border-swatch"
+               [style.border]="'var(' + bw.token + ') solid var(--color-brand-primary)'">
+          </div>
+        </div>
+        <span class="ds-token-desc">{{ bw.use }}</span>
+      </div>
+    }
+  </div>
+</div>

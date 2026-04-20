@@ -1,0 +1,38 @@
+<div class="ds-home">
+  <div class="ds-home__frame">
+
+    <!-- Hero content -->
+    <div class="ds-home__hero">
+      <h1 class="ds-home__headline">
+        AuctionsPlus
+        <span class="ds-home__headline-gradient">Design System</span>
+      </h1>
+      <p class="ds-home__subtitle">
+        A UI component library crafted for consistency, built for ag
+      </p>
+      <ap-button color="primary" style="margin-top:var(--spacing-lg)" (clicked)="getStarted.emit()">
+        Get Started
+      </ap-button>
+    </div>
+
+    <!-- Divider -->
+    <div class="ds-home__divider"></div>
+
+    <!-- Ticker -->
+    <div class="ds-home__ticker">
+      <div class="ds-home__ticker-track">
+        @for (item of tickerItems; track $index) {
+          <span class="ds-home__ticker-item">{{ item }}</span>
+        }
+      </div>
+    </div>
+
+    <!-- Frame decoration -->
+    <div class="ds-home__outline"></div>
+    <div class="ds-home__guide ds-home__guide--top"></div>
+    <div class="ds-home__guide ds-home__guide--bottom"></div>
+    <div class="ds-home__guide ds-home__guide--left"></div>
+    <div class="ds-home__guide ds-home__guide--right"></div>
+
+  </div>
+</div>

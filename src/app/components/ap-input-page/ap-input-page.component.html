@@ -1,0 +1,108 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Text Input - Text">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-input class="demo-input" label="Default" placeholder="Placeholder text" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-input class="demo-input" label="Error" placeholder="Placeholder text" state="error" hint="This field is required" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-input class="demo-input" label="Disabled" placeholder="Placeholder text" state="disabled" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="textCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Text Input - Password">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-input class="demo-input" type="password" label="Password" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-input class="demo-input" type="password" label="Error" state="error" hint="Password must be at least 8 characters" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-input class="demo-input" type="password" label="Disabled" state="disabled" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="passwordCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Text Input - Email">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-input class="demo-input" type="email" label="Email address" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-input class="demo-input" type="email" label="Error" state="error" hint="Please enter a valid email address" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-input class="demo-input" type="email" label="Disabled" state="disabled" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="emailCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Text Input - URL">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-input class="demo-input" type="url" label="Website" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-input class="demo-input" type="url" label="Error" state="error" hint="Please enter a valid URL" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-input class="demo-input" type="url" label="Disabled" state="disabled" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="urlCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Text Input - Telephone">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-input class="demo-input" type="tel" label="Phone number" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-input class="demo-input" type="tel" label="Error" state="error" hint="Please enter a valid phone number" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-input class="demo-input" type="tel" label="Disabled" state="disabled" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="telCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Text Input - Text - Small">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-input class="demo-input demo-input--sm" label="Default" size="sm" placeholder="Placeholder text" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-input class="demo-input demo-input--sm" label="Error" size="sm" state="error" hint="This field is required" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-input class="demo-input demo-input--sm" label="Disabled" size="sm" state="disabled" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="smallCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Text Input - Text Area">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-text-area class="demo-input" label="Description" placeholder="Enter a description…" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-text-area class="demo-input" label="Error" state="error" hint="This field is required" />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-text-area class="demo-input" label="Disabled" state="disabled" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="textAreaCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

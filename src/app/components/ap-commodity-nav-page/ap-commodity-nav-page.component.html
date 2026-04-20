@@ -1,0 +1,17 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Commodity Navigation - Default">
+    <ap-demo>
+      <ap-demo-group>
+        <div class="commodity-demo">
+          <ap-commodity-nav
+            [value]="selected()"
+            (valueChange)="selected.set($event)"
+          />
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="defaultCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

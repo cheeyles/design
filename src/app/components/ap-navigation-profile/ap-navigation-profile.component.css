@@ -1,0 +1,5 @@
+/* Nudge verified badge slightly outside avatar circle */
+.verified-badge {
+  margin-bottom: calc(-1 * var(--spacing-0-5));
+  margin-right:  calc(-1 * var(--spacing-0-5));
+}

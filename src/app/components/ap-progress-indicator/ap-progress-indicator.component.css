@@ -1,0 +1,41 @@
+.pi-root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+.pi-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pi-label {
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-sm);
+  line-height: var(--type-lh-body-sm);
+  font-weight: 500;
+  color: var(--color-text-dark);
+}
+
+.pi-value {
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-sm);
+  line-height: var(--type-lh-body-sm);
+  font-weight: 400;
+  color: var(--color-text-grey-dark);
+  margin-left: auto;
+}
+
+.pi-track {
+  width: 100%;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-grey-light);
+  overflow: hidden;
+}
+
+.pi-fill {
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}

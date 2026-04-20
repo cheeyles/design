@@ -1,0 +1,54 @@
+<div class="ds-panel">
+  @for (group of groups; track group.label) {
+    <div class="ds-card" style="padding:0;overflow:hidden">
+      <div class="ds-group-header"><span class="ds-group-header__label">{{ group.label }}</span></div>
+      @for (row of group.rows; track $index) {
+        <div class="colour-row" [class.colour-row--border-top]="$index > 0">
+          @for (tok of row.items; track $index) {
+            <div class="colour-col">
+              @if (tok) {
+                <div class="ds-colour-tile">
+                  <button
+                    type="button"
+                    class="ds-colour-tile__copy-btn"
+                    title="Copy token name"
+                    (click)="copyToken(tok.name)"
+                  >
+                    <span class="ds-colour-tile__copy-icon"
+                          [class.ds-colour-tile__copy-icon--copied]="copiedToken() === tok.name">
+                      {{ copiedToken() === tok.name ? 'check' : 'content_copy' }}
+                    </span>
+                  </button>
+
+                  @if (group.kind === 'fill') {
+                    <div class="ds-colour-tile__swatch"
+                         [style.background-color]="'var(' + tok.name + ')'">
+                    </div>
+                  } @else if (group.kind === 'text') {
+                    <div class="ds-colour-tile__swatch ds-colour-tile__swatch--text">
+                      <span class="text-swatch-aa" [style.color]="'var(' + tok.name + ')'">Aa</span>
+                    </div>
+                  } @else {
+                    <div class="ds-colour-tile__swatch ds-colour-tile__swatch--border"
+                         [style.border]="'2px solid var(' + tok.name + ')'">
+                    </div>
+                  }
+
+                  <div class="ds-colour-tile__meta">
+                    <div class="ds-colour-tile__label">{{ shortName(tok.name) }}</div>
+                    <div class="ds-colour-tile__hex ds-token-raw">{{ tok.hex }}</div>
+                  </div>
+                </div>
+              } @else {
+                <div class="colour-spacer"></div>
+              }
+              @if ($index < 3) {
+                <div class="colour-divider"></div>
+              }
+            </div>
+          }
+        </div>
+      }
+    </div>
+  }
+</div>

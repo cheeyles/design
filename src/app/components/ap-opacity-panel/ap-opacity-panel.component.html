@@ -1,0 +1,20 @@
+<div class="ds-panel">
+  <div class="ds-card" style="padding:0;overflow:hidden">
+    <div class="ds-group-header"><span class="ds-group-header__label">Opacity</span></div>
+    @for (op of opacities; track op.token) {
+      <div class="ds-token-row">
+        <div class="ds-token-cell">
+          <code class="ds-token-name">{{ op.label }}</code>
+          <span class="ds-token-raw">{{ op.raw }}</span>
+        </div>
+        <div class="swatch-cell">
+          <div class="opacity-wrap">
+            <div class="opacity-checker"></div>
+            <div class="opacity-fill" [style.opacity]="'var(' + op.token + ')'"></div>
+          </div>
+        </div>
+        <span class="ds-token-desc">{{ op.use }}</span>
+      </div>
+    }
+  </div>
+</div>

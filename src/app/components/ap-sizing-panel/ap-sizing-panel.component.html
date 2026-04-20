@@ -1,0 +1,38 @@
+<div class="ds-panel">
+  <div class="ds-card" style="padding:0;overflow:hidden">
+    <div class="ds-group-header"><span class="ds-group-header__label">Icon Sizes</span></div>
+    @for (row of iconSizes; track row.token) {
+      <div class="ds-token-row">
+        <div class="ds-token-cell">
+          <code class="ds-token-name">{{ row.label }}</code>
+          <span class="ds-token-raw">{{ row.raw }}</span>
+        </div>
+        <div class="swatch-cell">
+          <div class="size-swatch"
+               [style.width]="'var(' + row.token + ')'"
+               [style.height]="'var(' + row.token + ')'">
+          </div>
+        </div>
+        <span class="ds-token-desc">{{ row.use }}</span>
+      </div>
+    }
+  </div>
+  <div class="ds-card" style="padding:0;overflow:hidden">
+    <div class="ds-group-header"><span class="ds-group-header__label">Button Heights</span></div>
+    @for (row of btnSizes; track row.token) {
+      <div class="ds-token-row">
+        <div class="ds-token-cell">
+          <code class="ds-token-name">{{ row.label }}</code>
+          <span class="ds-token-raw">{{ row.raw }}</span>
+        </div>
+        <div class="swatch-cell">
+          <div class="size-swatch"
+               [style.width]="'var(' + row.token + ')'"
+               [style.height]="'var(' + row.token + ')'">
+          </div>
+        </div>
+        <span class="ds-token-desc">{{ row.use }}</span>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,141 @@
+.icons-panel {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--spacing-lg);
+}
+
+.icon-row {
+  display:     flex;
+  align-items: stretch;
+}
+
+.icon-row--border-top {
+  border-top: var(--border-width-default) solid var(--color-border-grey-light);
+}
+
+.icon-col {
+  display:     flex;
+  flex:        1 0 0;
+  align-items: stretch;
+}
+
+.icon-divider {
+  width:            1px;
+  background-color: var(--color-border-grey-light);
+  align-self:       stretch;
+  flex-shrink:      0;
+}
+
+.icon-spacer {
+  flex: 1;
+}
+
+/* ── Tile shared ─── */
+
+.icon-tile {
+  position:       relative;
+  flex:           1;
+  display:        flex;
+  flex-direction: column;
+}
+
+.icon-tile__copy-btn {
+  display:          none;
+  position:         absolute;
+  top:              var(--spacing-xs);
+  right:            var(--spacing-xs);
+  width:            24px;
+  height:           24px;
+  align-items:      center;
+  justify-content:  center;
+  background-color: var(--color-bg-white);
+  border:           var(--border-width-default) solid var(--color-border-grey-light);
+  border-radius:    var(--radius-sm);
+  cursor:           pointer;
+  padding:          0;
+}
+
+.icon-tile:hover .icon-tile__copy-btn {
+  display: flex;
+}
+
+.icon-tile__copy-icon {
+  font-family: 'Material Symbols Rounded';
+  font-size:   14px;
+  line-height: 1;
+  color:       var(--color-text-grey-dark);
+  user-select: none;
+  display:     block;
+}
+
+.icon-tile__copy-icon--copied {
+  color: var(--color-status-green);
+}
+
+.icon-tile__name {
+  font-size:    var(--type-size-body-md);
+  color:        var(--color-text-dark);
+  word-break:   break-all;
+  line-height:  var(--type-lh-body-sm);
+}
+
+/* ── Commodity ─── */
+
+.icon-tile--commodity {
+  gap:     var(--spacing-sm);
+  padding: var(--spacing-lg);
+}
+
+.commodity-box {
+  width:         40px;
+  height:        40px;
+  display:       flex;
+  align-items:   center;
+  justify-content: center;
+  border:        1px solid var(--color-border-grey-light);
+  border-radius: var(--radius-sm);
+}
+
+.commodity-icon {
+  width:                    24px;
+  height:                   24px;
+  background-color:         var(--color-text-dark);
+  -webkit-mask-size:        contain;
+  mask-size:                contain;
+  -webkit-mask-repeat:      no-repeat;
+  mask-repeat:              no-repeat;
+  -webkit-mask-position:    center;
+  mask-position:            center;
+  flex-shrink:              0;
+}
+
+/* ── Material ─── */
+
+.icon-tile--material {
+  gap:     var(--spacing-xs);
+  padding: var(--spacing-md);
+}
+
+.material-icon-wrap {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  width:           40px;
+  height:          40px;
+  border:          1px solid var(--color-border-grey-light);
+  border-radius:   var(--radius-sm);
+}
+
+.material-icon {
+  font-family: 'Material Symbols Rounded';
+  font-size:   24px;
+  line-height: 1;
+  color:       var(--color-text-dark);
+  user-select: none;
+}
+
+.icon-tile__weight {
+  font-size:   var(--type-size-body-sm);
+  color:       var(--color-text-grey-dark);
+  line-height: var(--type-lh-body-sm);
+}

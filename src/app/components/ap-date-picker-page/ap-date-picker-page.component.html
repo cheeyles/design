@@ -1,0 +1,34 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Date Picker - States">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-date-picker
+          class="demo-input"
+          label="Sale date"
+          [value]="date1()"
+          (valueChange)="date1.set($event)"
+        />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-date-picker
+          class="demo-input"
+          label="Error"
+          state="error"
+          hint="Please select a date"
+          [value]="date2()"
+          (valueChange)="date2.set($event)"
+        />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-date-picker
+          class="demo-input"
+          label="Disabled"
+          state="disabled"
+        />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="statesCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

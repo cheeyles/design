@@ -1,0 +1,37 @@
+<div class="cc-root">
+
+  <!-- Top section: identity + contact buttons -->
+  <div class="cc-body">
+
+    <!-- Agent identity -->
+    <div class="cc-identity">
+      <ap-avatar [src]="avatarSrc" [alt]="agentName" [size]="56" />
+      <div class="cc-name-block">
+        <span class="cc-name">{{ agentName }}</span>
+        <span class="cc-role">{{ agentRole }}</span>
+      </div>
+    </div>
+
+    <!-- Contact buttons -->
+    <div class="cc-actions">
+      <button class="cc-action-btn" type="button" (click)="phone.emit()">
+        <span class="icon-outlined cc-action-icon" aria-hidden="true">call</span>
+        Phone
+      </button>
+      <button class="cc-action-btn" type="button" (click)="email.emit()">
+        <span class="icon-outlined cc-action-icon" aria-hidden="true">mail</span>
+        Email
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Agency footer -->
+  <div class="cc-footer">
+    @if (agencyLogo) {
+      <img class="cc-agency-logo" [src]="agencyLogo" [alt]="agencyName" />
+    }
+    <span class="cc-agency-name">{{ agencyName }}</span>
+  </div>
+
+</div>

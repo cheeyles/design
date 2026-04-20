@@ -1,0 +1,37 @@
+/* Host provides the outer spacing — matches React NavItem margin: var(--spacing-0-5) var(--spacing-sm) */
+:host {
+  display: block;
+  padding: var(--spacing-0-5) var(--spacing-sm);
+}
+
+/* Nav item link / button — padding + gap match React NavItem */
+.item {
+  padding: var(--spacing-sm-md);
+  gap: var(--spacing-sm-md);
+}
+
+/* ── Collapsed / icon-only mode ─────────────────────────────────
+   Matches React NavIconItem: 48×48px, centered, margin 0-5 / 8px */
+
+:host.is-collapsed .item {
+  width: 48px;
+  height: 48px;
+  justify-content: center;
+  padding: 0;
+  gap: 0;
+}
+
+/* Active state — button mode (link mode uses routerLinkActive) */
+:host.is-active .item {
+  background-color: var(--color-brand-primary-light);
+  color: var(--color-brand-primary-dark);
+}
+
+/* Chevron rotation for expandable items */
+.chevron {
+  transition: transform 200ms ease;
+}
+
+.chevron--open {
+  transform: rotate(180deg);
+}

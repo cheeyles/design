@@ -1,0 +1,33 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Toggle - Sizes">
+    <ap-demo>
+      <ap-demo-group label="Large — Off">
+        <ap-toggle [checked]="lgOff()" (checkedChange)="lgOff.set($event)" />
+      </ap-demo-group>
+      <ap-demo-group label="Large — On">
+        <ap-toggle [checked]="lgOn()" (checkedChange)="lgOn.set($event)" />
+      </ap-demo-group>
+      <ap-demo-group label="Small — Off">
+        <ap-toggle size="sm" [checked]="smOff()" (checkedChange)="smOff.set($event)" />
+      </ap-demo-group>
+      <ap-demo-group label="Small — On">
+        <ap-toggle size="sm" [checked]="smOn()" (checkedChange)="smOn.set($event)" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="sizesCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Toggle - With Label">
+    <ap-demo>
+      <ap-demo-group label="With label">
+        <ap-toggle label="Enable notifications" [checked]="labeled()" (checkedChange)="labeled.set($event)" />
+      </ap-demo-group>
+      <ap-demo-group label="Disabled">
+        <ap-toggle label="Disabled option" [disabled]="true" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="labelCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

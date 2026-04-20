@@ -1,0 +1,4 @@
+/* Dropdown panel — offset below trigger */
+.panel {
+  margin-top: var(--spacing-xs);
+}

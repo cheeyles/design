@@ -106,10 +106,10 @@
 
   --primitive-font-family: 'Roboto', sans-serif;
 
-  --primitive-font-weight-regular:  Regular;
-  --primitive-font-weight-medium:   Medium;
-  --primitive-font-weight-semibold: Semi Bold;
-  --primitive-font-weight-bold:     Bold;
+  --primitive-font-weight-regular:  400;
+  --primitive-font-weight-medium:   500;
+  --primitive-font-weight-semibold: 600;
+  --primitive-font-weight-bold:     700;
 
   --primitive-font-size-10: 10px;
   --primitive-font-size-12: 12px;

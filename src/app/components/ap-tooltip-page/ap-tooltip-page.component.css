@@ -1,0 +1,7 @@
+.tt-demo-target {
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-sm);
+  color: var(--color-text-grey-dark);
+  text-decoration: underline dotted;
+  cursor: default;
+}

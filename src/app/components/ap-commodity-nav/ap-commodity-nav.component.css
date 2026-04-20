@@ -1,0 +1,52 @@
+.commodity-nav {
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  background-color: var(--color-bg-white);
+  border-bottom: var(--border-width-default) solid var(--color-border-grey-light);
+  padding-inline: var(--spacing-sm);
+}
+
+.commodity-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-md);
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.commodity-btn:hover,
+.commodity-btn--active {
+  background-color: var(--color-bg-light);
+}
+
+.commodity-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  transition: background-color 0.15s;
+}
+
+.commodity-label {
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-md);
+  line-height: var(--type-lh-body-md);
+  font-weight: 400;
+  color: var(--color-text-grey);
+  white-space: nowrap;
+}

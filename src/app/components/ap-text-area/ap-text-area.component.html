@@ -1,0 +1,24 @@
+<div class="input-field">
+  @if (label) {
+    <label class="input-label">{{ label }}</label>
+  }
+  <div
+    class="input-wrapper"
+    [class.input-wrapper--focused]="focused()"
+    [class.input-wrapper--error]="state === 'error'"
+    [class.input-wrapper--disabled]="state === 'disabled'"
+  >
+    <textarea
+      class="input-control"
+      [rows]="rows"
+      [placeholder]="placeholder"
+      [disabled]="state === 'disabled'"
+      [style.resize]="resize"
+      (focus)="focused.set(true)"
+      (blur)="focused.set(false)"
+    ></textarea>
+  </div>
+  @if (hint) {
+    <span class="input-hint" [class.input-hint--error]="state === 'error'">{{ hint }}</span>
+  }
+</div>

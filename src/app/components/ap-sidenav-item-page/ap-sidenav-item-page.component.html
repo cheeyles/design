@@ -1,0 +1,83 @@
+<ap-doc-page
+  description="Navigation elements for sidebar, header, and footer contexts."
+>
+
+  <ap-doc-section title="Nav Items - Dashboard sidebar - Nav item - Large">
+    <ap-demo>
+      <ap-demo-group [column]="true">
+        <div class="nav-demo">
+          <ap-sidenav-item icon="dashboard"    title="Overview"     [active]="activeNav() === 'Overview'"     (itemClick)="activeNav.set('Overview')" />
+          <ap-sidenav-item icon="list_alt"     title="My Sales"     [active]="activeNav() === 'My Sales'"     (itemClick)="activeNav.set('My Sales')" />
+          <ap-sidenav-item icon="shopping_bag" title="My Purchases" [active]="activeNav() === 'My Purchases'" (itemClick)="activeNav.set('My Purchases')" />
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+  <ap-doc-section title="Nav Items - Dashboard sidebar - Nav item - Icon">
+    <ap-demo>
+      <ap-demo-group [column]="true">
+        <div class="icon-nav-demo">
+          <button class="nav-icon-btn" [class.nav-icon-btn--active]="activeIcon() === 'dashboard'"    (click)="activeIcon.set('dashboard')">
+            <span class="icon-outlined">dashboard</span>
+          </button>
+          <button class="nav-icon-btn" [class.nav-icon-btn--active]="activeIcon() === 'list_alt'"     (click)="activeIcon.set('list_alt')">
+            <span class="icon-outlined">list_alt</span>
+          </button>
+          <button class="nav-icon-btn" [class.nav-icon-btn--active]="activeIcon() === 'shopping_bag'" (click)="activeIcon.set('shopping_bag')">
+            <span class="icon-outlined">shopping_bag</span>
+          </button>
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+  <ap-doc-section title="Nav Items - Dashboard sidebar - Nav item - with child - Large">
+    <ap-demo>
+      <ap-demo-group label="Click to expand" [column]="true">
+        <div class="nav-demo">
+          <ap-sidenav-item
+            icon="settings"
+            title="Parent"
+            [expandable]="true"
+            [expanded]="groupOpen()"
+            (expandedChange)="groupOpen.set($event)"
+          />
+          @if (groupOpen()) {
+            <button class="nav-sub-item">Child one</button>
+            <button class="nav-sub-item nav-sub-item--active">Child two</button>
+          }
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+  <ap-doc-section title="Nav Items - Sidebar item - Small">
+    <ap-coming-soon title="Small Nav Item" description="Small-size sidebar nav item — coming soon." />
+  </ap-doc-section>
+
+  <ap-doc-section title="Nav Items - Sidebar item - child - Small">
+    <ap-coming-soon title="Small Nav Group" description="Small-size collapsible nav group — coming soon." />
+  </ap-doc-section>
+
+  <ap-doc-section title="Nav Items - Header item - With leading icon">
+    <ap-coming-soon title="Header Nav Item" description="Header sub-navigation item with leading icon — coming soon." />
+  </ap-doc-section>
+
+  <ap-doc-section title="Nav Items - Header item - With trailing icon">
+    <ap-coming-soon title="Header Nav Item" description="Header sub-navigation item with trailing icon — coming soon." />
+  </ap-doc-section>
+
+  <ap-doc-section title="Nav Items - Footer item - link">
+    <ap-demo>
+      <ap-demo-group [column]="true">
+        <div class="footer-links-demo">
+          <a href="#" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Careers</a>
+          <a href="#" class="footer-link">Contact Us</a>
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+</ap-doc-page>

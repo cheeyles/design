@@ -1,0 +1,22 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Footer - Website">
+    <ap-demo>
+      <ap-demo-group>
+        <div class="footer-controls">
+          <ap-toggle
+            label="Mobile view"
+            [checked]="mobile()"
+            size="sm"
+            (checkedChange)="mobile.set(!mobile())"
+          />
+        </div>
+        <div class="footer-preview" [class.footer-preview--mobile]="mobile()">
+          <ap-footer [mobile]="mobile()" />
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="mobile() ? mobileCode : desktopCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

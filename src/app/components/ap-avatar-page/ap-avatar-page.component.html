@@ -1,0 +1,39 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Avatar - With image">
+    <ap-demo>
+      <ap-demo-group label="Default (40px)">
+        <ap-avatar [src]="avatarSrc" alt="Farmer" />
+      </ap-demo-group>
+      <ap-demo-group label="With verified badge">
+        <ap-avatar [src]="avatarSrc" alt="Grazier" [verified]="true" />
+      </ap-demo-group>
+      <ap-demo-group label="Large (56px)">
+        <ap-avatar [src]="avatarSrc" alt="Agronomist" [size]="56" />
+      </ap-demo-group>
+      <ap-demo-group label="Large + verified">
+        <ap-avatar [src]="avatarSrc" alt="Stock agent" [size]="56" [verified]="true" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="withImageCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Avatar - Fallback (no src)">
+    <ap-demo>
+      <ap-demo-group label="Default (40px)">
+        <ap-avatar alt="User" />
+      </ap-demo-group>
+      <ap-demo-group label="With verified badge">
+        <ap-avatar alt="User" [verified]="true" />
+      </ap-demo-group>
+      <ap-demo-group label="Large (56px)">
+        <ap-avatar alt="User" [size]="56" />
+      </ap-demo-group>
+      <ap-demo-group label="Large + verified">
+        <ap-avatar alt="User" [size]="56" [verified]="true" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="fallbackCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

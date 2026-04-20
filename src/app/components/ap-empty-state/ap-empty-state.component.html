@@ -1,0 +1,20 @@
+<div class="es-root">
+
+  <div class="es-icon-circle">
+    <span class="icon-outlined es-icon" aria-hidden="true">{{ icon }}</span>
+  </div>
+
+  <div class="es-text">
+    @if (title) {
+      <span class="es-title">{{ title }}</span>
+    }
+    @if (message) {
+      <span class="es-message">{{ message }}</span>
+    }
+  </div>
+
+  @if (actionLabel) {
+    <ap-button color="primary" size="sm" (clicked)="actionClick.emit()">{{ actionLabel }}</ap-button>
+  }
+
+</div>

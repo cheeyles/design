@@ -1,0 +1,6 @@
+/* app-root fills the viewport — ds-shell takes over from here */
+:host {
+  display: block;
+  height: 100vh;
+  overflow: hidden;
+}

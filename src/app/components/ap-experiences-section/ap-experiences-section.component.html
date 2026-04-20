@@ -1,0 +1,17 @@
+<div class="ds-section-layout">
+
+  <nav class="ds-section-nav">
+    @for (item of nav; track item.id) {
+      <button
+        class="ds-section-nav__item"
+        [class.ds-section-nav__item--active]="active() === item.id"
+        (click)="active.set(item.id)"
+      >{{ item.label }}</button>
+    }
+  </nav>
+
+  <div class="ds-section-content">
+    <ap-coming-soon [title]="activeLabel" />
+  </div>
+
+</div>

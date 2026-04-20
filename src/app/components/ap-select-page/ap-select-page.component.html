@@ -1,0 +1,53 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Dropdown Menu - Single Select">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-select
+          class="demo-input"
+          label="Breed"
+          [options]="options"
+          placeholder="Select a breed"
+          [value]="val1()"
+          (valueChange)="val1.set($event)"
+        />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-select
+          class="demo-input"
+          label="Error"
+          [options]="options"
+          state="error"
+          hint="Please select a breed"
+          [value]="val2()"
+          (valueChange)="val2.set($event)"
+        />
+      </ap-demo-group>
+      <ap-demo-group>
+        <ap-select
+          class="demo-input"
+          label="Disabled"
+          [options]="options"
+          state="disabled"
+        />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="selectCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Dropdown Menu - With Selection">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-select
+          class="demo-input"
+          label="Breed"
+          [options]="options"
+          [value]="val3()"
+          (valueChange)="val3.set($event)"
+        />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="statesCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

@@ -1,0 +1,40 @@
+<div class="bg-brand-dark text-white fixed top-0 left-0 w-full xl:relative">
+
+  <!-- Desktop bar (xl+) -->
+  <div class="nav-bar justify-between hidden xl:flex h-14">
+
+    <a class="flex items-center" [href]="homeHref">
+      <img [src]="logoSrc" class="block h-6 w-auto" alt="AuctionsPlus" />
+      <div class="title-divider border-r-2 border-r-white h-1/2"></div>
+      <div class="text-xl">{{ appTitle }}</div>
+    </a>
+
+    <div class="nav-links flex items-center">
+      <ng-content select="[navLinks]" />
+    </div>
+
+  </div>
+
+  <!-- Mobile bar (< xl) -->
+  <div class="flex justify-between xl:hidden h-14">
+
+    <button type="button" class="menu-btn flex items-center" (click)="menuOpen.emit()">
+      <span class="icon-outlined text-3xl">menu</span>
+    </button>
+
+    <div class="flex-1 flex items-center">
+      <a class="flex items-center" [href]="homeHref">
+        <img [src]="logoSrc" class="block h-8 w-auto" alt="AuctionsPlus" />
+      </a>
+    </div>
+
+    <div class="mobile-actions flex items-center">
+      <button type="button" class="cursor-pointer relative flex items-center justify-center"
+              (click)="notificationsClick.emit()">
+        <span class="icon-outlined text-[28px]">notifications</span>
+      </button>
+    </div>
+
+  </div>
+
+</div>

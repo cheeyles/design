@@ -1,0 +1,32 @@
+.colour-row {
+  display:     flex;
+  align-items: stretch;
+}
+
+.colour-row--border-top {
+  border-top: var(--border-width-default) solid var(--color-border-grey-light);
+}
+
+.colour-col {
+  display:     flex;
+  flex:        1 0 0;
+  align-items: stretch;
+}
+
+.colour-divider {
+  width:            1px;
+  background-color: var(--color-border-grey-light);
+  align-self:       stretch;
+  flex-shrink:      0;
+}
+
+.colour-spacer {
+  flex:    1;
+  padding: var(--spacing-lg);
+}
+
+.text-swatch-aa {
+  font-size:   var(--type-size-title-lg);
+  line-height: 1;
+  font-weight: 700;
+}

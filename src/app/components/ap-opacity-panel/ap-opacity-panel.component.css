@@ -1,0 +1,28 @@
+.swatch-cell {
+  width:           80px;
+  flex-shrink:     0;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+}
+
+.opacity-wrap {
+  position:      relative;
+  width:         56px;
+  height:        32px;
+  border-radius: var(--radius-sm);
+  overflow:      hidden;
+}
+
+.opacity-checker {
+  position:          absolute;
+  inset:             0;
+  background-image:  repeating-conic-gradient(#ccc 0% 25%, #fff 0% 50%);
+  background-size:   12px 12px;
+}
+
+.opacity-fill {
+  position:         absolute;
+  inset:            0;
+  background-color: var(--color-brand-primary);
+}

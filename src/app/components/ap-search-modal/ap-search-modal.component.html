@@ -1,0 +1,38 @@
+@if (open) {
+  <div class="sm-root" role="dialog" aria-modal="true" aria-label="Search">
+
+    <!-- Backdrop -->
+    <div class="sm-backdrop" (click)="close.emit()"></div>
+
+    <!-- Dialog -->
+    <div class="sm-dialog">
+
+      <!-- Search input row -->
+      <div class="sm-input-row">
+        <span class="icon-outlined sm-search-icon" aria-hidden="true">search</span>
+        <input
+          class="sm-input"
+          type="text"
+          [placeholder]="placeholder"
+          [value]="query()"
+          (input)="onInput($event)"
+          autofocus
+        />
+        @if (query()) {
+          <button class="sm-clear" aria-label="Clear search" (click)="onClear()">
+            <span class="icon-outlined" style="font-size:20px;line-height:1;color:var(--color-text-grey)" aria-hidden="true">close</span>
+          </button>
+        }
+        <div class="sm-kbd-hint">
+          <kbd>esc</kbd>
+        </div>
+      </div>
+
+      <!-- Results slot -->
+      <div class="sm-body">
+        <ng-content />
+      </div>
+
+    </div>
+  </div>
+}

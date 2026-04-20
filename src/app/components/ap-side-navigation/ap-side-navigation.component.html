@@ -1,0 +1,15 @@
+<div class="nav-wrap h-full overflow-y-auto bg-white flex flex-col justify-between">
+
+  <!-- Nav items -->
+  <ng-content />
+
+  <!-- Collapse toggle -->
+  <div class="collapse-footer flex flex-row-reverse">
+    <button type="button" class="collapse-btn cursor-pointer" (click)="toggle()">
+      <span class="icon-outlined">
+        {{ nav.collapsed() ? 'keyboard_double_arrow_right' : 'keyboard_double_arrow_left' }}
+      </span>
+    </button>
+  </div>
+
+</div>

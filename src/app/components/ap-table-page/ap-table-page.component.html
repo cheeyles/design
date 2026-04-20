@@ -1,0 +1,36 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Table - Lot management table">
+    <ap-demo>
+      <ap-demo-group>
+        <div class="table-demo">
+          <ap-data-table
+            [columns]="lotColumns"
+            [rows]="lotRows()"
+            [sortBy]="lotSortBy()"
+            [sortDir]="lotSortDir()"
+            (sortChange)="sortLot($event)"
+          />
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="tableCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Table - Simple read-only table">
+    <ap-demo>
+      <ap-demo-group>
+        <div class="table-demo">
+          <ap-data-table
+            [columns]="simpleColumns"
+            [rows]="simpleRows()"
+            [sortBy]="simpleSortBy()"
+            [sortDir]="simpleSortDir()"
+            (sortChange)="sortSimple($event)"
+          />
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+</ap-doc-page>

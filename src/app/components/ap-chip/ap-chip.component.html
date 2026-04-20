@@ -1,0 +1,13 @@
+<span class="chip">
+  <span class="chip__label">{{ label }}</span>
+  @if (hasRemove) {
+    <button
+      type="button"
+      class="chip__remove"
+      [attr.aria-label]="'Remove ' + label"
+      (click)="remove.emit()"
+    >
+      <span class="icon-outlined chip__remove-icon" aria-hidden="true">close</span>
+    </button>
+  }
+</span>

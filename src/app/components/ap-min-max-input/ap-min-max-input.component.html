@@ -1,0 +1,34 @@
+<div class="mm-root" [class.mm-root--disabled]="state === 'disabled'">
+  @if (label) {
+    <span class="mm-label">{{ label }}</span>
+  }
+  <div class="mm-row">
+    <div
+      class="mm-wrapper"
+      [class.mm-wrapper--error]="state === 'error'"
+      [class.mm-wrapper--focused]="focusedMin()"
+    >
+      <input
+        class="mm-field"
+        [placeholder]="minPlaceholder"
+        [disabled]="state === 'disabled'"
+        (focus)="focusedMin.set(true)"
+        (blur)="focusedMin.set(false)"
+      />
+    </div>
+    <span class="mm-dash">—</span>
+    <div
+      class="mm-wrapper"
+      [class.mm-wrapper--error]="state === 'error'"
+      [class.mm-wrapper--focused]="focusedMax()"
+    >
+      <input
+        class="mm-field"
+        [placeholder]="maxPlaceholder"
+        [disabled]="state === 'disabled'"
+        (focus)="focusedMax.set(true)"
+        (blur)="focusedMax.set(false)"
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="ds-section-layout">
+
+  <nav class="ds-section-nav">
+    @for (item of nav; track item.id) {
+      @if (item.children) {
+        <div>
+          <button
+            class="ds-section-nav__group-toggle"
+            (click)="toggleGroup(item.id)"
+          >
+            {{ item.label }}
+            <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">
+              {{ openGroups()[item.id] ? 'expand_less' : 'expand_more' }}
+            </span>
+          </button>
+          @if (openGroups()[item.id]) {
+            @for (child of item.children; track child.id) {
+              <button
+                class="ds-section-nav__item"
+                [class.ds-section-nav__item--active]="active() === child.id"
+                style="padding-left:var(--spacing-lg)"
+                (click)="setActive(child.id)"
+              >{{ child.label }}</button>
+            }
+          }
+        </div>
+      } @else {
+        <button
+          class="ds-section-nav__item"
+          [class.ds-section-nav__item--active]="active() === item.id"
+          (click)="setActive(item.id)"
+        >{{ item.label }}</button>
+      }
+    }
+  </nav>
+
+  <div class="ds-section-content">
+    @switch (active()) {
+      @case ('button')           { <ap-button-page /> }
+      @case ('tab')              { <ap-tab-page /> }
+      @case ('menu-item')        { <ap-sidenav-item-page /> }
+      @case ('inputs-text')      { <ap-input-page /> }
+      @case ('inputs-number')    { <ap-number-page /> }
+      @case ('inputs-dropdown')  { <ap-select-page /> }
+      @case ('inputs-radio')     { <ap-radio-page /> }
+      @case ('inputs-checkbox')  { <ap-checkbox-page /> }
+      @case ('inputs-toggle')    { <ap-toggle-page /> }
+      @case ('inputs-date')      { <ap-date-picker-page /> }
+      @case ('tags')             { <ap-tags-page /> }
+      @case ('scrollbar')        { <ap-scrollbar-page /> }
+      @case ('image')            { <ap-image-page /> }
+      @case ('avatar')           { <ap-avatar-page /> }
+      @case ('message')          { <ap-message-page /> }
+      @case ('tooltip')          { <ap-tooltip-page /> }
+      @default                   { <ap-coming-soon [title]="activeLabel" /> }
+    }
+  </div>
+
+</div>

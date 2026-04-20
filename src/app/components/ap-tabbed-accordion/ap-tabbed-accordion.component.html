@@ -1,0 +1,45 @@
+<div class="ta-root">
+  @for (section of sections; track section.id; let last = $last) {
+    <div class="ta-item" [class.ta-item--last]="last">
+
+      <!-- Header -->
+      <button
+        class="ta-header"
+        [attr.aria-expanded]="isOpen(section.id)"
+        (click)="toggle(section.id)"
+      >
+        <span class="ta-header-label">
+          @if (section.icon) {
+            <span class="icon-outlined ta-header-icon">{{ section.icon }}</span>
+          }
+          {{ section.title }}
+        </span>
+        <span
+          class="icon-outlined ta-chevron"
+          [class.ta-chevron--open]="isOpen(section.id)"
+          aria-hidden="true"
+        >expand_more</span>
+      </button>
+
+      <!-- Body with grid-row collapse -->
+      <div class="ta-body" [class.ta-body--open]="isOpen(section.id)">
+        <div class="ta-body-inner">
+          @if (section.fields?.length) {
+            <div class="ta-field-grid">
+              @for (field of section.fields; track field.label) {
+                <span class="ta-field-label">
+                  @if (field.icon) {
+                    <span class="icon-outlined ta-field-icon">{{ field.icon }}</span>
+                  }
+                  {{ field.label }}
+                </span>
+                <span class="ta-field-value">{{ field.value }}</span>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  }
+</div>

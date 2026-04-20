@@ -1,0 +1,27 @@
+<div class="toast-container">
+  @for (toast of toastService.toasts(); track toast.id) {
+    <div class="toast-card" role="alert">
+
+      <span
+        class="icon-outlined toast-icon"
+        [style.color]="variantConfig(toast.variant).color"
+        aria-hidden="true"
+      >{{ variantConfig(toast.variant).icon }}</span>
+
+      <div class="toast-body">
+        @if (toast.title) {
+          <span class="toast-title">{{ toast.title }}</span>
+        }
+        <span class="toast-message">{{ toast.message }}</span>
+        @if (toast.action) {
+          <button class="toast-action" (click)="toast.action!.onClick()">{{ toast.action.label }}</button>
+        }
+      </div>
+
+      <button class="toast-dismiss" aria-label="Dismiss" (click)="toastService.dismiss(toast.id)">
+        <span class="icon-outlined" style="font-size:18px;line-height:1;color:var(--color-text-grey)" aria-hidden="true">close</span>
+      </button>
+
+    </div>
+  }
+</div>

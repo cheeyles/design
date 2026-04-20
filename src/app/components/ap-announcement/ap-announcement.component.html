@@ -1,0 +1,19 @@
+<div class="ann-root">
+
+  <!-- Centred content -->
+  <div class="ann-content">
+    <span class="ann-title">{{ title }}</span>
+    @if (message) {
+      <span class="ann-message">{{ message }}</span>
+    }
+    @if (actionLabel) {
+      <button class="ann-action" (click)="actionClick.emit()">{{ actionLabel }}</button>
+    }
+  </div>
+
+  <!-- Dismiss button pinned right -->
+  <button class="ann-dismiss" aria-label="Dismiss" (click)="dismiss.emit()">
+    <span class="icon-outlined" style="font-size:18px;line-height:1;color:rgba(255,255,255,0.7)" aria-hidden="true">close</span>
+  </button>
+
+</div>

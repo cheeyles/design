@@ -1,0 +1,108 @@
+:host {
+  display: block;
+}
+
+.input-field {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--spacing-sm);
+  width:          100%;
+}
+
+.input-label {
+  font-size:   var(--type-size-body-sm);
+  line-height: var(--type-lh-body-sm);
+  font-weight: 500;
+  color:       var(--color-text-grey-dark);
+  display:     block;
+}
+
+.input-wrapper {
+  display:          flex;
+  align-items:      center;
+  background-color: var(--color-bg-white);
+  border:           var(--border-width-default) solid var(--color-border-grey);
+  border-radius:    var(--radius-sm);
+  padding:          var(--spacing-sm) var(--spacing-sm-md);
+  gap:              var(--spacing-sm);
+  width:            100%;
+  box-sizing:       border-box;
+  transition:       border-color 0.15s, box-shadow 0.15s;
+}
+
+.input-wrapper--sm {
+  padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+.input-wrapper--focused {
+  border-color: var(--color-border-brand-primary);
+  box-shadow:   0 0 0 1px var(--color-border-brand-primary);
+}
+
+.input-wrapper--error {
+  border-color: var(--color-border-red);
+  box-shadow:   0 0 0 1px var(--color-border-red);
+}
+
+.input-wrapper--disabled {
+  background-color: var(--color-bg-input-disabled);
+}
+
+.input-control {
+  flex:        1;
+  border:      none;
+  outline:     none;
+  background:  transparent;
+  font-family: var(--type-family-primary);
+  font-size:   var(--type-size-body-md);
+  line-height: var(--type-lh-body-md);
+  color:       var(--color-text-dark);
+  min-width:   0;
+  width:       100%;
+}
+
+.input-control--sm {
+  font-size:   var(--type-size-body-sm);
+  line-height: var(--type-lh-body-sm);
+}
+
+.input-control:disabled {
+  cursor: not-allowed;
+}
+
+.input-control::placeholder {
+  color: var(--color-text-grey);
+}
+
+.input-icon {
+  font-size:   var(--size-icon-xl);
+  color:       var(--color-text-grey);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.input-toggle {
+  display:     inline-flex;
+  align-items: center;
+  background:  none;
+  border:      none;
+  padding:     0;
+  cursor:      pointer;
+  color:       var(--color-text-grey);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.input-toggle:hover {
+  color: var(--color-text-grey-dark);
+}
+
+.input-hint {
+  font-size:   var(--type-size-label-md);
+  line-height: var(--type-lh-label-md);
+  color:       var(--color-text-grey-dark);
+}
+
+.input-hint--error {
+  color: var(--color-text-red);
+}

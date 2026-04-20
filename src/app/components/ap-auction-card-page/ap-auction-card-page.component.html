@@ -1,0 +1,60 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Auction Card — Horizontal">
+    <ap-demo>
+      <ap-demo-group>
+        <div class="acp-list">
+          <ap-auction-card
+            commodity="cattle"
+            title="Eastern States Cattle Sale"
+            auctionNo="#128194"
+            commodityLabel="Cattle"
+            auctionType="Auction"
+            lotCount="67 lots"
+            timer="Mon, 17 Apr 2026, 4:00 PM AEDT"
+            ctaLabel="Connect to Bid"
+          />
+          <ap-auction-card
+            commodity="sheep"
+            title="Elmore Sheep Sale"
+            auctionNo="#128195"
+            commodityLabel="Sheep"
+            auctionType="Forward+"
+            lotCount="142 lots"
+            timer="Closes Tue, 18 Apr 2026, 2:00 PM AEDT"
+            ctaLabel="View Lots"
+          />
+          <ap-auction-card
+            commodity="machinery"
+            title="AuctionsPlus Machinery Auction"
+            auctionNo="#128291"
+            commodityLabel="Machinery"
+            auctionType="Auction"
+            lotCount="47 lots"
+            timer="Wed, 19 Apr 2026, 10:00 AM AEDT"
+            ctaLabel="Connect to Bid"
+          />
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="code" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Auction Card — No CTA">
+    <ap-demo>
+      <ap-demo-group>
+        <div class="acp-list">
+          <ap-auction-card
+            commodity="equine"
+            title="Equine Spring Sale"
+            auctionNo="#127100"
+            commodityLabel="Equine"
+            auctionType="Auction"
+            lotCount="28 lots"
+          />
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+</ap-doc-page>

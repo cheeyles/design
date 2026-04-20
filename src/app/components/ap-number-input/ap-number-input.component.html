@@ -1,0 +1,25 @@
+<div class="ni-root" [class.ni-root--sm]="size === 'sm'">
+  @if (label) {
+    <label class="ni-label">{{ label }}</label>
+  }
+  <div
+    class="ni-wrapper"
+    [class.ni-wrapper--error]="state === 'error'"
+    [class.ni-wrapper--focused]="focused()"
+    [class.ni-wrapper--disabled]="state === 'disabled'"
+    [class.ni-wrapper--sm]="size === 'sm'"
+  >
+    <input
+      class="ni-field"
+      [class.ni-field--sm]="size === 'sm'"
+      type="number"
+      [placeholder]="placeholder"
+      [disabled]="state === 'disabled'"
+      (focus)="focused.set(true)"
+      (blur)="focused.set(false)"
+    />
+  </div>
+  @if (hint) {
+    <span class="ni-hint" [class.ni-hint--error]="state === 'error'">{{ hint }}</span>
+  }
+</div>

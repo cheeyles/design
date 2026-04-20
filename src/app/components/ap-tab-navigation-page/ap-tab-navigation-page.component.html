@@ -1,0 +1,45 @@
+<ap-doc-page
+  title="Tabbed Navigation"
+  description="Tab strip for switching between page sections."
+>
+
+  <ap-doc-section title="Tabbed Navigation - Default">
+    <ap-demo>
+      <ap-demo-group [column]="true">
+        <ap-tab-navigation
+          [tabs]="defaultTabs"
+          [activeIndex]="tab1()"
+          (tabChange)="tab1.set($event)"
+        />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="defaultCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Tabbed Navigation - With badge">
+    <ap-demo>
+      <ap-demo-group [column]="true">
+        <ap-tab-navigation
+          [tabs]="badgeTabs"
+          [activeIndex]="tab2()"
+          (tabChange)="tab2.set($event)"
+        />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="badgeCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Tabbed Navigation - With leading icon">
+    <ap-demo>
+      <ap-demo-group [column]="true">
+        <ap-tab-navigation
+          [tabs]="iconTabs"
+          [activeIndex]="tab3()"
+          (tabChange)="tab3.set($event)"
+        />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="iconCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

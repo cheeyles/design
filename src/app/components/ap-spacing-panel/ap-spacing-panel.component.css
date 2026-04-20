@@ -1,0 +1,15 @@
+.spacing-bar {
+  height:           8px;
+  min-width:        2px;
+  background-color: var(--color-brand-primary);
+  border-radius:    var(--radius-xs);
+}
+
+.spacing-raw {
+  width:       60px;
+  flex-shrink: 0;
+  font-size:   var(--type-size-body-md);
+  color:       var(--color-text-grey-dark);
+  font-family: monospace;
+  text-align:  right;
+}

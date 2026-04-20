@@ -1,0 +1,29 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Progress Tracker — Horizontal">
+    <ap-demo>
+      <ap-demo-group label="Step 1 active">
+        <ap-progress-tracker [steps]="auctionSteps" [activeStep]="0" variant="horizontal" />
+      </ap-demo-group>
+      <ap-demo-group label="Step 3 active">
+        <ap-progress-tracker [steps]="auctionSteps" [activeStep]="2" variant="horizontal" />
+      </ap-demo-group>
+      <ap-demo-group label="Complete">
+        <ap-progress-tracker [steps]="auctionSteps" [activeStep]="5" variant="horizontal" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="code" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Progress Tracker — Vertical">
+    <ap-demo>
+      <ap-demo-group label="With descriptions">
+        <ap-progress-tracker [steps]="listingSteps" [activeStep]="1" variant="vertical" />
+      </ap-demo-group>
+      <ap-demo-group label="Without descriptions">
+        <ap-progress-tracker [steps]="auctionSteps" [activeStep]="3" variant="vertical" />
+      </ap-demo-group>
+    </ap-demo>
+  </ap-doc-section>
+
+</ap-doc-page>

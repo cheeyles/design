@@ -1,0 +1,11 @@
+.atag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-0-5) var(--spacing-xs);
+  border-radius: var(--radius-sm);
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-label-md);
+  line-height: var(--type-lh-label-md);
+  font-weight: 500;
+  white-space: nowrap;
+}

@@ -1,0 +1,33 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Checkbox - States">
+    <ap-demo>
+      <ap-demo-group label="Unchecked">
+        <ap-checkbox label="Option A" [checked]="checked1()" (checkedChange)="checked1.set($event)" />
+      </ap-demo-group>
+      <ap-demo-group label="Checked">
+        <ap-checkbox label="Option B" [checked]="checked2()" (checkedChange)="checked2.set($event)" />
+      </ap-demo-group>
+      <ap-demo-group label="Indeterminate">
+        <ap-checkbox label="Option C" [indeterminate]="true" />
+      </ap-demo-group>
+      <ap-demo-group label="Disabled">
+        <ap-checkbox label="Option D" [disabled]="true" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="statesCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Checkbox - Group">
+    <ap-demo>
+      <ap-demo-group label="Select breeds" [column]="true">
+        <ap-checkbox label="Angus" [checked]="checked1()" (checkedChange)="checked1.set($event)" />
+        <ap-checkbox label="Hereford" [checked]="checked2()" (checkedChange)="checked2.set($event)" />
+        <ap-checkbox label="Murray Grey" [checked]="checked3()" (checkedChange)="checked3.set($event)" />
+        <ap-checkbox label="Shorthorn" [checked]="checked4()" (checkedChange)="checked4.set($event)" />
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="groupCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

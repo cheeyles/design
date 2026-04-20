@@ -1,0 +1,14 @@
+<span
+  class="lot-status"
+  [class.lot-status--has-icon]="config.icon"
+  [style.background-color]="config.bg"
+  [style.color]="config.color"
+>
+  @if (config.icon === 'dot') {
+    <span class="lot-status__dot" aria-hidden="true"></span>
+  }
+  @if (config.icon === 'verified') {
+    <span class="icon-outlined lot-status__verified-icon" aria-hidden="true">verified</span>
+  }
+  {{ config.label }}
+</span>

@@ -1,0 +1,42 @@
+@if (href) {
+  <a
+    [routerLink]="href"
+    routerLinkActive="bg-brand-primary-50 text-brand-primary-800"
+    class="item flex items-center w-full
+           text-brand-dark hover:bg-brand-primary-50 hover:text-brand-primary-800
+           rounded font-medium"
+    [class.item--collapsed]="collapsed"
+    [title]="collapsed ? title : ''"
+    [attr.aria-label]="collapsed ? title : null"
+  >
+    @if (icon) {
+      <span [class]="iconClass" aria-hidden="true">{{ icon }}</span>
+    }
+    @if (!collapsed) {
+      <span class="mr-auto">{{ title }}</span>
+      <ng-content />
+    }
+  </a>
+} @else {
+  <button
+    type="button"
+    class="item flex items-center w-full
+           text-brand-dark hover:bg-brand-primary-50 hover:text-brand-primary-800
+           rounded font-medium"
+    [class.item--collapsed]="collapsed"
+    [title]="collapsed ? title : ''"
+    [attr.aria-label]="collapsed ? title : null"
+    (click)="toggle()"
+  >
+    @if (icon) {
+      <span [class]="iconClass" aria-hidden="true">{{ icon }}</span>
+    }
+    @if (!collapsed) {
+      <span class="mr-auto">{{ title }}</span>
+      @if (expandable) {
+        <span class="icon-solid chevron" [class.chevron--open]="expanded" aria-hidden="true">expand_more</span>
+      }
+      <ng-content />
+    }
+  </button>
+}

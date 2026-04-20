@@ -1,0 +1,37 @@
+@if (open) {
+  <div class="modal-root" role="dialog" aria-modal="true" [attr.aria-label]="title">
+
+    <!-- Backdrop -->
+    <div class="modal-backdrop" (click)="close.emit()"></div>
+
+    <!-- Dialog -->
+    <div class="modal-dialog" [style.max-width]="maxWidth">
+
+      <!-- Header -->
+      <div class="modal-header">
+        <span class="modal-title">{{ title }}</span>
+        <button class="modal-close" aria-label="Close" (click)="close.emit()">
+          <span class="icon-outlined" style="font-size:22px;line-height:1;color:var(--color-text-grey)" aria-hidden="true">close</span>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+        <ng-content />
+      </div>
+
+      <!-- Footer -->
+      @if (primaryAction || secondaryAction) {
+        <div class="modal-footer">
+          @if (secondaryAction) {
+            <ap-button color="secondary" style="flex:1" (clicked)="secondaryClick.emit()">{{ secondaryAction }}</ap-button>
+          }
+          @if (primaryAction) {
+            <ap-button [color]="destructive ? 'destructive' : 'primary'" style="flex:1" (clicked)="primaryClick.emit()">{{ primaryAction }}</ap-button>
+          }
+        </div>
+      }
+
+    </div>
+  </div>
+}

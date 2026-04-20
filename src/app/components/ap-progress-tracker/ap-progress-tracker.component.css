@@ -1,0 +1,125 @@
+/* ── Horizontal ─────────────────────────────── */
+
+.pt-horizontal {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.pt-h-item {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.pt-h-item--last {
+  flex: 0;
+}
+
+.pt-h-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.pt-h-connector {
+  flex: 1;
+  height: 2px;
+  margin-top: 13px;
+  margin-left: var(--spacing-sm);
+  margin-right: var(--spacing-sm);
+}
+
+/* ── Vertical ───────────────────────────────── */
+
+.pt-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.pt-v-row {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.pt-v-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pt-v-connector {
+  width: 2px;
+  flex: 1;
+  min-height: 24px;
+  margin: var(--spacing-xs) 0;
+}
+
+.pt-v-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding-bottom: var(--spacing-lg);
+  padding-top: 2px;
+}
+
+.pt-v-right--last {
+  padding-bottom: 0;
+}
+
+/* ── Step icons ─────────────────────────────── */
+
+.pt-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pt-icon--complete {
+  background-color: var(--color-bg-green);
+}
+
+.pt-icon--active {
+  background-color: var(--color-brand-primary);
+  box-shadow: 0 0 0 4px var(--color-brand-primary-light);
+}
+
+.pt-icon--upcoming {
+  background-color: var(--color-bg-white);
+  border: 2px solid var(--color-border-grey);
+}
+
+.pt-icon-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-text-white);
+}
+
+/* ── Labels ─────────────────────────────────── */
+
+.pt-label {
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-sm);
+  line-height: var(--type-lh-body-sm);
+  font-weight: 400;
+  color: var(--color-text-dark);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.pt-label--active { font-weight: 600; }
+.pt-label--upcoming { color: var(--color-text-grey); }
+
+.pt-description {
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-sm);
+  line-height: var(--type-lh-body-sm);
+  font-weight: 400;
+  color: var(--color-text-grey-dark);
+}

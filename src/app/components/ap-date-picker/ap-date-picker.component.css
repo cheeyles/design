@@ -1,0 +1,203 @@
+.dp-root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  position: relative;
+}
+
+.dp-label {
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-sm);
+  line-height: var(--type-lh-body-sm);
+  font-weight: 500;
+  color: var(--color-text-grey-dark);
+  display: block;
+}
+
+.dp-trigger-wrap {
+  position: relative;
+}
+
+.dp-trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background-color: var(--color-bg-white);
+  border: var(--border-width-default) solid var(--color-border-grey);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm) var(--spacing-sm-md);
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dp-trigger--open {
+  border-color: var(--color-border-brand-primary);
+  box-shadow: 0 0 0 1px var(--color-border-brand-primary);
+}
+
+.dp-trigger--error {
+  border-color: var(--color-border-red);
+  box-shadow: 0 0 0 1px var(--color-border-red);
+}
+
+.dp-trigger--disabled {
+  background-color: var(--color-bg-input-disabled);
+  cursor: not-allowed;
+  opacity: var(--opacity-disabled);
+}
+
+.dp-cal-icon {
+  font-size: var(--size-icon-xl);
+  color: var(--color-text-grey);
+  flex-shrink: 0;
+}
+
+.dp-value {
+  flex: 1;
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-md);
+  line-height: var(--type-lh-body-md);
+  color: var(--color-text-dark);
+}
+
+.dp-value--placeholder {
+  color: var(--color-text-grey);
+}
+
+/* Calendar panel */
+.dp-calendar {
+  position: absolute;
+  top: calc(100% + var(--spacing-xs));
+  left: 0;
+  z-index: var(--z-dropdown);
+  background-color: var(--color-bg-white);
+  border: var(--border-width-default) solid var(--color-border-grey-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-light);
+  width: 228px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Month/year header */
+.dp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+}
+
+.dp-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--color-text-grey);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.dp-nav-icon {
+  font-size: var(--size-icon-lg);
+  line-height: 1;
+}
+
+.dp-month-label {
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-md);
+  line-height: var(--type-lh-body-md);
+  font-weight: 500;
+  color: var(--color-text-dark);
+}
+
+/* Grid */
+.dp-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.dp-dow-row {
+  display: grid;
+  grid-template-columns: repeat(7, 28px);
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-xs);
+}
+
+.dp-dow-cell {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-sm);
+  line-height: var(--type-lh-body-sm);
+  font-weight: 500;
+  color: var(--color-text-dark);
+}
+
+.dp-week-row {
+  display: grid;
+  grid-template-columns: repeat(7, 28px);
+}
+
+.dp-day {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: var(--border-width-default) solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  padding: var(--spacing-0-5);
+  box-sizing: border-box;
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-sm);
+  line-height: var(--type-lh-body-sm);
+  font-weight: 400;
+  color: var(--color-text-grey-dark);
+}
+
+.dp-day--out {
+  opacity: var(--opacity-subtle);
+}
+
+.dp-day--selected {
+  background-color: var(--color-brand-primary);
+  color: var(--color-text-white);
+  font-weight: 500;
+  border-color: transparent;
+}
+
+.dp-day--today {
+  border-color: var(--color-brand-primary);
+  color: var(--color-brand-primary);
+  font-weight: 500;
+}
+
+.dp-day--hovered {
+  background-color: var(--color-bg-grey-light);
+}
+
+.dp-hint {
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-label-md);
+  line-height: var(--type-lh-label-md);
+  color: var(--color-text-grey-dark);
+}
+
+.dp-hint--error {
+  color: var(--color-text-red);
+}

@@ -1,0 +1,77 @@
+<!-- Horizontal -->
+@if (variant === 'horizontal') {
+  <div class="pt-horizontal">
+    @for (step of steps; track $index; let i = $index; let last = $last) {
+      <div class="pt-h-item" [class.pt-h-item--last]="last">
+
+        <div class="pt-h-step">
+          <!-- Step icon -->
+          @if (stepState(i) === 'complete') {
+            <div class="pt-icon pt-icon--complete">
+              <span class="icon-outlined" style="font-size:16px;line-height:1;color:var(--color-text-white)" aria-hidden="true">check</span>
+            </div>
+          } @else if (stepState(i) === 'active') {
+            <div class="pt-icon pt-icon--active">
+              <div class="pt-icon-dot"></div>
+            </div>
+          } @else {
+            <div class="pt-icon pt-icon--upcoming"></div>
+          }
+
+          <span
+            class="pt-label"
+            [class.pt-label--active]="stepState(i) === 'active'"
+            [class.pt-label--upcoming]="stepState(i) === 'upcoming'"
+          >{{ step.label }}</span>
+        </div>
+
+        @if (!last) {
+          <div class="pt-h-connector" [style.background-color]="connectorColor(i)"></div>
+        }
+
+      </div>
+    }
+  </div>
+}
+
+<!-- Vertical -->
+@if (variant === 'vertical') {
+  <div class="pt-vertical">
+    @for (step of steps; track $index; let i = $index; let last = $last) {
+      <div class="pt-v-row">
+
+        <!-- Icon + connector column -->
+        <div class="pt-v-left">
+          @if (stepState(i) === 'complete') {
+            <div class="pt-icon pt-icon--complete">
+              <span class="icon-outlined" style="font-size:16px;line-height:1;color:var(--color-text-white)" aria-hidden="true">check</span>
+            </div>
+          } @else if (stepState(i) === 'active') {
+            <div class="pt-icon pt-icon--active">
+              <div class="pt-icon-dot"></div>
+            </div>
+          } @else {
+            <div class="pt-icon pt-icon--upcoming"></div>
+          }
+
+          @if (!last) {
+            <div class="pt-v-connector" [style.background-color]="connectorColor(i)"></div>
+          }
+        </div>
+
+        <!-- Text column -->
+        <div class="pt-v-right" [class.pt-v-right--last]="last">
+          <span
+            class="pt-label"
+            [class.pt-label--active]="stepState(i) === 'active'"
+            [class.pt-label--upcoming]="stepState(i) === 'upcoming'"
+          >{{ step.label }}</span>
+          @if (step.description) {
+            <span class="pt-description">{{ step.description }}</span>
+          }
+        </div>
+
+      </div>
+    }
+  </div>
+}

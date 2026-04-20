@@ -1,0 +1,22 @@
+<span class="tt-host" (mouseenter)="show()" (mouseleave)="hide()">
+  <ng-content />
+  @if (visible()) {
+    <span
+      class="tt-bubble"
+      [class.tt-bubble--top]="placement === 'top'"
+      [class.tt-bubble--bottom]="placement === 'bottom'"
+      [class.tt-bubble--left]="placement === 'left'"
+      [class.tt-bubble--right]="placement === 'right'"
+      role="tooltip"
+    >
+      <span
+        class="tt-arrow"
+        [class.tt-arrow--top]="placement === 'top'"
+        [class.tt-arrow--bottom]="placement === 'bottom'"
+        [class.tt-arrow--left]="placement === 'left'"
+        [class.tt-arrow--right]="placement === 'right'"
+      ></span>
+      {{ content }}
+    </span>
+  }
+</span>

@@ -1,0 +1,34 @@
+<div class="auc-row">
+
+  <!-- Left: commodity icon + text -->
+  <div class="auc-left">
+    <div class="auc-commodity-circle">
+      <img [src]="commodityIconSrc" [alt]="commodity" class="auc-commodity-img" />
+    </div>
+
+    <div class="auc-text-block">
+      <span class="auc-title">{{ title }}</span>
+
+      <div class="auc-meta">
+        @for (item of metaItems; track $index; let last = $last) {
+          <span class="auc-meta-item">{{ item }}</span>
+          @if (!last) {
+            <span class="auc-meta-dot" aria-hidden="true">•</span>
+          }
+        }
+      </div>
+
+      @if (timer) {
+        <span class="auc-timer">{{ timer }}</span>
+      }
+    </div>
+  </div>
+
+  <!-- Right: CTA -->
+  @if (ctaLabel) {
+    <button class="auc-cta" type="button" (click)="ctaClick.emit()">
+      {{ ctaLabel }}
+    </button>
+  }
+
+</div>

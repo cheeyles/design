@@ -1,0 +1,24 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Search Modal — Interactive">
+    <ap-demo>
+      <ap-demo-group>
+        <ap-button color="secondary" leadingIcon="search" (clicked)="open.set(true)">
+          Search
+        </ap-button>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="code" />
+  </ap-doc-section>
+
+</ap-doc-page>
+
+<ap-search-modal
+  [open]="open()"
+  placeholder="Search auctions, lots, vendors…"
+  (close)="open.set(false)"
+>
+  <p style="color:var(--color-text-grey);font-family:var(--type-family-primary);font-size:var(--type-size-body-sm);text-align:center;padding:var(--spacing-lg) 0">
+    Start typing to search
+  </p>
+</ap-search-modal>

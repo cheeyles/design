@@ -1,0 +1,34 @@
+<ap-doc-page>
+
+  <ap-doc-section title="Tooltip - Placement">
+    <ap-demo>
+      <ap-demo-group label="Hover each button">
+        <ap-tooltip content="Top tooltip" placement="top">
+          <ap-button color="secondary">Top</ap-button>
+        </ap-tooltip>
+        <ap-tooltip content="Bottom tooltip" placement="bottom">
+          <ap-button color="secondary">Bottom</ap-button>
+        </ap-tooltip>
+        <ap-tooltip content="Left tooltip" placement="left">
+          <ap-button color="secondary">Left</ap-button>
+        </ap-tooltip>
+        <ap-tooltip content="Right tooltip" placement="right">
+          <ap-button color="secondary">Right</ap-button>
+        </ap-tooltip>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="placementCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Tooltip - On any element">
+    <ap-demo>
+      <ap-demo-group label="Hover the text">
+        <ap-tooltip content="Tooltip on any element">
+          <span class="tt-demo-target">Hover me</span>
+        </ap-tooltip>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="elementCode" />
+  </ap-doc-section>
+
+</ap-doc-page>

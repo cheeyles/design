@@ -195,6 +195,23 @@
   --z-toast:    var(--primitive-z-toast);
   --z-tooltip:  var(--primitive-z-tooltip);
 
+  /* --- LAYOUT --- */
+
+  --layout-max-width:       1280px;
+  --layout-page-padding-x:  var(--primitive-space-6);   /* 24px — horizontal shell padding */
+  --layout-sidebar-width:   240px;
+  --layout-content-gap:     var(--primitive-space-6);   /* 24px — sidebar-to-content gap */
+  --layout-section-gap:     var(--primitive-space-8);   /* 32px — vertical gap between page sections */
+
+  /* --- BREAKPOINTS --- */
+
+  --breakpoint-xs:  var(--primitive-breakpoint-xs);
+  --breakpoint-sm:  var(--primitive-breakpoint-sm);
+  --breakpoint-md:  var(--primitive-breakpoint-md);
+  --breakpoint-lg:  var(--primitive-breakpoint-lg);
+  --breakpoint-xl:  var(--primitive-breakpoint-xl);
+  --breakpoint-2xl: var(--primitive-breakpoint-2xl);
+
   /* --- TRANSITION --- */
 
   --transition-fast:  var(--primitive-transition-fast);

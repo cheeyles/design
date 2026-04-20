@@ -1,126 +1,128 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./index.html', './src/**/*.{js,jsx}'],
+module.exports = {
+  content: [
+    './src/**/*.{html,ts}',
+  ],
   theme: {
     extend: {
+
+      /* ── AuctionsPlus brand colours ─────────────────────────── */
       colors: {
-        brand: {
-          primary:          'var(--color-brand-primary)',
-          'primary-hover':  'var(--color-brand-primary-hover)',
-          'primary-subtle': 'var(--color-brand-primary-subtle)',
-          'focus-ring':     'var(--color-brand-focus-ring)',
+
+        /* Navy — brand-dark (bg-brand-dark, text-brand-dark, bg-brand-dark-700 …) */
+        'brand-dark': {
+          DEFAULT: '#002341',   /* = --primitive-brand-dark-900  */
+          50:      '#E4E8ED',   /* = --primitive-brand-dark-50   */
+          700:     '#013C65',   /* = --primitive-brand-dark-700  */
+          900:     '#002341',   /* = --primitive-brand-dark-900  */
         },
-        text: {
-          default:   'var(--color-text-default)',
-          subtle:    'var(--color-text-subtle)',
-          disabled:  'var(--color-text-disabled)',
-          inverse:   'var(--color-text-inverse)',
-          'on-dark': 'var(--color-text-on-dark)',
-          brand:     'var(--color-text-brand)',
-          error:     'var(--color-text-error)',
-          warning:   'var(--color-text-warning)',
-          success:   'var(--color-text-success)',
+
+        /* Blue — brand-primary */
+        'brand-primary': {
+          DEFAULT: '#1971D8',   /* = --primitive-brand-primary-700 */
+          50:      '#E3F2FE',   /* = --primitive-brand-primary-50  */
+          700:     '#1971D8',   /* = --primitive-brand-primary-700 */
+          800:     '#1542A7',   /* = --primitive-brand-primary-900 */
+          900:     '#1542A7',   /* = --primitive-brand-primary-900 */
         },
-        bg: {
-          default:          'var(--color-bg-default)',
-          surface:          'var(--color-bg-surface)',
-          'surface-alt':    'var(--color-bg-surface-alt)',
-          overlay:          'var(--color-bg-overlay)',
-          brand:            'var(--color-bg-brand)',
-          disabled:         'var(--color-bg-disabled)',
-          error:            'var(--color-bg-error)',
-          'error-subtle':   'var(--color-bg-error-subtle)',
-          warning:          'var(--color-bg-warning)',
-          'warning-subtle': 'var(--color-bg-warning-subtle)',
-          success:          'var(--color-bg-success)',
-          'success-subtle': 'var(--color-bg-success-subtle)',
+
+        /* Green — positive */
+        'positive': {
+          DEFAULT: '#00873D',   /* = --primitive-positive-800 */
+          50:      '#E7F7EB',   /* = --primitive-positive-50  */
+          900:     '#006728',   /* = --primitive-positive-900 */
         },
-        border: {
-          default: 'var(--color-border-default)',
-          subtle:  'var(--color-border-subtle)',
-          strong:  'var(--color-border-strong)',
-          brand:   'var(--color-border-brand)',
-          error:   'var(--color-border-error)',
-          warning: 'var(--color-border-warning)',
-          success: 'var(--color-border-success)',
+
+        /* Red — negative */
+        'negative': {
+          DEFAULT: '#CD002B',   /* = --primitive-negative-900 */
+          50:      '#FFECF1',   /* = --primitive-negative-50  */
         },
-        status: {
-          error:            'var(--color-status-error)',
-          'error-subtle':   'var(--color-status-error-subtle)',
-          warning:          'var(--color-status-warning)',
-          'warning-subtle': 'var(--color-status-warning-subtle)',
-          success:          'var(--color-status-success)',
-          'success-dark':   'var(--color-status-success-dark)',
-          'success-subtle': 'var(--color-status-success-subtle)',
+
+        /* Orange — warning */
+        'warning': {
+          DEFAULT: '#D96725',   /* = --primitive-warning-900 */
+          50:      '#FDF4E3',   /* = --primitive-warning-50  */
         },
-        interactive: {
-          default:  'var(--color-interactive-default)',
-          hover:    'var(--color-interactive-hover)',
-          active:   'var(--color-interactive-active)',
-          disabled: 'var(--color-interactive-disabled)',
+
+        /* Yellow */
+        'yellow': {
+          DEFAULT: '#FFB700',   /* = --primitive-yellow-600 */
+          50:      '#FFF9E1',   /* = --primitive-yellow-50  */
         },
-        accent: {
-          yellow:          'var(--color-accent-yellow)',
-          'yellow-subtle': 'var(--color-accent-yellow-subtle)',
-          teal:            'var(--color-accent-teal)',
-          'teal-subtle':   'var(--color-accent-teal-subtle)',
-          purple:          'var(--color-accent-purple)',
-          'purple-subtle': 'var(--color-accent-purple-subtle)',
-          pink:            'var(--color-accent-pink)',
-          'pink-subtle':   'var(--color-accent-pink-subtle)',
+
+        /* Teal */
+        'teal': {
+          DEFAULT: '#005147',   /* = --primitive-teal-800 */
+          50:      '#DDEEED',   /* = --primitive-teal-50  */
+        },
+
+        /* Pink */
+        'pink': {
+          DEFAULT: '#760046',   /* = --primitive-pink-800 */
+          50:      '#F3E0EA',   /* = --primitive-pink-50  */
+        },
+
+        /* Purple */
+        'purple': {
+          DEFAULT: '#6A1B9A',   /* = --primitive-purple-800 */
+          50:      '#F3E5F5',   /* = --primitive-purple-50  */
+        },
+
+        /* Override Tailwind's default gray with AuctionsPlus brand grays.
+           Only values present in primitives.css are listed here. */
+        'gray': {
+          50:  '#F7FAFC',
+          100: '#F4F4F4',       /* = --primitive-gray-100 */
+          300: '#DBDEE0',       /* = --primitive-gray-300 */
+          400: '#B7BABC',       /* = --primitive-gray-400 */
+          700: '#5C5E60',       /* = --primitive-gray-700 */
+          800: '#3D4041',       /* = --primitive-gray-800 */
         },
       },
-      spacing: {
-        '0-5':   'var(--spacing-0-5)',
-        'xs':    'var(--spacing-xs)',
-        'sm':    'var(--spacing-sm)',
-        'sm-md': 'var(--spacing-sm-md)',
-        'md':    'var(--spacing-md)',
-        'lg':    'var(--spacing-lg)',
-        'xl':    'var(--spacing-xl)',
-        '2xl':   'var(--spacing-2xl)',
-        '3xl':   'var(--spacing-3xl)',
-        '4xl':   'var(--spacing-4xl)',
-        '5xl':   'var(--spacing-5xl)',
-        '6xl':   'var(--spacing-6xl)',
-      },
-      borderRadius: {
-        'xs':   'var(--radius-xs)',
-        'sm':   'var(--radius-sm)',
-        'md':   'var(--radius-md)',
-        'lg':   'var(--radius-lg)',
-        'xl':   'var(--radius-xl)',
-        'full': 'var(--radius-full)',
-      },
-      borderWidth: {
-        DEFAULT: 'var(--border-width-default)',
-        thick:   'var(--border-width-thick)',
-        focus:   'var(--border-width-focus)',
-      },
-      fontSize: {
-        'label-sm':    ['var(--type-size-label-sm)',    { lineHeight: 'var(--type-lh-label-sm)' }],
-        'label-md':    ['var(--type-size-label-md)',    { lineHeight: 'var(--type-lh-label-md)' }],
-        'body-sm':     ['var(--type-size-body-sm)',     { lineHeight: 'var(--type-lh-body-sm)' }],
-        'body-md':     ['var(--type-size-body-md)',     { lineHeight: 'var(--type-lh-body-md)' }],
-        'title-md':    ['var(--type-size-title-md)',    { lineHeight: 'var(--type-lh-title-md)' }],
-        'title-lg':    ['var(--type-size-title-lg)',    { lineHeight: 'var(--type-lh-title-lg)' }],
-        'headline-sm': ['var(--type-size-headline-sm)', { lineHeight: 'var(--type-lh-headline-sm)' }],
-        'headline-md': ['var(--type-size-headline-md)', { lineHeight: 'var(--type-lh-headline-md)' }],
-        'headline-lg': ['var(--type-size-headline-lg)', { lineHeight: 'var(--type-lh-headline-lg)' }],
-        'display-sm':  ['var(--type-size-display-sm)',  { lineHeight: 'var(--type-lh-display-sm)' }],
-        'display-md':  ['var(--type-size-display-md)',  { lineHeight: 'var(--type-lh-display-md)' }],
-        'display-lg':  ['var(--type-size-display-lg)',  { lineHeight: 'var(--type-lh-display-lg)' }],
-      },
+
+      /* ── Custom font families ──────────────────────────────── */
       fontFamily: {
         sans: ['Roboto', 'sans-serif'],
       },
-      boxShadow: {
-        'xs': 'var(--shadow-xs)',
-        'sm': 'var(--shadow-sm)',
-        'md': 'var(--shadow-md)',
-        'lg': 'var(--shadow-lg)',
-        'xl': 'var(--shadow-xl)',
+
+      /* ── Custom widths ─────────────────────────────────────── */
+      width: {
+        '260px': '260px',
       },
+
+      /* ── AuctionsPlus typography scale ─────────────────────── */
+      /* Clean names match the Figma type scale exactly.
+         Legacy aliases kept for backward compat with existing components. */
+      fontSize: {
+        /* — Clean Figma names — */
+        'label-sm':    ['10px', { lineHeight: '16px' }],
+        'label-md':    ['12px', { lineHeight: '18px' }],
+        'body-sm':     ['14px', { lineHeight: '22px' }],
+        'body-md':     ['16px', { lineHeight: '24px' }],
+        'title-md':    ['18px', { lineHeight: '28px' }],
+        'title-lg':    ['20px', { lineHeight: '30px' }],
+        'headline-sm': ['24px', { lineHeight: '36px' }],
+        'headline-md': ['28px', { lineHeight: '42px' }],
+        'headline-lg': ['32px', { lineHeight: '48px' }],
+        'display-sm':  ['36px', { lineHeight: '54px' }],
+        'display-md':  ['45px', { lineHeight: '68px' }],
+        'display-lg':  ['57px', { lineHeight: '86px' }],
+        /* — Legacy aliases (used in existing components) — */
+        'label-lg':     ['12px', { lineHeight: '18px' }],  /* = label-md   */
+        'label-medium': ['12px', { lineHeight: '18px' }],  /* = label-md   */
+        'body-lg':      ['16px', { lineHeight: '24px' }],  /* = body-md    */
+        'body-medium':  ['16px', { lineHeight: '24px' }],  /* = body-md    */
+        'title-sm':     ['18px', { lineHeight: '28px' }],  /* = title-md   */
+        'title-medium': ['18px', { lineHeight: '28px' }],  /* = title-md   */
+        'heading':      ['24px', { lineHeight: '36px' }],  /* = headline-sm */
+      },
+
+      /* ── Custom font weights ───────────────────────────────── */
+      fontWeight: {
+        'regular': '400',
+      },
+
     },
   },
   plugins: [],

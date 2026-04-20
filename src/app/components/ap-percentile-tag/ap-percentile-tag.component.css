@@ -1,0 +1,20 @@
+.ptag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-0-5) var(--spacing-xs);
+  border-radius: var(--radius-xs);
+  font-family: var(--type-family-primary);
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--color-text-grey-dark);
+}
+
+.ptag--sm {
+  font-size: var(--type-size-label-sm);
+  line-height: var(--type-lh-label-sm);
+}
+
+.ptag--md {
+  font-size: var(--type-size-label-md);
+  line-height: var(--type-lh-label-md);
+}

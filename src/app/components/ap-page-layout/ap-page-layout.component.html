@@ -1,0 +1,14 @@
+<ng-content select="[topNav]" />
+<ng-content select="[mobileNav]" />
+
+<div class="layout-body">
+  <div class="h-full xl:flex">
+
+    <ng-content select="[sideNav]" />
+
+    <div class="content-area h-full xl:flex-1 xl:overflow-y-auto">
+      <ng-content select="[pageContent]" />
+    </div>
+
+  </div>
+</div>

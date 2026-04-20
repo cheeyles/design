@@ -1,0 +1,6 @@
+.table-demo {
+  width: 100%;
+  border: 1px solid var(--color-border-grey-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
