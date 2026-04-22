@@ -28,14 +28,14 @@ export class ApTabPageComponent {
   ];
 
   readonly iconTabs = [
-    { value: 'cattle',   label: 'Cattle',   icon: 'agriculture'  },
-    { value: 'sheep',    label: 'Sheep',    icon: 'pets'         },
-    { value: 'machinery',label: 'Machinery',icon: 'construction' },
+    { value: 'details',  label: 'Details',  icon: 'fact_check'     },
+    { value: 'pedigree', label: 'Pedigree', icon: 'genetics'       },
+    { value: 'delivery', label: 'Delivery', icon: 'local_shipping' },
   ];
 
   readonly badgeTabs = [
     { value: 'lots',     label: 'Lots',     badge: 4  },
     { value: 'watching', label: 'Watching', badge: 12 },
-    { value: 'sold',     label: 'Sold',     badge: 1  },
+    { value: 'lost',     label: 'Lost',     badge: 1  },
   ];
 }

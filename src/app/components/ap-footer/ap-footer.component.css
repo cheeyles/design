@@ -45,7 +45,7 @@
   font-size: var(--type-size-body-sm);
   line-height: var(--type-lh-body-sm);
   font-weight: 400;
-  color: var(--color-border-grey-light);
+  color: var(--color-text-blue-grey);
   text-decoration: none;
 }
 
@@ -58,7 +58,7 @@
   font-size: var(--type-size-body-sm);
   line-height: var(--type-lh-body-sm);
   font-weight: 400;
-  color: var(--color-text-grey-light);
+  color: var(--color-text-blue-grey);
 }
 
 .footer-divider {
@@ -74,10 +74,16 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(255,255,255,0.3);
+  border: none;
   flex-shrink: 0;
-  color: var(--color-text-white);
+  color: var(--color-text-blue-grey);
+  font-size: 20px;
   text-decoration: none;
+}
+
+.store-badges {
+  display: flex;
+  gap: var(--spacing-sm);
 }
 
 .store-badge {

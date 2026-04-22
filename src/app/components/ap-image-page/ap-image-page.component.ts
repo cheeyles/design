@@ -18,7 +18,7 @@ import { ApImageComponent }      from '../ap-image/ap-image.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ApImagePageComponent {
-  readonly imgSrc = 'https://images.unsplash.com/photo-1500595046743-cd271d694e30?w=600';
+  readonly imgSrc = 'https://plus.unsplash.com/premium_photo-1663011279090-63d0e5d9e5c7?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
   readonly ratioCode =
 `<ap-image [src]="url" alt="Cattle" aspectRatio="3/2" />

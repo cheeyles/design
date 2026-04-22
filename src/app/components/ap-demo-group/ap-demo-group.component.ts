@@ -10,4 +10,5 @@ export class ApDemoGroupComponent {
   @Input() label?: string;
   @Input() column = false;
   @Input() gap?: string;
+  @Input() bg?: string;
 }

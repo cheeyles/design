@@ -18,6 +18,6 @@ import { ApSidenavItemComponent } from '../ap-sidenav-item/ap-sidenav-item.compo
 })
 export class ApSideNavPageComponent {
   active      = signal('overview');
-  accountOpen = signal(true);
-  helpOpen    = signal(true);
+  accountOpen = signal(false);
+  helpOpen    = signal(false);
 }

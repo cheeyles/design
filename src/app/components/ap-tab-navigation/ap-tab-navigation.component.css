@@ -16,8 +16,8 @@
   border-bottom: 3px solid transparent;
   cursor: pointer;
   font-family: var(--type-family-primary);
-  font-size: var(--type-size-body-sm);
-  line-height: var(--type-lh-body-sm);
+  font-size: var(--type-size-body-md);
+  line-height: var(--type-lh-body-md);
   font-weight: 500;
   color: var(--color-text-slate);
   white-space: nowrap;

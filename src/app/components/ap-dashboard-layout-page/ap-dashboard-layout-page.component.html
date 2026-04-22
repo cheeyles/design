@@ -1,0 +1,183 @@
+<ap-doc-page>
+
+  <!-- ── Wireframe diagram ── -->
+  <ap-doc-section title="Dashboard — Layout">
+
+    <div class="dlp-wrap">
+
+      <!-- Diagram -->
+      <div class="dlp-diagram">
+
+        <!-- Top nav bar -->
+        <div class="dlp-topnav">
+          <span class="dlp-label">ap-top-navigation · 56px · bg-brand-dark · fixed mobile / relative xl+</span>
+          <div class="dlp-topnav-right">
+            <div class="dlp-chip">notifications</div>
+            <div class="dlp-chip">ap-navigation-profile</div>
+          </div>
+        </div>
+
+        <!-- Body: sidebar + content -->
+        <div class="dlp-body">
+
+          <!-- Sidebar -->
+          <div class="dlp-sidebar">
+            <span class="dlp-label dlp-label--vert">ap-side-navigation · 240px · hidden &lt;xl</span>
+            <div class="dlp-sidebar-items">
+              <div class="dlp-nav-item dlp-nav-item--active"></div>
+              <div class="dlp-nav-item"></div>
+              <div class="dlp-nav-item"></div>
+              <div class="dlp-nav-item"></div>
+              <div class="dlp-nav-item"></div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="dlp-content">
+
+            <!-- Breadcrumb -->
+            <div class="dlp-breadcrumb">
+              <span class="dlp-label">ap-breadcrumb · conditional</span>
+            </div>
+
+            <!-- Page header -->
+            <div class="dlp-page-header">
+              <span class="dlp-label">Page heading · h1</span>
+            </div>
+
+            <!-- Action cards row -->
+            <div class="dlp-section-label">Section — layout-section-gap (32px) above</div>
+            <div class="dlp-cards-row">
+              <div class="dlp-action-card">
+                <div class="dlp-action-icon"></div>
+                <span class="dlp-label">ap-action-card</span>
+              </div>
+              <div class="dlp-action-card">
+                <div class="dlp-action-icon"></div>
+                <span class="dlp-label">ap-action-card</span>
+              </div>
+              <div class="dlp-action-card">
+                <div class="dlp-action-icon"></div>
+                <span class="dlp-label">ap-action-card</span>
+              </div>
+            </div>
+
+            <!-- Table section -->
+            <div class="dlp-section-label">Section — layout-section-gap (32px) above</div>
+            <div class="dlp-table">
+              <div class="dlp-table-header">
+                <div class="dlp-table-col dlp-table-col--head"></div>
+                <div class="dlp-table-col dlp-table-col--head"></div>
+                <div class="dlp-table-col dlp-table-col--head"></div>
+                <div class="dlp-table-col dlp-table-col--head"></div>
+              </div>
+              @for (row of [1,2,3]; track row) {
+                <div class="dlp-table-row">
+                  <div class="dlp-table-col"></div>
+                  <div class="dlp-table-col"></div>
+                  <div class="dlp-table-col"></div>
+                  <div class="dlp-table-col"></div>
+                </div>
+              }
+              <span class="dlp-label dlp-label--center">ap-data-table</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Hint bar -->
+      <p class="dlp-hint">
+        top-nav: 56px · sidebar: 240px (xl+) · page-padding-x: 24px · content-gap: 24px · section-gap: 32px
+      </p>
+    </div>
+
+  </ap-doc-section>
+
+  <!-- ── Zone breakdown ── -->
+  <ap-doc-section title="Dashboard — Zones">
+    <div class="dlp-table-wrap">
+      <table class="dlp-zone-table">
+        <thead>
+          <tr>
+            <th>Zone</th>
+            <th>Token</th>
+            <th>Value</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (z of zones; track z.name) {
+            <tr>
+              <td><strong>{{ z.name }}</strong></td>
+              <td><code>{{ z.token ?? '—' }}</code></td>
+              <td><code>{{ z.value }}</code></td>
+              <td>{{ z.description }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </ap-doc-section>
+
+  <!-- ── Component inventory ── -->
+  <ap-doc-section title="Dashboard — Components">
+    <div class="dlp-table-wrap">
+      <table class="dlp-zone-table">
+        <thead>
+          <tr>
+            <th>Zone</th>
+            <th>Component</th>
+            <th>Selector</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (c of components; track c.selector) {
+            <tr>
+              <td>{{ c.zone }}</td>
+              <td>{{ c.component }}</td>
+              <td><code>{{ c.selector }}</code></td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </ap-doc-section>
+
+  <!-- ── Responsive behaviour ── -->
+  <ap-doc-section title="Dashboard — Responsive">
+    <div class="dlp-responsive-grid">
+
+      <div class="dlp-resp-card">
+        <div class="dlp-resp-label">Mobile · &lt; 1280px</div>
+        <div class="dlp-resp-diagram dlp-resp-diagram--mobile">
+          <div class="dlp-resp-topnav">top nav · fixed</div>
+          <div class="dlp-resp-content">
+            <div class="dlp-resp-breadcrumb"></div>
+            <div class="dlp-resp-block"></div>
+            <div class="dlp-resp-block dlp-resp-block--tall"></div>
+          </div>
+          <div class="dlp-resp-footnote">sidebar hidden · hamburger in top nav</div>
+        </div>
+      </div>
+
+      <div class="dlp-resp-card">
+        <div class="dlp-resp-label">Desktop · xl+ (1280px+)</div>
+        <div class="dlp-resp-diagram dlp-resp-diagram--desktop">
+          <div class="dlp-resp-topnav">top nav · relative</div>
+          <div class="dlp-resp-body">
+            <div class="dlp-resp-sidebar">sidebar<br/>240px</div>
+            <div class="dlp-resp-content">
+              <div class="dlp-resp-breadcrumb"></div>
+              <div class="dlp-resp-block"></div>
+              <div class="dlp-resp-block dlp-resp-block--tall"></div>
+            </div>
+          </div>
+          <div class="dlp-resp-footnote">sidebar visible · top nav becomes relative</div>
+        </div>
+      </div>
+
+    </div>
+  </ap-doc-section>
+
+</ap-doc-page>

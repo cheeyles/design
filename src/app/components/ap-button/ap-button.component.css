@@ -49,9 +49,6 @@
   color: var(--color-text-grey);
   border: var(--border-width-default) solid var(--color-border-grey);
 }
-.btn-filled.btn-secondary:hover:not(:disabled) {
-  background-color: var(--color-bg-grey-light);
-}
 
 .btn-filled.btn-positive {
   background-color: var(--color-bg-green);

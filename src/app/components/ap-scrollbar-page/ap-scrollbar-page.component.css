@@ -37,7 +37,6 @@
   overflow-x: auto;
   display: flex;
   gap: var(--spacing-xs);
-  padding-bottom: var(--spacing-xs);
 }
 
 .sb-tab {
@@ -55,7 +54,7 @@
 }
 
 .sb-tab--active {
-  color: var(--color-brand-primary);
-  border-bottom-color: var(--color-brand-primary);
+  color: var(--color-brand-primary-dark);
+  border-bottom-color: var(--color-brand-primary-dark);
   font-weight: 500;
 }

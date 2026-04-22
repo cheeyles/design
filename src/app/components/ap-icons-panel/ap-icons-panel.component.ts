@@ -3,11 +3,11 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 interface IconGroup {
   id: string;
   label: string;
-  kind?: 'custom';
+  kind?: 'custom' | 'brand';
   icons: string[];
 }
 
-interface IconTile { name: string; weight?: number; }
+interface IconTile { name: string; weight?: number; variant?: string; }
 interface IconRow  { tiles: (IconTile | null)[]; }
 
 const ICON_GROUPS: IconGroup[] = [
@@ -59,12 +59,16 @@ const ICON_GROUPS: IconGroup[] = [
     id: 'messages', label: 'Messages',
     icons: ['chat_bubble','3p','chat','mark_chat_unread','chat_info','feedback','forum','campaign','lightbulb','light'],
   },
+  {
+    id: 'brand', label: 'Social Icons', kind: 'brand',
+    icons: ['facebook-logo','instagram-logo','tiktok-logo','x-logo','linkedin-logo'],
+  },
 ];
 
 interface GroupData {
   id: string;
   label: string;
-  kind?: 'custom';
+  kind?: 'custom' | 'brand';
   rows: IconRow[];
 }
 
@@ -72,22 +76,29 @@ function buildGroups(): GroupData[] {
   return ICON_GROUPS.map(g => {
     if (g.kind === 'custom') {
       const rows: IconRow[] = [];
-      for (let i = 0; i < g.icons.length; i += 4) {
-        const chunk = g.icons.slice(i, i + 4).map(n => ({ name: n }));
-        while (chunk.length < 4) chunk.push(null as unknown as IconTile);
+      for (let i = 0; i < g.icons.length; i += 6) {
+        const chunk = g.icons.slice(i, i + 6).map(n => ({ name: n }));
+        while (chunk.length < 6) chunk.push(null as unknown as IconTile);
         rows.push({ tiles: chunk });
       }
       return { id: g.id, label: g.label, kind: 'custom', rows };
     }
 
+    if (g.kind === 'brand') {
+      const rows: IconRow[] = [];
+      for (let i = 0; i < g.icons.length; i += 6) {
+        const chunk: (IconTile | null)[] = g.icons.slice(i, i + 6).map(n => ({ name: n, variant: 'bold' }));
+        while (chunk.length < 6) chunk.push(null);
+        rows.push({ tiles: chunk });
+      }
+      return { id: g.id, label: g.label, kind: 'brand', rows };
+    }
+
     const tiles: (IconTile | null)[] = [];
-    g.icons.forEach(name => {
-      tiles.push({ name, weight: 300 });
-      tiles.push({ name, weight: 400 });
-    });
-    while (tiles.length % 8 !== 0) tiles.push(null);
+    g.icons.forEach(name => tiles.push({ name, weight: 400 }));
+    while (tiles.length % 6 !== 0) tiles.push(null);
     const rows: IconRow[] = [];
-    for (let i = 0; i < tiles.length; i += 8) rows.push({ tiles: tiles.slice(i, i + 8) });
+    for (let i = 0; i < tiles.length; i += 6) rows.push({ tiles: tiles.slice(i, i + 6) });
     return { id: g.id, label: g.label, rows };
   });
 }
@@ -128,5 +139,19 @@ export class ApIconsPanelComponent {
 
   commoditySrc(name: string): string {
     return `icons/commodity/${name.toLowerCase()}.svg`;
+  }
+
+  copyBrand(name: string, variant: string): void {
+    navigator.clipboard.writeText(name);
+    this.copiedToken.set(name + '_' + variant + '_copy');
+    setTimeout(() => this.copiedToken.set(null), 1500);
+  }
+
+  phosphorClass(name: string, variant: string): string {
+    return `ph-${variant} ph-${name}`;
+  }
+
+  brandDisplayName(name: string): string {
+    return name.replace(/-/g, ' ');
   }
 }

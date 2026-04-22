@@ -15,7 +15,7 @@
 .top-bar--desktop {
   align-items: stretch;
   min-height: 56px;
-  padding: 0 var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-lg);
   gap: var(--spacing-lg);
 }
 
@@ -23,36 +23,38 @@
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  height: 48px;
-  padding: 0 var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-lg);
   background-color: var(--color-bg-dark);
   border-top: 1px solid rgba(255,255,255,0.1);
   flex-shrink: 0;
 }
 
-.nav-btn {
+.header-nav-btn {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-xs);
-  background: transparent;
+  padding: var(--spacing-sm) var(--spacing-sm);
+  background-color: transparent;
   border: none;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   font-family: var(--type-family-primary);
   font-size: var(--type-size-body-md);
   font-weight: 400;
+  line-height: var(--type-lh-body-sm);
   color: var(--color-text-white);
-  padding: 0;
   white-space: nowrap;
 }
 
-.nav-btn--active-top {
-  border-top-color: var(--color-brand-primary);
+.header-nav-btn--active {
+  background-color: color-mix(in srgb, #002341 90%, white);
 }
 
-.nav-btn--active-bottom {
-  border-bottom-color: var(--color-brand-primary);
+.header-nav-icon {
+  font-size: 18px;
+  line-height: 1;
+  color: inherit;
+  flex-shrink: 0;
 }
 
 .icon-btn {
@@ -66,6 +68,10 @@
   border-radius: var(--radius-sm);
   cursor: pointer;
   flex-shrink: 0;
+}
+
+.icon-btn:hover {
+  background-color: rgba(255,255,255,0.1);
 }
 
 .divider {
@@ -85,17 +91,28 @@
   flex-shrink: 0;
 }
 
-.search-stub {
-  width: 450px;
-  height: 36px;
+.search-pill {
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
   flex-shrink: 0;
-  background-color: rgba(255,255,255,0.1);
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(255,255,255,0.2);
-  font-family: var(--type-family-primary);
-  font-size: var(--type-size-body-sm);
-  color: rgba(255,255,255,0.5);
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-full);
   display: flex;
   align-items: center;
-  padding: 0 var(--spacing-sm);
+  gap: var(--spacing-sm);
+  padding: 0 var(--spacing-lg) 0 var(--spacing-md);
+  cursor: pointer;
+}
+
+.search-pill__icon {
+  font-size: 20px;
+  color: var(--color-text-grey);
+  flex-shrink: 0;
+}
+
+.search-pill__placeholder {
+  font-family: var(--type-family-primary);
+  font-size: var(--type-size-body-md);
+  color: var(--color-text-grey);
 }

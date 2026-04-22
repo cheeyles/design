@@ -18,7 +18,7 @@ import { ApAvatarComponent }     from '../ap-avatar/ap-avatar.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ApAvatarPageComponent {
-  readonly avatarSrc = 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=128&h=128&fit=crop&crop=face';
+  readonly avatarSrc = 'https://images.unsplash.com/photo-1504224357642-c87eacea1da4?q=80&w=200&auto=format&fit=crop';
 
   readonly withImageCode =
 `<ap-avatar [src]="url" alt="User" />

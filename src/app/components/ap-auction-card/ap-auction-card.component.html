@@ -3,7 +3,10 @@
   <!-- Left: commodity icon + text -->
   <div class="auc-left">
     <div class="auc-commodity-circle">
-      <img [src]="commodityIconSrc" [alt]="commodity" class="auc-commodity-img" />
+      <div class="auc-commodity-img"
+           [style.-webkit-mask-image]="'url(' + commodityIconSrc + ')'"
+           [style.mask-image]="'url(' + commodityIconSrc + ')'">
+      </div>
     </div>
 
     <div class="auc-text-block">

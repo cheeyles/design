@@ -1,8 +1,8 @@
 .header-controls {
-  padding: var(--spacing-md) var(--spacing-lg);
 }
 
 .header-preview {
+  width: 100%;
   border-radius: var(--radius-sm);
   overflow: hidden;
 }

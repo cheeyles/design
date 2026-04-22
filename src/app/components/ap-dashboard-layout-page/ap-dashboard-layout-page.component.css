@@ -1,0 +1,345 @@
+/* ── Outer wrap ── */
+.dlp-wrap {
+  padding: var(--spacing-lg);
+}
+
+/* ── Main diagram ── */
+.dlp-diagram {
+  border:        1px solid var(--color-border-grey-light);
+  border-radius: var(--radius-md);
+  overflow:      hidden;
+  background:    var(--color-bg-lighter);
+}
+
+/* Top nav zone */
+.dlp-topnav {
+  display:          flex;
+  align-items:      center;
+  justify-content:  space-between;
+  height:           48px;
+  padding:          0 var(--spacing-md);
+  background-color: var(--color-bg-dark);
+  flex-shrink:      0;
+}
+
+.dlp-topnav-right {
+  display: flex;
+  gap:     var(--spacing-sm);
+}
+
+.dlp-chip {
+  height:           24px;
+  padding:          0 var(--spacing-sm);
+  background:       rgba(255,255,255,0.15);
+  border-radius:    var(--radius-sm);
+  display:          flex;
+  align-items:      center;
+  font-family:      monospace;
+  font-size:        10px;
+  color:            rgba(255,255,255,0.7);
+  white-space:      nowrap;
+}
+
+/* Body row */
+.dlp-body {
+  display: flex;
+  height:  320px;
+}
+
+/* Sidebar zone */
+.dlp-sidebar {
+  width:            160px;
+  flex-shrink:      0;
+  background-color: var(--color-bg-white);
+  border-right:     1px solid var(--color-border-grey-light);
+  padding:          var(--spacing-md) var(--spacing-sm);
+  display:          flex;
+  flex-direction:   column;
+  gap:              var(--spacing-md);
+}
+
+.dlp-sidebar-items {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--spacing-xs);
+}
+
+.dlp-nav-item {
+  height:        28px;
+  border-radius: var(--radius-sm);
+  background:    var(--color-bg-light);
+}
+
+.dlp-nav-item--active {
+  background: var(--color-brand-primary-light);
+}
+
+/* Content zone */
+.dlp-content {
+  flex:    1;
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap:     var(--spacing-sm);
+  overflow: hidden;
+}
+
+/* Breadcrumb zone */
+.dlp-breadcrumb {
+  height:        24px;
+  background:    var(--color-bg-white);
+  border-radius: var(--radius-sm);
+  display:       flex;
+  align-items:   center;
+  padding:       0 var(--spacing-sm);
+  flex-shrink:   0;
+}
+
+/* Page header zone */
+.dlp-page-header {
+  height:        32px;
+  background:    var(--color-bg-white);
+  border-radius: var(--radius-sm);
+  display:       flex;
+  align-items:   center;
+  padding:       0 var(--spacing-sm);
+  flex-shrink:   0;
+}
+
+/* Section label */
+.dlp-section-label {
+  font-family:  monospace;
+  font-size:    10px;
+  color:        var(--color-text-grey);
+  margin-top:   var(--spacing-xs);
+  flex-shrink:  0;
+}
+
+/* Action cards row */
+.dlp-cards-row {
+  display:     flex;
+  gap:         var(--spacing-sm);
+  flex-shrink: 0;
+}
+
+.dlp-action-card {
+  flex:             1;
+  background:       var(--color-bg-white);
+  border-radius:    var(--radius-sm);
+  border:           1px solid var(--color-border-grey-light);
+  padding:          var(--spacing-sm);
+  display:          flex;
+  flex-direction:   column;
+  gap:              var(--spacing-xs);
+  align-items:      flex-start;
+}
+
+.dlp-action-icon {
+  width:            24px;
+  height:           24px;
+  border-radius:    var(--radius-full);
+  background-color: var(--color-bg-blue-light);
+  flex-shrink:      0;
+}
+
+/* Table zone */
+.dlp-table {
+  flex:          1;
+  background:    var(--color-bg-white);
+  border-radius: var(--radius-sm);
+  border:        1px solid var(--color-border-grey-light);
+  overflow:      hidden;
+  position:      relative;
+  display:       flex;
+  flex-direction: column;
+  min-height:    0;
+}
+
+.dlp-table-header,
+.dlp-table-row {
+  display: flex;
+  gap:     1px;
+  border-bottom: 1px solid var(--color-border-grey-light);
+  flex-shrink: 0;
+}
+
+.dlp-table-col {
+  flex:       1;
+  height:     24px;
+  background: var(--color-bg-lighter);
+}
+
+.dlp-table-col--head {
+  background: var(--color-bg-light);
+  height:     28px;
+}
+
+/* Labels */
+.dlp-label {
+  font-family:  monospace;
+  font-size:    9px;
+  color:        var(--color-text-grey);
+  white-space:  nowrap;
+  overflow:     hidden;
+  text-overflow: ellipsis;
+}
+
+.dlp-label--vert {
+  writing-mode:    vertical-rl;
+  text-orientation: mixed;
+  transform:       rotate(180deg);
+  font-size:       9px;
+}
+
+.dlp-label--center {
+  position:   absolute;
+  bottom:     var(--spacing-xs);
+  left:       50%;
+  transform:  translateX(-50%);
+  color:      var(--color-text-grey-dark);
+}
+
+/* Hint text */
+.dlp-hint {
+  margin:      var(--spacing-sm) 0 0;
+  font-size:   var(--type-size-label-md);
+  color:       var(--color-text-grey);
+  font-family: monospace;
+}
+
+/* ── Zone table ── */
+.dlp-table-wrap {
+  padding:    var(--spacing-lg);
+  overflow-x: auto;
+}
+
+.dlp-zone-table {
+  width:           100%;
+  border-collapse: collapse;
+  font-family:     var(--type-family-primary);
+  font-size:       var(--type-size-body-sm);
+}
+
+.dlp-zone-table th {
+  text-align:    left;
+  padding:       var(--spacing-sm) var(--spacing-md);
+  border-bottom: 2px solid var(--color-border-grey-light);
+  color:         var(--color-text-grey-dark);
+  font-weight:   600;
+  white-space:   nowrap;
+}
+
+.dlp-zone-table td {
+  padding:       var(--spacing-sm) var(--spacing-md);
+  border-bottom: 1px solid var(--color-border-grey-light);
+  color:         var(--color-text-dark);
+  vertical-align: top;
+}
+
+.dlp-zone-table code {
+  font-family:      monospace;
+  font-size:        var(--type-size-label-md);
+  background:       var(--color-bg-light);
+  padding:          2px var(--spacing-xs);
+  border-radius:    var(--radius-xs);
+  color:            var(--color-text-grey-dark);
+  white-space:      nowrap;
+}
+
+/* ── Responsive diagrams ── */
+.dlp-responsive-grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   var(--spacing-lg);
+  padding:               var(--spacing-lg);
+}
+
+.dlp-resp-card {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--spacing-sm);
+}
+
+.dlp-resp-label {
+  font-family:  monospace;
+  font-size:    var(--type-size-label-md);
+  color:        var(--color-text-grey-dark);
+  font-weight:  600;
+}
+
+.dlp-resp-diagram {
+  border:        1px solid var(--color-border-grey-light);
+  border-radius: var(--radius-md);
+  overflow:      hidden;
+  background:    var(--color-bg-lighter);
+}
+
+.dlp-resp-topnav {
+  height:           32px;
+  background:       var(--color-bg-dark);
+  display:          flex;
+  align-items:      center;
+  padding:          0 var(--spacing-sm);
+  font-family:      monospace;
+  font-size:        9px;
+  color:            rgba(255,255,255,0.6);
+  flex-shrink:      0;
+}
+
+.dlp-resp-body {
+  display: flex;
+  height:  160px;
+}
+
+.dlp-resp-sidebar {
+  width:            56px;
+  background:       var(--color-bg-white);
+  border-right:     1px solid var(--color-border-grey-light);
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  font-family:      monospace;
+  font-size:        8px;
+  color:            var(--color-text-grey);
+  text-align:       center;
+  flex-shrink:      0;
+}
+
+.dlp-resp-content {
+  flex:    1;
+  padding: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap:     var(--spacing-xs);
+}
+
+.dlp-resp-breadcrumb {
+  height:        14px;
+  background:    var(--color-bg-white);
+  border-radius: var(--radius-xs);
+  flex-shrink:   0;
+}
+
+.dlp-resp-block {
+  flex:          0 0 28px;
+  background:    var(--color-bg-white);
+  border-radius: var(--radius-xs);
+}
+
+.dlp-resp-block--tall {
+  flex: 1;
+  min-height: 0;
+}
+
+.dlp-resp-diagram--mobile .dlp-resp-body {
+  height: 160px;
+}
+
+.dlp-resp-footnote {
+  padding:     var(--spacing-xs) var(--spacing-sm);
+  background:  var(--color-bg-light);
+  font-family: monospace;
+  font-size:   9px;
+  color:       var(--color-text-grey);
+  border-top:  1px solid var(--color-border-grey-light);
+}

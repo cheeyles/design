@@ -6,6 +6,7 @@
 
 /* Nav item link / button — padding + gap match React NavItem */
 .item {
+  font-size: var(--type-size-body-md);
   padding: var(--spacing-sm-md);
   gap: var(--spacing-sm-md);
 }

@@ -3,6 +3,7 @@
   flex-direction:   column;
   background-color: var(--color-bg-white);
   border-radius:    var(--radius-md);
+  border:           1px solid var(--grey-300);
   width:            300px;
   flex-shrink:      0;
 }

@@ -53,19 +53,74 @@
   </ap-doc-section>
 
   <ap-doc-section title="Nav Items - Sidebar item - Small">
-    <ap-coming-soon title="Small Nav Item" description="Small-size sidebar nav item — coming soon." />
+    <ap-demo>
+      <ap-demo-group [column]="true">
+        <div class="small-nav-demo">
+          <button class="ds-section-nav__item" [class.ds-section-nav__item--active]="activeSmall() === 'forecast'" (click)="activeSmall.set('forecast')">Price Discovery</button>
+          <button class="ds-section-nav__item" [class.ds-section-nav__item--active]="activeSmall() === 'news'" (click)="activeSmall.set('news')">News</button>
+          <button class="ds-section-nav__item" [class.ds-section-nav__item--active]="activeSmall() === 'auctions'" (click)="activeSmall.set('auctions')">Auctions</button>
+        </div>
+      </ap-demo-group>
+    </ap-demo>
   </ap-doc-section>
 
   <ap-doc-section title="Nav Items - Sidebar item - child - Small">
-    <ap-coming-soon title="Small Nav Group" description="Small-size collapsible nav group — coming soon." />
+    <ap-demo>
+      <ap-demo-group [column]="true">
+        <div class="small-nav-demo">
+          <button class="ds-section-nav__group-toggle" (click)="smallGroupOpen.update(v => !v)">
+            Livestock
+            <span class="small-nav-chevron icon-outlined" [class.small-nav-chevron--open]="smallGroupOpen()">expand_more</span>
+          </button>
+          @if (smallGroupOpen()) {
+            <button class="ds-section-nav__item ds-section-nav__item--child" [class.ds-section-nav__item--active]="activeSmall() === 'cattle'" (click)="activeSmall.set('cattle')">Cattle</button>
+            <button class="ds-section-nav__item ds-section-nav__item--child" [class.ds-section-nav__item--active]="activeSmall() === 'sheep'" (click)="activeSmall.set('sheep')">Sheep</button>
+          }
+        </div>
+      </ap-demo-group>
+    </ap-demo>
   </ap-doc-section>
 
   <ap-doc-section title="Nav Items - Header item - With leading icon">
-    <ap-coming-soon title="Header Nav Item" description="Header sub-navigation item with leading icon — coming soon." />
+    <ap-demo>
+      <ap-demo-group [column]="true">
+        <div class="header-nav-demo">
+          <button class="header-nav-btn" [class.header-nav-btn--active]="activeLeading() === 'forecast'" (click)="activeLeading.set('forecast')">
+            <span class="header-nav-icon icon-outlined">chart_data</span>
+            Price Discovery
+          </button>
+          <button class="header-nav-btn" [class.header-nav-btn--active]="activeLeading() === 'news'" (click)="activeLeading.set('news')">
+            <span class="header-nav-icon icon-outlined">newspaper</span>
+            News
+          </button>
+          <button class="header-nav-btn" [class.header-nav-btn--active]="activeLeading() === 'auctions'" (click)="activeLeading.set('auctions')">
+            <span class="header-nav-icon icon-outlined">gavel</span>
+            Auctions
+          </button>
+        </div>
+      </ap-demo-group>
+    </ap-demo>
   </ap-doc-section>
 
   <ap-doc-section title="Nav Items - Header item - With trailing icon">
-    <ap-coming-soon title="Header Nav Item" description="Header sub-navigation item with trailing icon — coming soon." />
+    <ap-demo>
+      <ap-demo-group [column]="true">
+        <div class="header-nav-demo">
+          <button class="header-nav-btn" [class.header-nav-btn--active]="activeTrailing() === 'listings'" (click)="activeTrailing.set('listings')">
+            Listings
+            <span class="header-nav-icon icon-outlined">keyboard_arrow_down</span>
+          </button>
+          <button class="header-nav-btn" [class.header-nav-btn--active]="activeTrailing() === 'livestock'" (click)="activeTrailing.set('livestock')">
+            Livestock
+            <span class="header-nav-icon icon-outlined">keyboard_arrow_down</span>
+          </button>
+          <button class="header-nav-btn" [class.header-nav-btn--active]="activeTrailing() === 'machinery'" (click)="activeTrailing.set('machinery')">
+            Machinery
+            <span class="header-nav-icon icon-outlined">keyboard_arrow_down</span>
+          </button>
+        </div>
+      </ap-demo-group>
+    </ap-demo>
   </ap-doc-section>
 
   <ap-doc-section title="Nav Items - Footer item - link">

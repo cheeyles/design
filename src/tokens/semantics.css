@@ -81,6 +81,12 @@
   --color-accent-pink:          var(--primitive-pink-800);
   --color-accent-pink-light:    var(--primitive-pink-50);
 
+  /* --- UTILITY ALIASES --- */
+
+  --grey-300:               var(--primitive-gray-300);
+  --color-text-blue-grey:   var(--primitive-brand-dark-200);
+  --color-border-blue-grey: var(--primitive-brand-dark-200);
+
   /* --- COLOUR — BUTTON HOVER --- */
 
   --color-bg-input-disabled:     color-mix(in srgb, var(--color-text-grey) 4%, transparent);

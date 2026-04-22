@@ -13,7 +13,6 @@ import { ApOpacityPanelComponent }  from '../ap-opacity-panel/ap-opacity-panel.c
 import { ApTransitionPanelComponent } from '../ap-transition-panel/ap-transition-panel.component';
 import { ApZIndexPanelComponent }   from '../ap-z-index-panel/ap-z-index-panel.component';
 import { ApBreakpointsPanelComponent } from '../ap-breakpoints-panel/ap-breakpoints-panel.component';
-import { ApLayoutPanelComponent }   from '../ap-layout-panel/ap-layout-panel.component';
 
 interface NavItem { id: string; label: string; }
 
@@ -31,7 +30,6 @@ const NAV: NavItem[] = [
   { id: 'transition',   label: 'Transition'   },
   { id: 'z-index',      label: 'Z-Index'      },
   { id: 'breakpoints',  label: 'Breakpoints'  },
-  { id: 'layout',       label: 'Layout'       },
 ];
 
 @Component({
@@ -52,7 +50,6 @@ const NAV: NavItem[] = [
     ApTransitionPanelComponent,
     ApZIndexPanelComponent,
     ApBreakpointsPanelComponent,
-    ApLayoutPanelComponent,
   ],
   templateUrl: './ap-foundations-section.component.html',
   styleUrl:    './ap-foundations-section.component.css',

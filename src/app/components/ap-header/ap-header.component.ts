@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, signal } from '@angular/core';
-import { ApLogoComponent } from '../ap-logo/ap-logo.component';
+import { ApLogoComponent }   from '../ap-logo/ap-logo.component';
+import { ApAvatarComponent } from '../ap-avatar/ap-avatar.component';
 
 export interface HeaderNavLink { label: string; dropdown?: boolean; }
 
@@ -15,7 +16,7 @@ const BOTTOM_RIGHT_DEFAULT: { label: string; icon: string }[] = [
 @Component({
   selector: 'ap-header',
   standalone: true,
-  imports: [ApLogoComponent],
+  imports: [ApLogoComponent, ApAvatarComponent],
   templateUrl: './ap-header.component.html',
   styleUrl:    './ap-header.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -29,7 +30,7 @@ export class ApHeaderComponent {
   readonly bottomRight = BOTTOM_RIGHT_DEFAULT;
 
   activeTop    = signal<string | null>(null);
-  activeBottom = signal<string>('Livestock');
+  activeBottom = signal<string | null>(null);
 
   setTop(label: string): void    { this.activeTop.set(label); }
   setBottom(label: string): void { this.activeBottom.set(label); }

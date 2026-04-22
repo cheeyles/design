@@ -63,7 +63,12 @@
 
 .ni-field::-webkit-inner-spin-button,
 .ni-field::-webkit-outer-spin-button {
-  opacity: 1;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.ni-field[type=number] {
+  -moz-appearance: textfield;
 }
 
 .ni-hint {
