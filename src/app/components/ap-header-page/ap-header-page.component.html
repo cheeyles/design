@@ -19,4 +19,27 @@
     <ap-code-block [code]="mobile() ? mobileCode : desktopCode" />
   </ap-doc-section>
 
+
+  <ap-doc-section title="Header - Dashboard">
+    <ap-demo>
+      <ap-demo-group [column]="true">
+        <div class="header-preview">
+          <ap-header variant="dashboard" />
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="dashboardCode" />
+  </ap-doc-section>
+
+  <ap-doc-section title="Header - Listings">
+    <ap-demo>
+      <ap-demo-group [column]="true">
+        <div class="header-preview">
+          <ap-header variant="listings" />
+        </div>
+      </ap-demo-group>
+    </ap-demo>
+    <ap-code-block [code]="listingsCode" />
+  </ap-doc-section>
+
 </ap-doc-page>

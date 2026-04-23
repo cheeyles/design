@@ -46,8 +46,9 @@
   white-space: nowrap;
 }
 
+.header-nav-btn:hover,
 .header-nav-btn--active {
-  background-color: color-mix(in srgb, #002341 90%, white);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .header-nav-icon {
@@ -89,30 +90,4 @@
   border-radius: var(--radius-full);
   background-color: var(--color-border-grey-light);
   flex-shrink: 0;
-}
-
-.search-pill {
-  width: 100%;
-  max-width: 400px;
-  height: 40px;
-  flex-shrink: 0;
-  background-color: var(--color-bg-white);
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  padding: 0 var(--spacing-lg) 0 var(--spacing-md);
-  cursor: pointer;
-}
-
-.search-pill__icon {
-  font-size: 20px;
-  color: var(--color-text-grey);
-  flex-shrink: 0;
-}
-
-.search-pill__placeholder {
-  font-family: var(--type-family-primary);
-  font-size: var(--type-size-body-md);
-  color: var(--color-text-grey);
 }

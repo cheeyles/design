@@ -74,12 +74,6 @@
   border: 1px solid var(--color-border-grey-light);
 }
 
-.ds-section-nav__item--child {
-  padding-left: var(--spacing-2xl);
-  font-size: var(--type-size-body-sm);
-  font-weight: 400;
-}
-
 .small-nav-chevron {
   font-size: 18px;
   line-height: 1;
@@ -115,8 +109,9 @@
   white-space: nowrap;
 }
 
+.header-nav-btn:hover,
 .header-nav-btn--active {
-  background-color: color-mix(in srgb, #002341 90%, white);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .header-nav-icon {
@@ -124,6 +119,10 @@
   line-height: 1;
   color: inherit;
   flex-shrink: 0;
+}
+
+.header-nav-demo--leading .header-nav-icon {
+  color: var(--color-brand-primary);
 }
 
 /* Footer links container — dark background */

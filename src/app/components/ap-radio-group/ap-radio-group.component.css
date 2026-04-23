@@ -4,15 +4,6 @@
   gap: var(--spacing-0-5);
 }
 
-.rg-label {
-  font-family: var(--type-family-primary);
-  font-size: var(--type-size-label-md);
-  line-height: var(--type-lh-label-md);
-  font-weight: 500;
-  color: var(--color-text-grey-dark);
-  display: block;
-}
-
 .rg-options {
   display: flex;
   flex-direction: column;

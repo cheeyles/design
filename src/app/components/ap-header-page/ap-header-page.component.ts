@@ -21,6 +21,8 @@ import { ApToggleComponent }     from '../ap-toggle/ap-toggle.component';
 export class ApHeaderPageComponent {
   mobile = signal(false);
 
-  readonly desktopCode = `<ap-header />`;
-  readonly mobileCode  = `<ap-header [mobile]="true" />`;
+  readonly desktopCode   = `<ap-header />`;
+  readonly mobileCode    = `<ap-header [mobile]="true" />`;
+  readonly dashboardCode = `<ap-header variant="dashboard" />`;
+  readonly listingsCode  = `<ap-header variant="listings" />`;
 }

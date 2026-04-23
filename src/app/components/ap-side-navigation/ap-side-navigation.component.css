@@ -3,7 +3,7 @@
   width: 260px;
   padding-top: var(--spacing-md-lg);
   padding-bottom: var(--spacing-md-lg);
-  transition: width var(--transition-base) var(--easing-default);
+  transition: none;
   overflow: hidden; /* clips item text during collapse transition */
   flex-shrink: 0;
 }

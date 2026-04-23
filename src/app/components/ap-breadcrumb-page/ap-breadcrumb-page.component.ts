@@ -19,17 +19,10 @@ import { ApBreadcrumbComponent } from '../ap-breadcrumb/ap-breadcrumb.component'
 })
 export class ApBreadcrumbPageComponent {
   readonly exampleCrumbs = [
-    { label: 'Home',                       href: '#' },
-    { label: 'Auctions',                   href: '#' },
-    { label: 'Cattle',                     href: '#' },
-    { label: 'Eastern States Cattle Sale', href: '#' },
-    { label: '40 PTIC Heifers' },
-  ];
-
-  readonly shortCrumbs = [
-    { label: 'Home',     href: '#' },
-    { label: 'Auctions', href: '#' },
-    { label: 'Cattle' },
+    { label: 'Home',                        href: '#' },
+    { label: 'Auctions',                    href: '#' },
+    { label: 'Cattle',                      href: '#' },
+    { label: 'Trent Bridge Wagyu 2025 Sale' },
   ];
 
   readonly exampleCode =
@@ -37,13 +30,7 @@ export class ApBreadcrumbPageComponent {
   { label: 'Home',     href: '/' },
   { label: 'Auctions', href: '/auctions' },
   { label: 'Cattle',   href: '/auctions/cattle' },
-  { label: 'Eastern States Cattle Sale' },
+  { label: 'Trent Bridge Wagyu 2025 Sale' },
 ]" />`;
 
-  readonly shortCode =
-`<ap-breadcrumb [crumbs]="[
-  { label: 'Home',     href: '/' },
-  { label: 'Auctions', href: '/auctions' },
-  { label: 'Cattle' },
-]" />`;
 }

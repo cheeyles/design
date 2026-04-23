@@ -6,7 +6,7 @@
   <ap-doc-section title="Side Navigation - Default">
     <ap-demo>
       <ap-demo-group>
-        <div class="side-nav-demo">
+        <ap-side-navigation class="side-nav-demo">
 
           <ap-sidenav-item icon="dashboard"     title="Overview"              [active]="active() === 'overview'"  (itemClick)="active.set('overview')" />
           <ap-sidenav-item icon="list_alt"      title="My Sales"              [active]="active() === 'sales'"     (itemClick)="active.set('sales')" />
@@ -43,7 +43,7 @@
 
           <ap-sidenav-item icon="settings" title="Communication Settings" [active]="active() === 'settings'" (itemClick)="active.set('settings')" />
 
-        </div>
+        </ap-side-navigation>
       </ap-demo-group>
     </ap-demo>
   </ap-doc-section>

@@ -1,12 +1,9 @@
-/* Sidebar demo container — matches React SideNav wrapper */
+/* Sidebar demo container */
 .side-nav-demo {
-  width: 280px;
-  background-color: var(--color-bg-white);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border-grey-light);
-  padding: var(--spacing-sm) 0;
-  display: flex;
-  flex-direction: column;
+  overflow: hidden;
+  display: block;
 }
 
 .nav-divider {

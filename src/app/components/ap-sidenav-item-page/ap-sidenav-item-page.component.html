@@ -56,9 +56,9 @@
     <ap-demo>
       <ap-demo-group [column]="true">
         <div class="small-nav-demo">
-          <button class="ds-section-nav__item" [class.ds-section-nav__item--active]="activeSmall() === 'forecast'" (click)="activeSmall.set('forecast')">Price Discovery</button>
-          <button class="ds-section-nav__item" [class.ds-section-nav__item--active]="activeSmall() === 'news'" (click)="activeSmall.set('news')">News</button>
-          <button class="ds-section-nav__item" [class.ds-section-nav__item--active]="activeSmall() === 'auctions'" (click)="activeSmall.set('auctions')">Auctions</button>
+          <button class="ds-section-nav__item" [class.ds-section-nav__item--active]="activeSmall() === 'forecast'" (click)="activeSmall.set('forecast')">Item 1</button>
+          <button class="ds-section-nav__item" [class.ds-section-nav__item--active]="activeSmall() === 'news'" (click)="activeSmall.set('news')">Item 2</button>
+          <button class="ds-section-nav__item" [class.ds-section-nav__item--active]="activeSmall() === 'auctions'" (click)="activeSmall.set('auctions')">Item 3</button>
         </div>
       </ap-demo-group>
     </ap-demo>
@@ -69,12 +69,12 @@
       <ap-demo-group [column]="true">
         <div class="small-nav-demo">
           <button class="ds-section-nav__group-toggle" (click)="smallGroupOpen.update(v => !v)">
-            Livestock
+            Group label
             <span class="small-nav-chevron icon-outlined" [class.small-nav-chevron--open]="smallGroupOpen()">expand_more</span>
           </button>
           @if (smallGroupOpen()) {
-            <button class="ds-section-nav__item ds-section-nav__item--child" [class.ds-section-nav__item--active]="activeSmall() === 'cattle'" (click)="activeSmall.set('cattle')">Cattle</button>
-            <button class="ds-section-nav__item ds-section-nav__item--child" [class.ds-section-nav__item--active]="activeSmall() === 'sheep'" (click)="activeSmall.set('sheep')">Sheep</button>
+            <button class="ds-section-nav__item ds-section-nav__item--child" [class.ds-section-nav__item--active]="activeSmall() === 'cattle'" (click)="activeSmall.set('cattle')">Item 1</button>
+            <button class="ds-section-nav__item ds-section-nav__item--child" [class.ds-section-nav__item--active]="activeSmall() === 'sheep'" (click)="activeSmall.set('sheep')">Item 2</button>
           }
         </div>
       </ap-demo-group>
@@ -84,7 +84,7 @@
   <ap-doc-section title="Nav Items - Header item - With leading icon">
     <ap-demo>
       <ap-demo-group [column]="true">
-        <div class="header-nav-demo">
+        <div class="header-nav-demo header-nav-demo--leading">
           <button class="header-nav-btn" [class.header-nav-btn--active]="activeLeading() === 'forecast'" (click)="activeLeading.set('forecast')">
             <span class="header-nav-icon icon-outlined">chart_data</span>
             Price Discovery
@@ -106,16 +106,16 @@
     <ap-demo>
       <ap-demo-group [column]="true">
         <div class="header-nav-demo">
-          <button class="header-nav-btn" [class.header-nav-btn--active]="activeTrailing() === 'listings'" (click)="activeTrailing.set('listings')">
-            Listings
-            <span class="header-nav-icon icon-outlined">keyboard_arrow_down</span>
-          </button>
           <button class="header-nav-btn" [class.header-nav-btn--active]="activeTrailing() === 'livestock'" (click)="activeTrailing.set('livestock')">
             Livestock
             <span class="header-nav-icon icon-outlined">keyboard_arrow_down</span>
           </button>
           <button class="header-nav-btn" [class.header-nav-btn--active]="activeTrailing() === 'machinery'" (click)="activeTrailing.set('machinery')">
             Machinery
+            <span class="header-nav-icon icon-outlined">keyboard_arrow_down</span>
+          </button>
+          <button class="header-nav-btn" [class.header-nav-btn--active]="activeTrailing() === 'service'" (click)="activeTrailing.set('service')">
+            Services
             <span class="header-nav-icon icon-outlined">keyboard_arrow_down</span>
           </button>
         </div>

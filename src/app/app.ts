@@ -15,10 +15,10 @@ interface Section {
 
 const SECTIONS: Section[] = [
   { id: 'home',        label: 'Home',        matIcon: 'home',       desc: '' },
-  { id: 'foundations', label: 'Foundations', matIcon: 'layers',     desc: 'Our core visual language. Built for ag.' },
-  { id: 'components',  label: 'Components',  matIcon: 'widgets',    desc: 'Reusable UI building blocks for livestock, machinery and commodity workflows.' },
-  { id: 'patterns',    label: 'Patterns',    matIcon: 'view_quilt', desc: 'Proven layouts and interaction patterns to support ag industry tasks.' },
-  { id: 'experiences', label: 'Experiences', matIcon: 'devices',    desc: 'End-to-end flows connecting producers, agents and buyers across the supply chain.' },
+  { id: 'foundations', label: 'Foundations', matIcon: 'layers',     desc: 'Our core visual language. Built for ag' },
+  { id: 'components',  label: 'Components',  matIcon: 'widgets',    desc: 'Reusable UI building blocks for ag workflows' },
+  { id: 'patterns',    label: 'Patterns',    matIcon: 'view_quilt', desc: 'Proven layouts and interaction patterns' },
+  { id: 'experiences', label: 'Experiences', matIcon: 'devices',    desc: 'End-to-end flows' },
 ];
 
 @Component({

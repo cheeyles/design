@@ -20,6 +20,7 @@ const NAV: NavItem[] = [
   { id: 'exp-mobile-app',       label: 'Mobile App'       },
   { id: 'exp-liveassess',       label: 'LiveAssess'       },
   { id: 'exp-console',          label: 'Console'          },
+  { id: 'exp-bidding-client',   label: 'Bidding Client'   },
 ];
 
 @Component({

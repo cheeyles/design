@@ -31,10 +31,15 @@
       <!-- Left: logo + search -->
       <div class="flex items-center" style="gap:var(--spacing-lg);flex-shrink:0;align-self:center">
         <ap-logo variant="light" width="175px" />
-        <div class="search-pill">
-          <span class="icon-outlined search-pill__icon">search</span>
-          <span class="search-pill__placeholder">Search Upcoming Lots &amp; Auctions</span>
-        </div>
+        @if (topbarTitle) {
+          <span class="ds-topbar__title">{{ topbarTitle }}</span>
+        }
+        @if (variant === 'website') {
+          <div class="search-pill">
+            <span class="icon-outlined search-pill__icon">search</span>
+            <input class="search-pill__input" type="search" placeholder="Search Upcoming Lots &amp; Auctions" />
+          </div>
+        }
       </div>
 
       <!-- Right: nav + icons -->
@@ -71,6 +76,7 @@
     </div>
 
     <!-- Bottom bar -->
+    @if (variant === 'website') {
     <div class="bottom-bar">
       <nav class="flex items-stretch" style="gap:8px">
         @for (link of bottomLeft; track link.label) {
@@ -99,6 +105,7 @@
         }
       </nav>
     </div>
+    }
 
   </header>
 }

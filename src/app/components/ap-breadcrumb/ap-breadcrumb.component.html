@@ -1,24 +1,16 @@
 <nav aria-label="Breadcrumb">
-  <ol class="flex items-center overflow-x-auto text-brand-dark text-body-sm">
+  <ol class="bc-list">
     @for (crumb of crumbs; track $index) {
-
-      @if ($index > 0) {
-        <li class="flex-shrink-0" aria-hidden="true">
-          <span class="icon-outlined text-[16px]" style="color:var(--color-text-grey-dark)">chevron_right</span>
-        </li>
-      }
-
-      <li>
+      <li class="bc-item">
         @if (crumb.href) {
-          <a
-            [routerLink]="crumb.href"
-            class="hover:text-brand-primary hover:underline whitespace-nowrap"
-          >{{ crumb.label }}</a>
+          <a [routerLink]="crumb.href" class="bc-link">{{ crumb.label }}</a>
         } @else {
-          <span class="whitespace-nowrap" aria-current="page">{{ crumb.label }}</span>
+          <span class="bc-current" aria-current="page">{{ crumb.label }}</span>
+        }
+        @if (!$last) {
+          <span class="bc-sep icon-outlined" aria-hidden="true">chevron_right</span>
         }
       </li>
-
     }
   </ol>
 </nav>

@@ -53,6 +53,7 @@
 
   --color-border-grey:              var(--primitive-gray-400);
   --color-border-grey-light:        var(--primitive-gray-300);
+  --color-border-card:              var(--primitive-gray-200);
   --color-border-grey-dark:         var(--primitive-gray-800);
   --color-border-brand-primary:     var(--primitive-brand-primary-700);
   --color-border-brand-primary-dark: var(--primitive-brand-primary-900);

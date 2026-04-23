@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { ApButtonComponent } from '../ap-button/ap-button.component';
 
-const ITEMS = ['Assessment Entry', 'Listings Portal', 'Mobile App', 'Website', 'LiveAssess', 'Dashboard', 'Console'];
+const ITEMS = ['Assessment Entry', 'Listings Portal', 'Mobile App', 'Website', 'LiveAssess', 'Dashboard', 'Console', 'Bidding Client'];
 
 @Component({
   selector: 'ap-ds-home',

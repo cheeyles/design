@@ -76,6 +76,7 @@ const COLOUR_GROUPS: ColourGroup[] = [
       { name: '--color-border-grey-dark',          hex: '#3D4041' },
       { name: '--color-border-grey',               hex: '#B7BABC' },
       { name: '--color-border-grey-light',         hex: '#DBDEE0' },
+      { name: '--color-border-card',               hex: '#EEEEEE' },
       null,
       { name: '--color-border-brand-primary-dark', hex: '#1542A7' },
       { name: '--color-border-brand-primary',      hex: '#1971D8' },

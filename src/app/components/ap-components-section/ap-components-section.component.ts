@@ -16,6 +16,7 @@ import { ApImagePageComponent }         from '../ap-image-page/ap-image-page.com
 import { ApAvatarPageComponent }        from '../ap-avatar-page/ap-avatar-page.component';
 import { ApMessagePageComponent }       from '../ap-message-page/ap-message-page.component';
 import { ApTooltipPageComponent }       from '../ap-tooltip-page/ap-tooltip-page.component';
+import { ApSearchFieldPageComponent }   from '../ap-search-field-page/ap-search-field-page.component';
 
 interface NavChild { id: string; label: string; done: boolean; }
 interface NavItem  { id: string; label: string; done?: boolean; children?: NavChild[]; }
@@ -28,7 +29,7 @@ const NAV: NavItem[] = [
       { id: 'inputs-text',     label: 'Text Inputs',   done: true  },
       { id: 'inputs-number',   label: 'Number Inputs', done: true  },
       { id: 'inputs-dropdown', label: 'Dropdown Menu', done: true  },
-      { id: 'inputs-special',  label: 'Search Field',  done: false },
+      { id: 'inputs-special',  label: 'Search Field',  done: true  },
       { id: 'inputs-radio',    label: 'Radio Button',  done: true  },
       { id: 'inputs-checkbox', label: 'Checkboxes',    done: true  },
       { id: 'inputs-date',     label: 'Date Picker',   done: true  },
@@ -66,6 +67,7 @@ const NAV: NavItem[] = [
     ApAvatarPageComponent,
     ApMessagePageComponent,
     ApTooltipPageComponent,
+    ApSearchFieldPageComponent,
   ],
   templateUrl: './ap-components-section.component.html',
   styleUrl:    './ap-components-section.component.css',

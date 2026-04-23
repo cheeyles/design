@@ -95,13 +95,13 @@
 }
 
 .sel-option--selected {
-  background-color: var(--color-brand-primary-light);
+  background-color: var(--color-bg-light);
   color: var(--color-brand-primary-dark);
   font-weight: 500;
 }
 
-.sel-option--hovered:not(.sel-option--selected) {
-  background-color: var(--color-bg-grey-light);
+.sel-option--hovered {
+  background-color: var(--color-bg-light);
 }
 
 .sel-hint {
